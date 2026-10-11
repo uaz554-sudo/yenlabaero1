@@ -9,7 +9,6 @@ layout: null
     <title>顏究所 YEN LAB AERO | 哩程、航空、信用卡主流媒體</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 跑馬燈動畫 */
         @keyframes ticker {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
@@ -25,71 +24,177 @@ layout: null
 <body class="bg-[#f0f4f8] font-sans">
     
     <!-- 置頂跑馬燈 (快訊) -->
-    <div class="bg-[#cba052] text-[#0a192f] text-sm py-2 overflow-hidden relative ticker-container">
+    <div class="bg-[#cba052] text-[#0a192f] text-sm py-2 overflow-hidden relative ticker-container shadow-sm">
         <div class="whitespace-nowrap animate-ticker font-bold">
-            🔥 快訊：歡迎來到顏究所 YEN LAB AERO！最新航空與哩程資訊即將上線，敬請期待...
+            🔥 快訊：歡迎來到顏究所 YEN LAB AERO！為您帶來最新航空、哩程與信用卡第一手資訊。
         </div>
     </div>
 
     <!-- 導覽列 -->
-    <nav class="bg-[#0a192f] text-white p-4 shadow-md">
+    <nav class="bg-[#0a192f] text-white p-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto max-w-6xl flex justify-between items-center">
-            <a href="/" class="text-2xl font-serif font-bold text-[#cba052]">
-                YEN LAB AERO <span class="text-white text-lg ml-2">顏究所</span>
+            <a href="/" class="text-2xl font-serif font-bold text-[#cba052] flex items-baseline">
+                YEN LAB AERO <span class="text-white text-lg ml-2 font-sans">顏究所</span>
             </a>
-            <div class="hidden md:flex space-x-6">
-               <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
-<a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
-<a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
+                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
+                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
             </div>
         </div>
     </nav>
 
     <!-- 主要內容區 -->
-    <main class="container mx-auto max-w-6xl px-4 py-12">
+    <main class="container mx-auto max-w-6xl px-4 py-8">
         
-        <div class="flex items-center justify-between mb-8 border-b-2 border-[#0a192f] pb-2">
-            <h2 class="text-2xl font-bold text-[#0a192f]">最新文章</h2>
+        <!-- ================= 頭條區 (Hero Section) ================= -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+            <!-- 左側大頭條 (抓取第 1 篇文章) -->
+            <div class="lg:col-span-2 relative group overflow-hidden rounded-xl shadow-lg h-[400px]">
+                {% if site.posts.size > 0 %}
+                    {% assign hero_post = site.posts[0] %}
+                    <a href="{{ site.baseurl }}{{ hero_post.url }}">
+                        <!-- 如果沒有上傳圖片，使用預設的飛機圖 -->
+                        <img src="{{ hero_post.thumbnail | default: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent p-6 pt-24">
+                            <span class="bg-[#cba052] text-[#0a192f] text-xs font-bold px-3 py-1 rounded-sm mb-3 inline-block">{{ hero_post.category | default: '最新發布' }}</span>
+                            <h2 class="text-3xl font-bold text-white mb-2 leading-tight">{{ hero_post.title }}</h2>
+                            <p class="text-gray-300 text-sm line-clamp-2">{{ hero_post.description }}</p>
+                        </div>
+                    </a>
+                {% else %}
+                    <!-- 沒有文章時的預設畫面 -->
+                    <div class="relative w-full h-full">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent p-6 pt-24">
+                            <span class="bg-[#cba052] text-[#0a192f] text-xs font-bold px-3 py-1 rounded-sm mb-3 inline-block">系統提示</span>
+                            <h2 class="text-3xl font-bold text-white mb-2 leading-tight">歡迎來到顏究所！主編準備中</h2>
+                            <p class="text-gray-300 text-sm">這裡將自動顯示您的第一篇頭條文章，請前往後台發布。</p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- 右側兩小篇 (抓取第 2, 3 篇文章) -->
+            <div class="flex flex-col gap-6 h-[400px]">
+                {% for i in (1..2) %}
+                    <div class="relative group overflow-hidden rounded-xl shadow-lg h-[188px]">
+                        {% if site.posts[i] %}
+                            {% assign sub_post = site.posts[i] %}
+                            <a href="{{ site.baseurl }}{{ sub_post.url }}">
+                                <img src="{{ sub_post.thumbnail | default: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80' }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent p-4 pt-16">
+                                    <span class="text-[#cba052] text-xs font-bold mb-1 block">{{ sub_post.category }}</span>
+                                    <h3 class="text-md font-bold text-white leading-snug line-clamp-2">{{ sub_post.title }}</h3>
+                                </div>
+                            </a>
+                        {% else %}
+                            <!-- 沒有文章時的預設畫面 -->
+                            <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale opacity-80">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] to-transparent p-4 pt-16">
+                                <span class="text-gray-400 text-xs font-bold mb-1 block">等待發布</span>
+                                <h3 class="text-md font-bold text-gray-300 line-clamp-2">後續發布的文章將顯示於此</h3>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
 
-        <!-- 文章網格區 (動態抓取) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- ================= 雙欄設計區 ================= -->
+        <div class="flex flex-col lg:flex-row gap-8">
             
-            {% if site.posts.size == 0 %}
-                <!-- 當沒有文章時顯示的畫面 -->
-                <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-24 bg-white rounded-lg shadow-sm">
-                    <h3 class="text-xl text-gray-500 font-bold mb-2">主編正在趕稿中 ✈️</h3>
-                    <p class="text-gray-400">目前尚無文章，敬請期待顏究所的最新報導！</p>
+            <!-- 左側：最新新聞列表 (第 4 篇之後的文章) -->
+            <div class="lg:w-2/3">
+                <div class="flex items-center justify-between mb-6 border-b-2 border-[#0a192f] pb-2">
+                    <h2 class="text-2xl font-bold text-[#0a192f]">最新文章</h2>
                 </div>
-            {% else %}
-                <!-- 當有文章時，自動產生的排版 -->
-                {% for post in site.posts %}
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-                    <a href="{{ site.baseurl }}{{ post.url }}">
-                        {% if post.thumbnail %}
-                        <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
-                        {% else %}
-                        <div class="w-full h-48 bg-[#0a192f] flex items-center justify-center text-[#cba052] font-bold text-xl">YEN LAB AERO</div>
-                        {% endif %}
-                    </a>
-                    <div class="p-5 flex flex-col flex-grow">
-                        <span class="text-xs font-bold text-[#cba052] mb-2 block">{{ post.category }}</span>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {% for post in site.posts offset:3 %}
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full border border-gray-100">
                         <a href="{{ site.baseurl }}{{ post.url }}">
-                            <h3 class="text-lg font-bold text-[#0a192f] hover:text-blue-600 mb-2 line-clamp-2">{{ post.title }}</h3>
+                            {% if post.thumbnail %}
+                            <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+                            {% else %}
+                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400">暫無圖片</div>
+                            {% endif %}
                         </a>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ post.description }}</p>
-                        <span class="text-xs text-gray-400 mt-auto pt-4">{{ post.date | date: "%Y-%m-%d" }}</span>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <span class="text-xs font-bold text-[#cba052] mb-2 block">{{ post.category }}</span>
+                            <a href="{{ site.baseurl }}{{ post.url }}">
+                                <h3 class="text-lg font-bold text-[#0a192f] hover:text-blue-600 mb-2 line-clamp-2">{{ post.title }}</h3>
+                            </a>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-2">{{ post.description }}</p>
+                            <span class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-50">{{ post.date | date: "%Y-%m-%d" }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+
+                {% if site.posts.size <= 3 %}
+                <div class="text-center py-12 bg-white rounded-xl shadow-sm border border-gray-100 mt-2">
+                    <p class="text-gray-400">當您發布超過 3 篇文章後，這裡會繼續顯示更多新聞卡片！</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- 右側：側邊欄 (Sidebar) -->
+            <div class="lg:w-1/3 space-y-8">
+                
+                <!-- 訂閱電子報區塊 -->
+                <div class="bg-[#0a192f] rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-[#cba052] opacity-20"></div>
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <span class="mr-2">✈️</span> 訂閱顏究所
+                    </h3>
+                    <p class="text-gray-300 text-sm mb-4">每週為您推送最新的哩程兌換教學、航空快訊與信用卡優惠。</p>
+                    <form onsubmit="event.preventDefault(); alert('功能開發中！');" class="flex flex-col gap-3">
+                        <input type="email" placeholder="輸入您的 Email" class="px-4 py-2 rounded text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
+                        <button type="submit" class="bg-[#cba052] text-[#0a192f] font-bold py-2 rounded hover:bg-yellow-500 transition shadow-md">立即訂閱</button>
+                    </form>
+                </div>
+
+                <!-- 編輯精選 / 熱門區塊 (靜態推薦) -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-[#0a192f] mb-4 border-l-4 border-[#cba052] pl-3">編輯精選推薦</h3>
+                    <div class="space-y-4">
+                        <a href="/aviation.html" class="flex items-center group">
+                            <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                            </div>
+                            <div class="ml-3">
+                                <span class="text-[10px] text-gray-400 mb-1 block">航空資訊</span>
+                                <h4 class="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-2">2026 最新各家航空機隊引進計畫總整理</h4>
+                            </div>
+                        </a>
+                        <a href="/mileage.html" class="flex items-center group">
+                            <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
+                            </div>
+                            <div class="ml-3">
+                                <span class="text-[10px] text-gray-400 mb-1 block">哩程資訊</span>
+                                <h4 class="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-2">新手必看：如何用日常消費換到人生第一張商務艙機票</h4>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                {% endfor %}
-            {% endif %}
 
+            </div>
         </div>
+
     </main>
 
     <!-- 頁尾 -->
-    <footer class="bg-[#0a192f] text-gray-400 py-8 text-center mt-12">
-        <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
+    <footer class="bg-[#0a192f] text-gray-400 py-8 mt-12 border-t-4 border-[#cba052]">
+        <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition">關於我們</a>
+                <a href="#" class="hover:text-white transition">聯絡編輯</a>
+                <a href="#" class="hover:text-white transition">隱私權政策</a>
+            </div>
+        </div>
     </footer>
 
 </body>
