@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | 顏究所 YEN LAB AERO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f0f4f8] font-sans">
+    
+    <!-- 導覽列 (已經換成真實連結) -->
+    <nav class="bg-[#0a192f] text-white p-4 shadow-md">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <a href="/" class="text-2xl font-serif font-bold text-[#cba052]">
+                YEN LAB AERO <span class="text-white text-lg ml-2">顏究所</span>
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
+                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
+                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區 -->
+    <main class="container mx-auto max-w-6xl px-4 py-12">
+        <div class="flex items-center justify-between mb-8 border-b-2 border-[#0a192f] pb-2">
+            <h2 class="text-2xl font-bold text-[#0a192f]">分類：{{ page.title }}</h2>
+        </div>
+
+        <!-- 文章網格區 (系統會自動過濾該分類的文章) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% assign has_category_post = false %}
+            {% for post in site.posts %}
+                {% if post.category == page.category_name %}
+                    {% assign has_category_post = true %}
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+                        <a href="{{ site.baseurl }}{{ post.url }}">
+                            {% if post.thumbnail %}
+                            <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+                            {% else %}
+                            <div class="w-full h-48 bg-[#0a192f] flex items-center justify-center text-[#cba052] font-bold text-xl">YEN LAB AERO</div>
+                            {% endif %}
+                        </a>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <span class="text-xs font-bold text-[#cba052] mb-2 block">{{ post.category }}</span>
+                            <a href="{{ site.baseurl }}{{ post.url }}">
+                                <h3 class="text-lg font-bold text-[#0a192f] hover:text-blue-600 mb-2 line-clamp-2">{{ post.title }}</h3>
+                            </a>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ post.description }}</p>
+                            <span class="text-xs text-gray-400 mt-auto pt-4">{{ post.date | date: "%Y-%m-%d" }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {% if has_category_post == false %}
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-24 bg-white rounded-lg shadow-sm">
+                    <p class="text-gray-400">主編還在努力撰寫「{{ page.title }}」的文章，敬請期待！</p>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
