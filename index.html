@@ -194,7 +194,27 @@ layout: null
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <!-- Grid Layout: Hero + Side News -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+            <!-- 自動抓取最新文章迴圈 開始 -->
+{% for post in site.posts %}
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <a href="{{ post.url }}">
+        {% if post.thumbnail %}
+        <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+        {% else %}
+        <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">暫無圖片</div>
+        {% endif %}
+    </a>
+    <div class="p-5 flex flex-col h-full">
+        <span class="text-xs font-bold text-blue-600 mb-2 block">{{ post.category }}</span>
+        <a href="{{ post.url }}">
+            <h3 class="text-lg font-bold text-[#0a192f] hover:text-blue-600 mb-2 line-clamp-2">{{ post.title }}</h3>
+        </a>
+        <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ post.description }}</p>
+        <span class="text-xs text-gray-400 mt-auto pt-4">{{ post.date | date: "%Y-%m-%d" }}</span>
+    </div>
+</div>
+{% endfor %}
+<!-- 自動抓取最新文章迴圈 結束 -->
                 
                 <!-- Main Featured Article (Hero) -->
                 <div class="lg:col-span-8 group cursor-pointer relative overflow-hidden rounded-2xl shadow-sm hover-lift">
