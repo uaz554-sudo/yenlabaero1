@@ -239,145 +239,155 @@
 
     <main class="container mx-auto px-4 py-8">
         
-        <!-- 頭條新聞網格 -->
+        <!-- === 頭條新聞網格 (請在此替換您的重點文章) === -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
             
-            <!-- 主要大頭條 (佔據左側大部分) -->
-            <article class="lg:col-span-8 relative rounded-2xl overflow-hidden shadow-lg group article-card cursor-pointer min-h-[400px] lg:min-h-[500px]">
-                <div class="absolute inset-0 w-full h-full">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200" alt="頭等艙" class="w-full h-full object-cover article-img">
+            <!-- 1. 主要大頭條 (佔據左側大部分) -->
+            <!-- ★ 請將 href="#" 替換為您的文章網址，例如 href="article-01.html" ★ -->
+            <a href="#" class="lg:col-span-8 relative rounded-2xl overflow-hidden shadow-lg group article-card block min-h-[400px] lg:min-h-[500px]">
+                <!-- 預設底圖：當您沒放圖片時會顯示這個深藍色背景 -->
+                <div class="absolute inset-0 w-full h-full bg-brand-blue flex flex-col items-center justify-center text-white/10">
+                    <i class="fas fa-plane text-6xl mb-3 group-hover:scale-110 transition-transform duration-500"></i>
+                    <span class="text-xl font-bold tracking-[0.4em] ml-2">YEN LAB</span>
                 </div>
-                <!-- 漸層遮罩 -->
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent opacity-90"></div>
+                <!-- ★ 請在下方 src="" 的引號內放入您的圖片網址。若留空則顯示上方預設底圖 ★ -->
+                <img src="" alt="大頭條圖片" class="absolute inset-0 w-full h-full object-cover article-img relative z-10" onerror="this.style.display='none'">
                 
-                <!-- 內容 -->
-                <div class="absolute bottom-0 p-6 md:p-10 w-full">
+                <!-- 漸層遮罩 (確保白色文字清楚可見) -->
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent z-20"></div>
+                
+                <!-- 內容區塊 -->
+                <div class="absolute bottom-0 p-6 md:p-10 w-full z-30">
                     <span class="inline-block bg-brand-gold text-brand-blue font-bold px-3 py-1 rounded-sm text-xs mb-4">
-                        獨家評測 / 航空
+                        <!-- ★ 替換分類 ★ -->
+                        分類名稱 (例：航空新聞)
                     </span>
                     <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-4 group-hover:text-brand-gold transition-colors">
-                        星宇航空開航西雅圖：頭等艙軟硬體全方位深度體驗報告
+                        <!-- ★ 替換標題 ★ -->
+                        【您的第一篇大頭條文章標題】
                     </h1>
                     <p class="text-gray-200 md:text-lg mb-4 hidden md:block line-clamp-2">
-                        歷經漫長的等待，星宇航空終於迎來北美新航點西雅圖。這次我們親自搭乘首航航班，為您帶來頭等艙最真實的開箱體驗，從貴賓室到機上餐飲一次看透。
+                        <!-- ★ 替換摘要 ★ -->
+                        這是文章摘要區域。當您寫好文章後，請將第一段內容或重點摘要貼在這裡，讓讀者預覽...
                     </p>
                     <div class="flex items-center text-gray-300 text-sm gap-4">
-                        <span class="flex items-center gap-2"><img src="https://placehold.co/100x100/333/fff?text=Yen" class="w-6 h-6 rounded-full"> 顏究所主編</span>
-                        <span><i class="far fa-clock mr-1"></i> 2 小時前</span>
-                        <span><i class="far fa-comment mr-1"></i> 128</span>
+                        <span class="flex items-center gap-2">顏究所主編</span>
+                        <span><i class="far fa-clock mr-1"></i> 2026/10/12</span>
                     </div>
                 </div>
-            </article>
+            </a>
 
             <!-- 右側次要頭條 (佔據右側) -->
             <div class="lg:col-span-4 flex flex-col gap-6">
-                <!-- 次頭條 1 -->
-                <article class="relative rounded-2xl overflow-hidden shadow-md group article-card cursor-pointer flex-1 min-h-[220px]">
-                    <div class="absolute inset-0 w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600" alt="飯店" class="w-full h-full object-cover article-img">
+                
+                <!-- 2. 次頭條 A -->
+                <!-- ★ 請將 href="#" 替換為您的文章網址 ★ -->
+                <a href="#" class="relative rounded-2xl overflow-hidden shadow-md group article-card block flex-1 min-h-[220px]">
+                    <div class="absolute inset-0 w-full h-full bg-brand-blue flex flex-col items-center justify-center text-white/10">
+                        <i class="fas fa-hotel text-5xl mb-2 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-0 p-5 w-full">
-                        <span class="text-brand-gold text-xs font-bold mb-2 block uppercase tracking-wider">飯店快訊</span>
+                    <!-- ★ 請在下方 src="" 放入圖片 ★ -->
+                    <img src="" alt="次頭條圖片" class="absolute inset-0 w-full h-full object-cover article-img relative z-10" onerror="this.style.display='none'">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
+                    <div class="absolute bottom-0 p-5 w-full z-30">
+                        <span class="text-brand-gold text-xs font-bold mb-2 block uppercase tracking-wider">分類名稱</span>
                         <h2 class="text-xl font-bold text-white leading-snug group-hover:text-gray-200">
-                            萬豪旅享家大改表！2026 點數兌換亮點與貶值地雷區解析
+                            <!-- ★ 替換標題 ★ -->
+                            【您的第二篇文章標題】
                         </h2>
-                        <div class="text-gray-400 text-xs mt-3"><i class="far fa-clock mr-1"></i> 5 小時前</div>
+                        <div class="text-gray-400 text-xs mt-3"><i class="far fa-clock mr-1"></i> 日期</div>
                     </div>
-                </article>
+                </a>
 
-                <!-- 次頭條 2 -->
-                <article class="relative rounded-2xl overflow-hidden shadow-md group article-card cursor-pointer flex-1 min-h-[220px]">
-                    <div class="absolute inset-0 w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600" alt="信用卡" class="w-full h-full object-cover article-img">
+                <!-- 3. 次頭條 B -->
+                <!-- ★ 請將 href="#" 替換為您的文章網址 ★ -->
+                <a href="#" class="relative rounded-2xl overflow-hidden shadow-md group article-card block flex-1 min-h-[220px]">
+                    <div class="absolute inset-0 w-full h-full bg-brand-blue flex flex-col items-center justify-center text-white/10">
+                        <i class="fas fa-credit-card text-5xl mb-2 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div class="absolute bottom-0 p-5 w-full">
-                        <span class="text-brand-gold text-xs font-bold mb-2 block uppercase tracking-wider">信用卡攻略</span>
+                    <!-- ★ 請在下方 src="" 放入圖片 ★ -->
+                    <img src="" alt="次頭條圖片" class="absolute inset-0 w-full h-full object-cover article-img relative z-10" onerror="this.style.display='none'">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
+                    <div class="absolute bottom-0 p-5 w-full z-30">
+                        <span class="text-brand-gold text-xs font-bold mb-2 block uppercase tracking-wider">分類名稱</span>
                         <h2 class="text-xl font-bold text-white leading-snug group-hover:text-gray-200">
-                            【2026第一季】無腦刷神卡爭霸戰：國內外高回饋信用卡推薦總整理
+                            <!-- ★ 替換標題 ★ -->
+                            【您的第三篇文章標題】
                         </h2>
-                        <div class="text-gray-400 text-xs mt-3"><i class="far fa-clock mr-1"></i> 昨天</div>
+                        <div class="text-gray-400 text-xs mt-3"><i class="far fa-clock mr-1"></i> 日期</div>
                     </div>
-                </article>
+                </a>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
-            <!-- 左側主要內容區塊 (佔 2 欄) -->
+            <!-- === 左側主要內容區塊：最新發布文章列表 === -->
             <div class="lg:col-span-2">
                 <div class="flex items-center justify-between border-b-2 border-gray-200 pb-2 mb-6">
                     <h3 class="text-2xl font-black text-brand-blue flex items-center gap-2">
                         <i class="fas fa-layer-group text-brand-gold"></i> 最新發布
                     </h3>
-                    <a href="#" class="text-sm text-gray-500 hover:text-brand-blue font-medium">查看全部 <i class="fas fa-chevron-right text-xs"></i></a>
                 </div>
 
+                <!-- 這裡開始是文章列表 -->
                 <div class="space-y-6">
-                    <!-- 文章列表 1 -->
-                    <article class="flex flex-col sm:flex-row gap-6 group cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=500" alt="護照哩程" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    
+                    <!-- 列表文章 1 -->
+                    <div class="flex flex-col sm:flex-row gap-6 group bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow relative">
+                        <!-- ★ 請將下方 href="#" 替換為您的文章網址 (這個連結會蓋住整個卡片) ★ -->
+                        <a href="#" class="absolute inset-0 z-20"></a>
+                        
+                        <!-- 圖片區 -->
+                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0 relative bg-gray-50 flex items-center justify-center text-gray-300 border border-gray-100">
+                            <i class="fas fa-image text-4xl group-hover:text-brand-gold transition-colors"></i>
+                            <!-- ★ 請在 src="" 放入圖片 ★ -->
+                            <img src="" alt="縮圖" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-10" onerror="this.style.display='none'">
                         </div>
-                        <div class="flex flex-col justify-center w-full">
+                        
+                        <!-- 文字區 -->
+                        <div class="flex flex-col justify-center w-full relative z-30 pointer-events-none">
                             <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">哩程資訊</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">分類名稱</span>
                                 <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 2026/10/12</span>
                             </div>
                             <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors leading-tight">
-                                國泰航空「亞洲萬里通」(Asia Miles) 終極教學：如何利用中停規則開出超值環球機票？
+                                <!-- ★ 替換標題 ★ -->
+                                【您的列表文章標題 1】
                             </h4>
                             <p class="text-gray-500 text-sm line-clamp-2">
-                                亞萬改表後雖然部分航線漲價，但其強大的「中停」與「開口」規則依舊是亮點。本篇實戰教學帶你一步步規劃...
+                                <!-- ★ 替換摘要 ★ -->
+                                您的文章摘要寫在這裡。可以擷取文章的前兩行，超過的字數會自動變成刪節號...
                             </p>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- 文章列表 2 -->
-                    <article class="flex flex-col sm:flex-row gap-6 group cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?auto=format&fit=crop&q=80&w=500" alt="頂級飯店" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <!-- 列表文章 2 -->
+                    <div class="flex flex-col sm:flex-row gap-6 group bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow relative">
+                        <!-- ★ 替換網址 ★ -->
+                        <a href="#" class="absolute inset-0 z-20"></a>
+                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0 relative bg-gray-50 flex items-center justify-center text-gray-300 border border-gray-100">
+                            <i class="fas fa-image text-4xl group-hover:text-brand-gold transition-colors"></i>
+                            <img src="" alt="縮圖" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 z-10" onerror="this.style.display='none'">
                         </div>
-                        <div class="flex flex-col justify-center w-full">
+                        <div class="flex flex-col justify-center w-full relative z-30 pointer-events-none">
                             <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded">飯店資訊</span>
-                                <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 2026/10/11</span>
+                                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded">分類名稱</span>
+                                <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 日期</span>
                             </div>
                             <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors leading-tight">
-                                京都安縵 (Aman Kyoto) 住宿體驗：隱身森林的極致奢華，值不值得一晚五萬台幣？
+                                <!-- ★ 替換標題 ★ -->
+                                【您的列表文章標題 2】
                             </h4>
                             <p class="text-gray-500 text-sm line-clamp-2">
-                                位於京都洛北的安縵京都，以其庭園設計聞名於世。這次我們使用了 FHR (Fine Hotels & Resorts) 預訂，來看看有哪些特殊待遇。
+                                <!-- ★ 替換摘要 ★ -->
+                                您的文章摘要寫在這裡。可以擷取文章的前兩行，超過的字數會自動變成刪節號...
                             </p>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- 文章列表 3 -->
-                    <article class="flex flex-col sm:flex-row gap-6 group cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0">
-                            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=500" alt="信用卡" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="flex flex-col justify-center w-full">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded">金融動態</span>
-                                <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 2026/10/10</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors leading-tight">
-                                匯豐銀行 (HSBC) 旅人卡全新權益公告：機場接送門檻降低，續卡禮升級
-                            </h4>
-                            <p class="text-gray-500 text-sm line-clamp-2">
-                                為了迎戰競爭激烈的旅遊神卡市場，匯豐銀行今日宣布調降旅人無限卡與御璽卡的機場接送消費門檻...
-                            </p>
-                        </div>
-                    </article>
-                </div>
-                
-                <!-- 載入更多按鈕 -->
-                <div class="mt-8 text-center">
-                    <button class="bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-50 hover:text-brand-blue transition-colors shadow-sm">
-                        載入更多文章 <i class="fas fa-arrow-down ml-2"></i>
-                    </button>
                 </div>
             </div>
 
