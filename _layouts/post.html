@@ -1,155 +1,246 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | 顏究所 YEN LAB AERO</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <title>{{ page.title }} | 顏究所 Yen Lab Aero</title>
+    <!-- 載入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Google 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 載入 FontAwesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 設定 Tailwind 自訂主題 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0B2046', // 深海軍藍
+                            gold: '#D4AF37', // 香檳金
+                            light: '#F8F9FA',
+                            dark: '#1A1A1A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* 讓後台打的 Markdown 內文有雜誌級的美化 */
-        .prose h1, .prose h2, .prose h3 { color: #0a192f; font-weight: bold; margin-top: 2.5rem; margin-bottom: 1rem; }
-        .prose h2 { font-size: 1.5rem; border-left: 4px solid #cba052; padding-left: 0.75rem; }
-        .prose h3 { font-size: 1.25rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #374151; font-size: 1.05rem; }
-        .prose img { border-radius: 0.5rem; margin: 2rem 0; width: 100%; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
-        .prose a { color: #cba052; font-weight: bold; text-decoration: none; border-bottom: 1px solid #cba052; padding-bottom: 2px; transition: all 0.2s; }
-        .prose a:hover { color: #0a192f; border-color: #0a192f; }
-        .prose ul, .prose ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #374151; line-height: 1.8; }
-        .prose ul { list-style-type: disc; }
-        .prose ol { list-style-type: decimal; }
-        .prose li { margin-bottom: 0.5rem; }
-        .prose blockquote { border-left: 4px solid #e5e7eb; padding-left: 1rem; color: #6b7280; font-style: italic; margin: 1.5rem 0; background: #f9fafb; padding: 1rem; border-radius: 0 0.5rem 0.5rem 0; }
-  /* 讓文章內的表格擁有精緻的格線與排版 */
-.article-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2rem 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
+        /* 專為文章內文設計的美化樣式 */
+        .article-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #2D3748;
+        }
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0B2046;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #D4AF37;
+            padding-left: 0.75rem;
+        }
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+        .article-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .article-content ol {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .article-content blockquote {
+            border-left: 4px solid #0B2046;
+            background-color: #F8F9FA;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            color: #4A5568;
+            font-style: italic;
+        }
+        
+        /* 💡 讓文章內的表格擁有精緻格線與舒適邊距 */
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .article-content th, 
+        .article-content td {
+            border: 1px solid #E5E7EB;
+            padding: 12px 16px;
+            text-align: left;
+        }
+        .article-content th {
+            background-color: #F8FAFC;
+            color: #0B2046;
+            font-weight: 700;
+        }
+        .article-content tr:nth-child(even) {
+            background-color: #F9FAFB;
+        }
 
-.article-content th, 
-.article-content td {
-    border: 1px solid #e5e7eb; /* 淺灰色邊框 */
-    padding: 12px 16px;
-    text-align: left;
-}
-
-.article-content th {
-    background-color: #f8fafc; /* 乾淨的灰底表頭 */
-    color: #0B2046; /* 使用你的品牌深海軍藍 */
-    font-weight: 700;
-}
-
-.article-content tr:nth-child(even) {
-    background-color: #f9fafb; /* 奇偶行交錯微底色，閱讀更清晰 */
-}
+        .article-content img {
+            border-radius: 0.75rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
-<body class="bg-[#f0f4f8] font-sans">
-    
-    <!-- 導覽列 (與首頁一致) -->
-    <nav class="bg-[#0a192f] text-white p-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto max-w-6xl flex justify-between items-center">
-            <a href="/" class="text-2xl font-serif font-bold text-[#cba052] flex items-baseline">
-                YEN LAB AERO <span class="text-white text-lg ml-2 font-sans">顏究所</span>
-            </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
-                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
-                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- 主要內容區 -->
-    <main class="container mx-auto max-w-6xl px-4 py-8">
-        <div class="flex flex-col lg:flex-row gap-8">
+    <!-- 主導覽列 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-blue text-brand-gold flex items-center justify-center rounded-lg font-bold text-xl group-hover:bg-brand-gold group-hover:text-brand-blue transition-colors">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black text-brand-blue tracking-wider">顏究所</span>
+                    <span class="text-[10px] uppercase text-gray-500 tracking-[0.2em] -mt-1 font-bold">Yen Lab Aero</span>
+                </div>
+            </a>
+
+            <!-- 桌機版選單 -->
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 font-medium text-gray-600 items-center">
+                <a href="/" class="hover:text-brand-gold transition-colors pb-1">首頁</a>
+                <a href="#" class="hover:text-brand-gold transition-colors pb-1">航空新聞</a>
+                <a href="#" class="hover:text-brand-gold transition-colors pb-1">飯店資訊</a>
+                <a href="#" class="hover:text-brand-gold transition-colors pb-1">哩程資訊</a>
+                <a href="#" class="hover:text-brand-gold transition-colors pb-1">信用卡攻略</a>
+                <a href="#" class="hover:text-brand-gold transition-colors pb-1">專欄觀點</a>
+            </nav>
+
+            <!-- 搜尋與贊助 -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://buymeacoffee.com/yen.travel" target="_blank" class="bg-brand-gold text-brand-blue px-5 py-2 rounded-full text-sm font-bold hover:bg-yellow-400 transition-all shadow-md flex items-center">
+                    <i class="fas fa-coffee mr-2"></i> 贊助我們
+                </a>
+            </div>
+
+            <!-- 手機版選單按鈕 -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-blue text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 文章主內容區塊 -->
+    <main class="container mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
             
             <!-- 左側：文章主體 -->
-            <div class="lg:w-2/3">
-                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-10">
-                    
-                    <!-- 麵包屑導覽 / 分類 -->
-                    <div class="flex items-center text-sm mb-6">
-                        <a href="/" class="text-gray-500 hover:text-[#0a192f] transition">首頁</a>
-                        <span class="mx-2 text-gray-300">/</span>
-                        <span class="text-[#cba052] font-bold">{{ page.category }}</span>
-                    </div>
-                    
-                    <!-- 標題與資訊 -->
-                    <h1 class="text-3xl md:text-4xl font-bold text-[#0a192f] mb-6 leading-tight">{{ page.title }}</h1>
-                    <div class="flex items-center text-gray-400 text-sm mb-8 pb-6 border-b border-gray-100">
-                        <span class="mr-6 flex items-center">🕒 發布時間：{{ page.date | date: "%Y-%m-%d" }}</span>
-                        <span class="flex items-center">✍️ 編輯：顏究所團隊</span>
-                    </div>
-                    
-                    <!-- 文章封面圖 -->
-                    {% if page.thumbnail %}
-                    <img src="{{ page.thumbnail }}" alt="{{ page.title }}" class="w-full h-auto max-h-[450px] rounded-lg mb-10 object-cover shadow-sm">
+            <article class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-10">
+                <!-- 文章分類與日期 -->
+                <div class="flex items-center gap-3 mb-4">
+                    {% if page.category %}
+                    <span class="bg-blue-50 text-brand-blue text-xs font-bold px-3 py-1 rounded-full border border-blue-100">
+                        {{ page.category }}
+                    </span>
                     {% endif %}
-
-                    <!-- 內文區塊 -->
-                    <article class="prose max-w-none">
-                        {{ content }}
-                    </article>
-                </div>
-            </div>
-
-            <!-- 右側：側邊欄 (與首頁一致) -->
-            <div class="lg:w-1/3 space-y-8">
-                
-                <!-- 訂閱電子報區塊 -->
-                <div class="bg-[#0a192f] rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
-                    <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-[#cba052] opacity-20"></div>
-                    <h3 class="text-xl font-bold mb-2 flex items-center">
-                        <span class="mr-2">✈️</span> 訂閱顏究所
-                    </h3>
-                    <p class="text-gray-300 text-sm mb-4">每週為您推送最新的哩程兌換教學、航空快訊與信用卡優惠。</p>
-                    <form onsubmit="event.preventDefault(); alert('功能開發中！');" class="flex flex-col gap-3">
-                        <input type="email" placeholder="輸入您的 Email" class="px-4 py-2 rounded text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
-                        <button type="submit" class="bg-[#cba052] text-[#0a192f] font-bold py-2 rounded hover:bg-yellow-500 transition shadow-md">立即訂閱</button>
-                    </form>
+                    <span class="text-gray-400 text-sm">
+                        <i class="far fa-clock mr-1"></i> {{ page.date | date: "%Y/%m/%d" }}
+                    </span>
                 </div>
 
-                <!-- 編輯精選 / 熱門區塊 -->
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <h3 class="text-lg font-bold text-[#0a192f] mb-4 border-l-4 border-[#cba052] pl-3">編輯精選推薦</h3>
-                    <div class="space-y-4">
-                        <a href="/aviation.html" class="flex items-center group">
-                            <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
-                            </div>
-                            <div class="ml-3">
-                                <span class="text-[10px] text-gray-400 mb-1 block">航空資訊</span>
-                                <h4 class="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-2">2026 最新各家航空機隊引進計畫總整理</h4>
-                            </div>
-                        </a>
-                        <a href="/mileage.html" class="flex items-center group">
-                            <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
-                            </div>
-                            <div class="ml-3">
-                                <span class="text-[10px] text-gray-400 mb-1 block">哩程資訊</span>
-                                <h4 class="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-2">新手必看：如何用日常消費換到人生第一張商務艙機票</h4>
-                            </div>
-                        </a>
+                <!-- 文章標題 -->
+                <h1 class="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-6">
+                    {{ page.title }}
+                </h1>
+
+                <!-- 封面圖片 (如果有設定的話) -->
+                {% if page.thumbnail %}
+                <div class="mb-8 rounded-xl overflow-hidden shadow-md max-h-[450px]">
+                    <img src="{{ page.thumbnail }}" alt="{{ page.title }}" class="w-full h-full object-cover">
+                </div>
+                {% endif %}
+
+                <!-- 文章內文 (支援 Markdown 與表格) -->
+                <div class="article-content">
+                    {{ content }}
+                </div>
+
+                <!-- 文章底部分享與贊助 -->
+                <div class="mt-12 pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div class="text-sm text-gray-500">
+                        喜歡這篇文章嗎？歡迎分享給更多旅人！
                     </div>
+                    <a href="https://buymeacoffee.com/yen.travel" target="_blank" class="bg-brand-gold text-brand-blue px-4 py-2 rounded-lg font-bold text-sm hover:bg-yellow-400 transition-colors shadow-sm flex items-center">
+                        <i class="fas fa-mug-hot mr-2"></i> 請作者喝杯咖啡
+                    </a>
+                </div>
+            </article>
+
+            <!-- 右側：側邊欄 -->
+            <aside class="lg:col-span-4 space-y-8">
+                <!-- 贊助支持區塊 -->
+                <div class="bg-white border border-brand-gold rounded-2xl p-6 shadow-lg text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-brand-gold"></div>
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-gold text-3xl mt-2">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-brand-blue">支持顏究所</h4>
+                    <p class="text-sm text-gray-500 mb-6">您的贊助是我們持續產出優質航空與飯店評測的最大動力！</p>
+                    <a href="https://buymeacoffee.com/yen.travel" target="_blank" class="flex items-center justify-center w-full bg-[#FFDD00] text-gray-900 font-bold px-4 py-3 rounded-lg hover:bg-[#FFEA4C] transition-colors shadow-sm">
+                        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" class="h-6 mr-2">
+                        Buy me a coffee
+                    </a>
                 </div>
 
-            </div>
+                <!-- 熱門文章推薦 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-black text-gray-900 mb-4 border-l-4 border-brand-gold pl-3">本週熱門排行</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start group cursor-pointer">
+                            <span class="text-2xl font-black text-gray-200 group-hover:text-brand-gold transition-colors">1</span>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm group-hover:text-brand-blue leading-tight mb-1">台灣出發飛歐洲！阿聯酋航空商務艙促銷</h4>
+                                <span class="text-xs text-gray-400">航空新聞</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start group cursor-pointer">
+                            <span class="text-2xl font-black text-gray-200 group-hover:text-brand-gold transition-colors">2</span>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm group-hover:text-brand-blue leading-tight mb-1">【新手向】什麼是 FHR？美國運通白金卡訂房秘笈</h4>
+                                <span class="text-xs text-gray-400">信用卡攻略</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
         </div>
     </main>
 
     <!-- 頁尾 -->
-    <footer class="bg-[#0a192f] text-gray-400 py-8 mt-12 border-t-4 border-[#cba052]">
-        <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center text-sm">
-            <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
-            <div class="flex space-x-4 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white transition">關於我們</a>
-                <a href="#" class="hover:text-white transition">聯絡編輯</a>
-                <a href="#" class="hover:text-white transition">隱私權政策</a>
-            </div>
+    <footer class="bg-brand-dark text-white pt-12 pb-6 border-t-4 border-brand-gold mt-16">
+        <div class="container mx-auto px-4 text-center text-xs text-gray-500">
+            <p>&copy; 2026 顏究所 Yen Lab Aero. All rights reserved.</p>
         </div>
     </footer>
 
