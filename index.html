@@ -1,287 +1,538 @@
----
-layout: null
----
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>顏究所 YEN LAB AERO | 哩程、航空、信用卡主流媒體</title>
+    <meta name="description" content="顏究所 Yen Lab Aero - 華語圈最大的航空、飯店、哩程與信用卡專業新聞媒體。為讀者解碼旅行的價值。">
+    <meta property="og:title" content="顏究所 Yen Lab Aero | 航空與飯店新聞網">
+    <meta property="og:description" content="專精在飯店、哩程、信用卡與航空的專業新聞媒體。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/">
+    
+    <title>顏究所 Yen Lab Aero | 華語圈最大的航空、飯店、哩程與信用卡新聞媒體</title>
+    <!-- 載入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Google 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 載入 FontAwesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 設定 Tailwind 自訂主題 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0B2046', // 深海軍藍 (航空/專業感)
+                            gold: '#D4AF37', // 香檳金 (奢華/尊榮感)
+                            light: '#F8F9FA',
+                            dark: '#1A1A1A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
+        /* 自訂新聞跑馬燈動畫 */
         @keyframes ticker {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
         .animate-ticker {
-            animation: ticker 20s linear infinite;
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 25s linear infinite;
         }
-        .ticker-container:hover .animate-ticker {
-            animation-play-state: paused;
+        /* 卡片懸停特效 */
+        .article-card:hover .article-img {
+            transform: scale(1.05);
+        }
+        .article-img {
+            transition: transform 0.5s ease;
         }
     </style>
 </head>
-<body class="bg-[#f0f4f8] font-sans">
-    
-    <!-- 置頂跑馬燈 (快訊) -->
-    <div class="bg-[#cba052] text-[#0a192f] text-sm py-2 overflow-hidden relative ticker-container shadow-sm">
-        <div class="whitespace-nowrap animate-ticker font-bold">
-            🔥 快訊：歡迎來到顏究所 YEN LAB AERO！為您帶來最新航空、哩程與信用卡第一手資訊。
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- 頂部新聞快訊 -->
+    <div class="bg-brand-blue text-white text-sm py-2 overflow-hidden relative flex items-center">
+        <div class="container mx-auto px-4 flex">
+            <span class="bg-brand-gold text-brand-blue font-bold px-3 py-1 rounded-sm text-xs z-10 whitespace-nowrap mr-4 flex-shrink-0">
+                <i class="fas fa-bolt mr-1"></i> 最新快訊
+            </span>
+            <div class="overflow-hidden relative w-full flex items-center">
+                <p class="animate-ticker text-gray-200">
+                    ✈️ 長榮航空宣布增購 5 架波音 787-9 客機，預計 2026 年底交機 &nbsp;&nbsp;|&nbsp;&nbsp; 🏨 萬豪旅享家 (Marriott Bonvoy) 宣佈 2026 年第一季全球會員等級保級標準維持不變 &nbsp;&nbsp;|&nbsp;&nbsp; 💳 2026 最新神卡出爐！海外實體消費最高享 5.5% 回饋無上限...
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- 導覽列 -->
-    <nav class="bg-[#0a192f] text-white p-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto max-w-6xl flex justify-between items-center">
-            <a href="/" class="text-2xl font-serif font-bold text-[#cba052] flex items-baseline">
-                YEN LAB AERO <span class="text-white text-lg ml-2 font-sans">顏究所</span>
+    <!-- 主導覽列 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-blue text-brand-gold flex items-center justify-center rounded-lg font-bold text-xl group-hover:bg-brand-gold group-hover:text-brand-blue transition-colors">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black text-brand-blue tracking-wider">顏究所</span>
+                    <span class="text-[10px] uppercase text-gray-500 tracking-[0.2em] -mt-1 font-bold">Yen Lab Aero</span>
+                </div>
             </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
-                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
-                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- 主要內容區 -->
-    <main class="container mx-auto max-w-6xl px-4 py-8">
-        
-        <!-- ================= 頭條區 (Hero Section) ================= -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            <!-- 左側大頭條 (抓取第 1 篇文章) -->
-            <div class="lg:col-span-2 relative group overflow-hidden rounded-xl shadow-lg h-[400px]">
-                {% if site.posts.size > 0 %}
-                    {% assign hero_post = site.posts[0] %}
-                    <a href="{{ site.baseurl }}{{ hero_post.url }}">
-                        <!-- 如果沒有上傳圖片，使用預設的飛機圖 -->
-                        <img src="{{ hero_post.thumbnail | default: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent p-6 pt-24">
-                            <span class="bg-[#cba052] text-[#0a192f] text-xs font-bold px-3 py-1 rounded-sm mb-3 inline-block">{{ hero_post.category | default: '最新發布' }}</span>
-                            <h2 class="text-3xl font-bold text-white mb-2 leading-tight">{{ hero_post.title }}</h2>
-                            <p class="text-gray-300 text-sm line-clamp-2">{{ hero_post.description }}</p>
-                        </div>
+            <!-- 桌機版選單 (含下拉式分類) -->
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 font-medium text-gray-600 items-center">
+                <a href="#" class="text-brand-blue font-bold border-b-2 border-brand-gold pb-1">首頁</a>
+                
+                <!-- 航空新聞下拉 -->
+                <div class="relative group py-2">
+                    <a href="#" class="hover:text-brand-gold transition-colors pb-1 flex items-center gap-1">
+                        航空新聞 <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
                     </a>
-                {% else %}
-                    <!-- 沒有文章時的預設畫面 -->
-                    <div class="relative w-full h-full">
-                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent p-6 pt-24">
-                            <span class="bg-[#cba052] text-[#0a192f] text-xs font-bold px-3 py-1 rounded-sm mb-3 inline-block">系統提示</span>
-                            <h2 class="text-3xl font-bold text-white mb-2 leading-tight">歡迎來到顏究所！主編準備中</h2>
-                            <p class="text-gray-300 text-sm">這裡將自動顯示您的第一篇頭條文章，請前往後台發布。</p>
-                        </div>
+                    <div class="absolute top-full left-0 mt-0 w-40 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-gray-100">
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">傳統航空</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">低成本航空</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">貴賓室體驗</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue">航線異動</a>
                     </div>
-                {% endif %}
+                </div>
+
+                <!-- 飯店資訊下拉 -->
+                <div class="relative group py-2">
+                    <a href="#" class="hover:text-brand-gold transition-colors pb-1 flex items-center gap-1">
+                        飯店資訊 <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="absolute top-full left-0 mt-0 w-40 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-gray-100">
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">萬豪集團</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">希爾頓集團</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">洲際集團</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue">獨立奢華酒店</a>
+                    </div>
+                </div>
+
+                <!-- 哩程資訊下拉 -->
+                <div class="relative group py-2">
+                    <a href="#" class="hover:text-brand-gold transition-colors pb-1 flex items-center gap-1">
+                        哩程資訊 <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="absolute top-full left-0 mt-0 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-gray-100">
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">亞洲萬里通</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">長榮無限萬哩遊</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">華夏哩程</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue">外籍航空計畫</a>
+                    </div>
+                </div>
+
+                <!-- 信用卡攻略下拉 -->
+                <div class="relative group py-2">
+                    <a href="#" class="hover:text-brand-gold transition-colors pb-1 flex items-center gap-1">
+                        信用卡攻略 <i class="fas fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="absolute top-full left-0 mt-0 w-40 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-gray-100">
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">台灣信用卡</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">美國信用卡</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue border-b border-gray-50">點數轉換</a>
+                        <a href="#" class="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue">首刷禮推薦</a>
+                    </div>
+                </div>
+
+                <a href="#" class="hover:text-brand-gold transition-colors pb-1">專欄觀點</a>
+            </nav>
+
+            <!-- 搜尋與會員 -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button class="text-gray-500 hover:text-brand-blue"><i class="fas fa-search text-lg"></i></button>
+                <a href="https://buymeacoffee.com/yen.travel" target="_blank" class="bg-brand-gold text-brand-blue px-5 py-2 rounded-full text-sm font-bold hover:bg-yellow-400 transition-all shadow-md flex items-center">
+                    <i class="fas fa-coffee mr-2"></i> 贊助我們
+                </a>
             </div>
 
-            <!-- 右側兩小篇 (抓取第 2, 3 篇文章) -->
-            <div class="flex flex-col gap-6 h-[400px]">
-                {% for i in (1..2) %}
-                    <div class="relative group overflow-hidden rounded-xl shadow-lg h-[188px]">
-                        {% if site.posts[i] %}
-                            {% assign sub_post = site.posts[i] %}
-                            <a href="{{ site.baseurl }}{{ sub_post.url }}">
-                                <img src="{{ sub_post.thumbnail | default: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80' }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent p-4 pt-16">
-                                    <span class="text-[#cba052] text-xs font-bold mb-1 block">{{ sub_post.category }}</span>
-                                    <h3 class="text-md font-bold text-white leading-snug line-clamp-2">{{ sub_post.title }}</h3>
-                                </div>
-                            </a>
-                        {% else %}
-                            <!-- 沒有文章時的預設畫面 -->
-                            <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover grayscale opacity-80">
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a192f] to-transparent p-4 pt-16">
-                                <span class="text-gray-400 text-xs font-bold mb-1 block">等待發布</span>
-                                <h3 class="text-md font-bold text-gray-300 line-clamp-2">後續發布的文章將顯示於此</h3>
-                            </div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>
+            <!-- 手機版選單按鈕 -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-blue text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
 
-        <!-- ================= 雙欄設計區 ================= -->
-        <div class="flex flex-col lg:flex-row gap-8">
+        <!-- 手機版隱藏選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t pb-4 px-4 absolute w-full shadow-lg left-0 top-full max-h-[80vh] overflow-y-auto">
+            <a href="#" class="block py-3 text-brand-blue font-bold border-b">首頁</a>
             
-            <!-- 左側：最新新聞列表 (第 4 篇之後的文章) -->
-            <div class="lg:w-2/3">
-                <div class="flex items-center justify-between mb-6 border-b-2 border-[#0a192f] pb-2">
-                    <h2 class="text-2xl font-bold text-[#0a192f]">最新文章</h2>
+            <!-- 手機版展開: 航空新聞 -->
+            <details class="group border-b">
+                <summary class="flex justify-between items-center py-3 text-gray-600 font-medium cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    航空新聞
+                    <span class="transition group-open:rotate-180">
+                        <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </span>
+                </summary>
+                <div class="pl-4 pb-3 space-y-3 mt-1">
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">傳統航空</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">低成本航空</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">貴賓室體驗</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">航線異動</a>
                 </div>
+            </details>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {% for post in site.posts offset:3 %}
-                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full border border-gray-100">
-                        <a href="{{ site.baseurl }}{{ post.url }}">
-                            {% if post.thumbnail %}
-                            <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
-                            {% else %}
-                            <div class="w-full h-48 bg-gray-100 flex items-center justify-center text-gray-400">暫無圖片</div>
-                            {% endif %}
-                        </a>
-                        <div class="p-5 flex flex-col flex-grow">
-                            <span class="text-xs font-bold text-[#cba052] mb-2 block">{{ post.category }}</span>
-                            <a href="{{ site.baseurl }}{{ post.url }}">
-                                <h3 class="text-lg font-bold text-[#0a192f] hover:text-blue-600 mb-2 line-clamp-2">{{ post.title }}</h3>
-                            </a>
-                            <p class="text-gray-500 text-sm mb-4 line-clamp-2">{{ post.description }}</p>
-                            <span class="text-xs text-gray-400 mt-auto pt-4 border-t border-gray-50">{{ post.date | date: "%Y-%m-%d" }}</span>
-                        </div>
-                    </div>
-                {% endfor %}
+            <!-- 手機版展開: 飯店資訊 -->
+            <details class="group border-b">
+                <summary class="flex justify-between items-center py-3 text-gray-600 font-medium cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    飯店資訊
+                    <span class="transition group-open:rotate-180">
+                        <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </span>
+                </summary>
+                <div class="pl-4 pb-3 space-y-3 mt-1">
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">萬豪集團</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">希爾頓集團</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">洲際集團</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">獨立奢華酒店</a>
                 </div>
+            </details>
 
-                {% if site.posts.size <= 3 %}
-                <div class="text-center py-12 bg-white rounded-xl shadow-sm border border-gray-100 mt-2">
-                    <p class="text-gray-400">當您發布超過 3 篇文章後，這裡會繼續顯示更多新聞卡片！</p>
+            <!-- 手機版展開: 哩程資訊 -->
+            <details class="group border-b">
+                <summary class="flex justify-between items-center py-3 text-gray-600 font-medium cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    哩程資訊
+                    <span class="transition group-open:rotate-180">
+                        <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </span>
+                </summary>
+                <div class="pl-4 pb-3 space-y-3 mt-1">
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">亞洲萬里通</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">長榮無限萬哩遊</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">華夏哩程</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">外籍航空計畫</a>
                 </div>
-                {% endif %}
+            </details>
+
+            <!-- 手機版展開: 信用卡攻略 -->
+            <details class="group border-b">
+                <summary class="flex justify-between items-center py-3 text-gray-600 font-medium cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    信用卡攻略
+                    <span class="transition group-open:rotate-180">
+                        <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </span>
+                </summary>
+                <div class="pl-4 pb-3 space-y-3 mt-1">
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">台灣信用卡</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">美國信用卡</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">點數轉換</a>
+                    <a href="#" class="block text-sm text-gray-500 hover:text-brand-blue">首刷禮推薦</a>
+                </div>
+            </details>
+
+            <a href="#" class="block py-3 text-gray-600 border-b font-medium">專欄觀點</a>
+
+            <div class="mt-4 flex gap-4">
+                <button class="w-full bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm"><i class="fas fa-search mr-2"></i>搜尋</button>
+                <button class="w-full bg-brand-blue text-white px-4 py-2 rounded-lg text-sm">登入 / 註冊</button>
             </div>
+        </div>
+    </header>
 
-            <!-- 右側：側邊欄 (Sidebar) -->
-            <div class="lg:w-1/3 space-y-8">
-                
-                <!-- 訂閱電子報區塊 -->
-                <div class="bg-[#0a192f] rounded-xl p-6 text-white shadow-lg relative overflow-hidden">
-                    <div class="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-[#cba052] opacity-20"></div>
-                    <h3 class="text-xl font-bold mb-2 flex items-center">
-                        <span class="mr-2">✈️</span> 訂閱顏究所
-                    </h3>
-                    <p class="text-gray-300 text-sm mb-4">每週為您推送最新的哩程兌換教學、航空快訊與信用卡優惠。</p>
-                    <form onsubmit="event.preventDefault(); alert('功能開發中！');" class="flex flex-col gap-3">
-                        <input type="email" placeholder="輸入您的 Email" class="px-4 py-2 rounded text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
-                        <button type="submit" class="bg-[#cba052] text-[#0a192f] font-bold py-2 rounded hover:bg-yellow-500 transition shadow-md">立即訂閱</button>
-                    </form>
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- 頭條新聞網格 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
+            
+            <!-- 主要大頭條 (佔據左側大部分) -->
+            <article class="lg:col-span-8 relative rounded-2xl overflow-hidden shadow-lg group article-card cursor-pointer min-h-[400px] lg:min-h-[500px]">
+                <div class="absolute inset-0 w-full h-full">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200" alt="頭等艙" class="w-full h-full object-cover article-img">
                 </div>
-
-                <!-- 編輯精選 / 熱門區塊 (靜態推薦) -->
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <h3 class="text-lg font-bold text-[#0a192f] mb-4 border-l-4 border-[#cba052] pl-3">編輯精選推薦</h3>
-                    <div class="space-y-4">
-                        <a href="/aviation.html" class="flex items-center group">
-                            <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
-                            </div>
-                            <div class="ml-3">
-                                <span class="text-[10px] text-gray-400 mb-1 block">航空資訊</span>
-                                <h4 class="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-2">2026 最新各家航空機隊引進計畫總整理</h4>
-                            </div>
-                        </a>
-                        <a href="/mileage.html" class="flex items-center group">
-                            <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover group-hover:scale-110 transition">
-                            </div>
-                            <div class="ml-3">
-                                <span class="text-[10px] text-gray-400 mb-1 block">哩程資訊</span>
-                                <h4 class="text-sm font-bold text-gray-800 group-hover:text-blue-600 line-clamp-2">新手必看：如何用日常消費換到人生第一張商務艙機票</h4>
-                            </div>
-                        </a>
+                <!-- 漸層遮罩 -->
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent opacity-90"></div>
+                
+                <!-- 內容 -->
+                <div class="absolute bottom-0 p-6 md:p-10 w-full">
+                    <span class="inline-block bg-brand-gold text-brand-blue font-bold px-3 py-1 rounded-sm text-xs mb-4">
+                        獨家評測 / 航空
+                    </span>
+                    <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-4 group-hover:text-brand-gold transition-colors">
+                        星宇航空開航西雅圖：頭等艙軟硬體全方位深度體驗報告
+                    </h1>
+                    <p class="text-gray-200 md:text-lg mb-4 hidden md:block line-clamp-2">
+                        歷經漫長的等待，星宇航空終於迎來北美新航點西雅圖。這次我們親自搭乘首航航班，為您帶來頭等艙最真實的開箱體驗，從貴賓室到機上餐飲一次看透。
+                    </p>
+                    <div class="flex items-center text-gray-300 text-sm gap-4">
+                        <span class="flex items-center gap-2"><img src="https://placehold.co/100x100/333/fff?text=Yen" class="w-6 h-6 rounded-full"> 顏究所主編</span>
+                        <span><i class="far fa-clock mr-1"></i> 2 小時前</span>
+                        <span><i class="far fa-comment mr-1"></i> 128</span>
                     </div>
                 </div>
+            </article>
 
+            <!-- 右側次要頭條 (佔據右側) -->
+            <div class="lg:col-span-4 flex flex-col gap-6">
+                <!-- 次頭條 1 -->
+                <article class="relative rounded-2xl overflow-hidden shadow-md group article-card cursor-pointer flex-1 min-h-[220px]">
+                    <div class="absolute inset-0 w-full h-full">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=600" alt="飯店" class="w-full h-full object-cover article-img">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-0 p-5 w-full">
+                        <span class="text-brand-gold text-xs font-bold mb-2 block uppercase tracking-wider">飯店快訊</span>
+                        <h2 class="text-xl font-bold text-white leading-snug group-hover:text-gray-200">
+                            萬豪旅享家大改表！2026 點數兌換亮點與貶值地雷區解析
+                        </h2>
+                        <div class="text-gray-400 text-xs mt-3"><i class="far fa-clock mr-1"></i> 5 小時前</div>
+                    </div>
+                </article>
+
+                <!-- 次頭條 2 -->
+                <article class="relative rounded-2xl overflow-hidden shadow-md group article-card cursor-pointer flex-1 min-h-[220px]">
+                    <div class="absolute inset-0 w-full h-full">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600" alt="信用卡" class="w-full h-full object-cover article-img">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-0 p-5 w-full">
+                        <span class="text-brand-gold text-xs font-bold mb-2 block uppercase tracking-wider">信用卡攻略</span>
+                        <h2 class="text-xl font-bold text-white leading-snug group-hover:text-gray-200">
+                            【2026第一季】無腦刷神卡爭霸戰：國內外高回饋信用卡推薦總整理
+                        </h2>
+                        <div class="text-gray-400 text-xs mt-3"><i class="far fa-clock mr-1"></i> 昨天</div>
+                    </div>
+                </article>
             </div>
         </div>
 
-    </main>
-<!-- ================= 實用小工具區 ================= -->
-        <section class="mt-16 mb-8 bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-            <div class="flex items-center justify-between mb-8 border-b-2 border-[#cba052] pb-2">
-                <h2 class="text-2xl font-bold text-[#0a192f] flex items-center">
-                    <svg class="w-6 h-6 mr-2 text-[#cba052]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    顏究所實用小工具
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- 工具 1: 哩程估算 -->
-                <div class="bg-gray-50 rounded-lg p-5 border border-gray-100 hover:shadow-md transition">
-                    <h3 class="font-bold text-[#0a192f] mb-2 flex items-center">✈️ 哩程價值估算機</h3>
-                    <p class="text-xs text-gray-500 mb-4">快速換算手中哩程的現金價值(僅供參考)</p>
-                    <select id="miles-rate" class="w-full mb-3 p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
-                        <option value="0.45">長榮航空 (EVA) - 估值 $0.45/哩</option>
-                        <option value="0.4">中華航空 (CI) - 估值 $0.40/哩</option>
-                        <option value="0.35">國泰亞洲萬里通 - 估值 $0.35/哩</option>
-                    </select>
-                    <input type="number" id="miles-amount" placeholder="輸入哩程數量 (例: 50000)" class="w-full mb-3 p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
-                    <button onclick="calcMiles()" class="w-full bg-[#0a192f] text-white py-2 rounded text-sm hover:bg-blue-900 transition font-bold">開始估算</button>
-                    <div id="miles-result" class="mt-3 text-center text-[#cba052] font-bold text-lg hidden"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- 左側主要內容區塊 (佔 2 欄) -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center justify-between border-b-2 border-gray-200 pb-2 mb-6">
+                    <h3 class="text-2xl font-black text-brand-blue flex items-center gap-2">
+                        <i class="fas fa-layer-group text-brand-gold"></i> 最新發布
+                    </h3>
+                    <a href="#" class="text-sm text-gray-500 hover:text-brand-blue font-medium">查看全部 <i class="fas fa-chevron-right text-xs"></i></a>
                 </div>
 
-                <!-- 工具 2: 刷卡回饋試算 -->
-                <div class="bg-gray-50 rounded-lg p-5 border border-gray-100 hover:shadow-md transition">
-                    <h3 class="font-bold text-[#0a192f] mb-2 flex items-center">💳 海外刷卡真實回饋</h3>
-                    <p class="text-xs text-gray-500 mb-4">自動扣除 1.5% 海外手續費，算出淨賺回饋</p>
-                    <div class="flex gap-2 mb-3">
-                        <input type="number" id="spend-amount" placeholder="消費台幣金額" class="w-2/3 p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
-                        <div class="w-1/3 relative">
-                            <input type="number" id="reward-rate" placeholder="回饋率" class="w-full p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052]">
-                            <span class="absolute right-3 top-2 text-gray-400 text-sm">%</span>
+                <div class="space-y-6">
+                    <!-- 文章列表 1 -->
+                    <article class="flex flex-col sm:flex-row gap-6 group cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=500" alt="護照哩程" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
-                    </div>
-                    <button onclick="calcReward()" class="w-full bg-[#cba052] text-[#0a192f] py-2 rounded text-sm hover:bg-yellow-500 transition font-bold">計算實賺金額</button>
-                    <div id="reward-result" class="mt-3 text-center text-[#0a192f] font-bold text-lg hidden"></div>
-                </div>
+                        <div class="flex flex-col justify-center w-full">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded">哩程資訊</span>
+                                <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 2026/10/12</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors leading-tight">
+                                國泰航空「亞洲萬里通」(Asia Miles) 終極教學：如何利用中停規則開出超值環球機票？
+                            </h4>
+                            <p class="text-gray-500 text-sm line-clamp-2">
+                                亞萬改表後雖然部分航線漲價，但其強大的「中停」與「開口」規則依舊是亮點。本篇實戰教學帶你一步步規劃...
+                            </p>
+                        </div>
+                    </article>
 
-                <!-- 工具 3: 航班追蹤 -->
-                <div class="bg-gray-50 rounded-lg p-5 border border-gray-100 hover:shadow-md transition">
-                    <h3 class="font-bold text-[#0a192f] mb-2 flex items-center">🔍 航班動態追蹤</h3>
-                    <p class="text-xs text-gray-500 mb-4">輸入航班代碼，立即開啟即時雷達圖</p>
-                    <div class="flex flex-col h-full justify-start">
-                        <input type="text" id="flight-number" placeholder="輸入航班代碼 (例: JX800)" class="w-full mb-3 p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[#cba052] uppercase">
-                        <button onclick="trackFlight()" class="w-full bg-[#0a192f] text-white py-2 rounded text-sm hover:bg-blue-900 transition font-bold mt-auto">立即追蹤</button>
-                    </div>
-                </div>
+                    <!-- 文章列表 2 -->
+                    <article class="flex flex-col sm:flex-row gap-6 group cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?auto=format&fit=crop&q=80&w=500" alt="頂級飯店" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col justify-center w-full">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded">飯店資訊</span>
+                                <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 2026/10/11</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors leading-tight">
+                                京都安縵 (Aman Kyoto) 住宿體驗：隱身森林的極致奢華，值不值得一晚五萬台幣？
+                            </h4>
+                            <p class="text-gray-500 text-sm line-clamp-2">
+                                位於京都洛北的安縵京都，以其庭園設計聞名於世。這次我們使用了 FHR (Fine Hotels & Resorts) 預訂，來看看有哪些特殊待遇。
+                            </p>
+                        </div>
+                    </article>
 
+                    <!-- 文章列表 3 -->
+                    <article class="flex flex-col sm:flex-row gap-6 group cursor-pointer bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full sm:w-1/3 h-48 sm:h-36 rounded-lg overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=500" alt="信用卡" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="flex flex-col justify-center w-full">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded">金融動態</span>
+                                <span class="text-gray-400 text-xs"><i class="far fa-clock mr-1"></i> 2026/10/10</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors leading-tight">
+                                匯豐銀行 (HSBC) 旅人卡全新權益公告：機場接送門檻降低，續卡禮升級
+                            </h4>
+                            <p class="text-gray-500 text-sm line-clamp-2">
+                                為了迎戰競爭激烈的旅遊神卡市場，匯豐銀行今日宣布調降旅人無限卡與御璽卡的機場接送消費門檻...
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- 載入更多按鈕 -->
+                <div class="mt-8 text-center">
+                    <button class="bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-50 hover:text-brand-blue transition-colors shadow-sm">
+                        載入更多文章 <i class="fas fa-arrow-down ml-2"></i>
+                    </button>
+                </div>
             </div>
-        </section>
 
-        <!-- 小工具運作程式碼 -->
-        <script>
-            function calcMiles() {
-                const amount = document.getElementById('miles-amount').value;
-                const rate = document.getElementById('miles-rate').value;
-                const resultDiv = document.getElementById('miles-result');
-                if(!amount || amount <= 0) return alert('請輸入大於 0 的哩程數');
-                const value = Math.round(amount * rate).toLocaleString();
-                resultDiv.innerHTML = `約等值 NT$ ${value}`;
-                resultDiv.classList.remove('hidden');
-            }
-            function calcReward() {
-                const spend = document.getElementById('spend-amount').value;
-                const rate = document.getElementById('reward-rate').value;
-                const resultDiv = document.getElementById('reward-result');
-                if(!spend || !rate) return alert('請完整輸入金額與回饋率');
-                const netRate = (rate - 1.5) / 100;
-                const netEarn = Math.round(spend * netRate);
-                if(netEarn >= 0) {
-                    resultDiv.innerHTML = `實賺 NT$ ${netEarn.toLocaleString()}`;
-                    resultDiv.className = "mt-3 text-center text-[#cba052] font-bold text-lg";
-                } else {
-                    resultDiv.innerHTML = `倒賠 NT$ ${Math.abs(netEarn).toLocaleString()}`;
-                    resultDiv.className = "mt-3 text-center text-red-500 font-bold text-lg";
-                }
-                resultDiv.classList.remove('hidden');
-            }
-            function trackFlight() {
-                const flight = document.getElementById('flight-number').value.replace(/\s/g, '');
-                if(!flight) return alert('請輸入航班代碼');
-                window.open(`https://www.flightradar24.com/data/flights/${flight}`, '_blank');
-            }
-        </script>
-        <!-- ================= 小工具區結束 ================= -->
-    <!-- 頁尾 -->
-    <footer class="bg-[#0a192f] text-gray-400 py-8 mt-12 border-t-4 border-[#cba052]">
-        <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center text-sm">
-            <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
-            <div class="flex space-x-4 mt-4 md:mt-0">
-                <a href="/about.html" class="hover:text-white transition">關於我們</a>
-<a href="/contact.html" class="hover:text-white transition">聯絡編輯</a>
-<a href="/privacy.html" class="hover:text-white transition">隱私權政策</a>
+            <!-- 右側邊欄 -->
+            <aside class="lg:col-span-1 space-y-8">
+                
+                <!-- 贊助支持區塊 -->
+                <div class="bg-white border border-brand-gold rounded-2xl p-6 shadow-lg text-center relative overflow-hidden">
+                    <!-- 頂部裝飾條 -->
+                    <div class="absolute top-0 left-0 w-full h-2 bg-brand-gold"></div>
+                    
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-gold text-3xl mt-2">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 text-brand-blue">支持顏究所</h4>
+                    <p class="text-sm text-gray-500 mb-6">您的贊助是我們持續產出優質航空與飯店評測的最大動力！請我們喝杯咖啡吧 ☕️</p>
+                    <a href="https://buymeacoffee.com/yen.travel" target="_blank" class="flex items-center justify-center w-full bg-[#FFDD00] text-gray-900 font-bold px-4 py-3 rounded-lg hover:bg-[#FFEA4C] transition-colors shadow-sm">
+                        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" class="h-6 mr-2">
+                        Buy me a coffee
+                    </a>
+                </div>
+
+                <!-- 熱門文章排行 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-black text-gray-900 mb-4 border-l-4 border-brand-gold pl-3">本週熱門排行</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4 items-start group cursor-pointer">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-brand-gold transition-colors">1</span>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm group-hover:text-brand-blue leading-tight mb-1">台灣出發飛歐洲！阿聯酋航空商務艙促銷，來回只要 8.5 萬台幣起</h4>
+                                <span class="text-xs text-gray-500">航空新聞 · 3.5 萬次閱讀</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start group cursor-pointer">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-brand-gold transition-colors">2</span>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm group-hover:text-brand-blue leading-tight mb-1">【新手向】什麼是 FHR？美國運通白金卡訂房秘笈全公開</h4>
+                                <span class="text-xs text-gray-500">信用卡攻略 · 2.8 萬次閱讀</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start group cursor-pointer">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-brand-gold transition-colors">3</span>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm group-hover:text-brand-blue leading-tight mb-1">日航 JAL 國內線頭等艙體驗：羽田飛往新千歲，機上餐點與貴賓室</h4>
+                                <span class="text-xs text-gray-500">航空新聞 · 2.1 萬次閱讀</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start group cursor-pointer">
+                            <span class="text-3xl font-black text-gray-200 group-hover:text-brand-gold transition-colors">4</span>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm group-hover:text-brand-blue leading-tight mb-1">台北寒舍艾美 vs. W Hotel，信義區頂級萬豪系飯店該選哪間？</h4>
+                                <span class="text-xs text-gray-500">飯店資訊 · 1.9 萬次閱讀</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 廣告版位 Placeholder -->
+                <div class="bg-gray-200 rounded-2xl h-64 flex flex-col items-center justify-center text-gray-400 border-2 border-dashed border-gray-300">
+                    <span class="text-sm uppercase tracking-widest mb-1">Advertisement</span>
+                    <i class="fas fa-ad text-3xl"></i>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t-4 border-brand-gold mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <!-- 品牌資訊 -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-gold text-brand-blue flex items-center justify-center rounded font-bold text-sm">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <span class="text-xl font-black tracking-wider">顏究所</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Yen Lab Aero 是專精在飯店、哩程、信用卡與航空的專業新聞媒體。我們為讀者解碼旅行的價值。
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 快速連結 -->
+                <div>
+                    <h4 class="text-brand-gold font-bold mb-4 uppercase tracking-wider text-sm">探索頻道</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">航空新聞快訊</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">機艙深度體驗</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">頂級飯店資訊</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">常客哩程資訊</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">信用卡優惠比較</a></li>
+                    </ul>
+                </div>
+
+                <!-- 關於我們 -->
+                <div>
+                    <h4 class="text-brand-gold font-bold mb-4 uppercase tracking-wider text-sm">關於我們</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">關於顏究所</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">編輯團隊</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">商務合作與廣告推廣</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">加入我們</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <!-- 法務與版權 -->
+                <div>
+                    <h4 class="text-brand-gold font-bold mb-4 uppercase tracking-wider text-sm">法務資訊</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">隱私權政策</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">服務條款</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">免責聲明</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie 政策</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 顏究所 Yen Lab Aero. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Made with ❤️ for frequent flyers.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // 處理手機版選單切換
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
