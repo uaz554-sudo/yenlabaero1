@@ -11,11 +11,31 @@ collections:
     label: "新聞文章"
     folder: "_posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {label: "文章標題", name: "title", widget: "string"}
+      - {label: "自訂網址英文代稱 (Slug，例如: cathay-a350-review)", name: "slug", widget: "string"}
       - {label: "發布時間", name: "date", widget: "datetime"}
-      - {label: "文章分類", name: "category", widget: "select", options: ["傳統航空", "低成本航空", "貴賓室體驗", "航線異動", "萬豪集團", "希爾頓集團", "洲際集團", "獨立奢華酒店", "亞洲萬里通", "長榮無限萬哩遊", "華夏哩程", "外籍航空計畫", "台灣信用卡", "美國信用卡", "點數轉換", "首刷禮推薦"]}
+      
+      # 主主題 (對應頂部導覽列大分類)
+      - label: "主主題 (Main Category)"
+        name: "main_category"
+        widget: "select"
+        options: ["航空新聞", "飯店資訊", "哩程資訊", "信用卡攻略", "專欄觀點"]
+        
+      # 次主題 (對應下拉選單細分選項)
+      - label: "次主題 (Sub Category)"
+        name: "sub_category"
+        widget: "select"
+        options: [
+          "傳統航空", "低成本航空", "貴賓室體驗", "航線異動",
+          "萬豪集團", "希爾頓集團", "洲際集團", "獨立奢華酒店",
+          "亞洲萬里通", "長榮無限萬哩遊", "華夏哩程", "外籍航空計畫",
+          "台灣信用卡", "美國信用卡", "點數轉換", "首刷禮推薦",
+          "深度專欄"
+        ]
+        
+      - {label: "關鍵字 (用半角逗號隔開，例: 長榮航空, 商務艙, A350)", name: "tags", widget: "string", required: false}
       - {label: "新聞簡介 (顯示在首頁)", name: "description", widget: "text"}
       - {label: "封面圖片", name: "thumbnail", widget: "image", required: false}
       - {label: "完整內文", name: "body", widget: "markdown"}
