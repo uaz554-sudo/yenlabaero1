@@ -1,21 +1,48 @@
 backend:
-  name: github
-  repo: uaz554-sudo/yenlabaero1
-  branch: main
+name: github
+repo: uaz554-sudo/yenlabaero1
+branch: main
+
+publish_mode: editorial_workflow
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "news"
-    label: "新聞文章"
-    folder: "_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "文章標題", name: "title", widget: "string"}
-      - {label: "發布時間", name: "date", widget: "datetime"}
-      - {label: "文章分類", name: "category", widget: "select", options: ["航空資訊", "哩程資訊", "信用卡"]}
-      - {label: "新聞簡介 (顯示在首頁)", name: "description", widget: "text"}
-      - {label: "封面圖片", name: "thumbnail", widget: "image", required: false}
-      - {label: "完整內文", name: "body", widget: "markdown"}
+
+name: "news"
+label: "新聞文章"
+folder: "_posts"
+create: true
+slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+fields:
+
+{label: "文章標題", name: "title", widget: "string"}
+
+{label: "發布時間", name: "date", widget: "datetime"}
+
+label: "文章分類", name: "category", widget: "select", options: [
+"傳統航空",
+"低成本航空",
+"貴賓室體驗",
+"航線異動",
+"萬豪集團",
+"希爾頓集團",
+"洲際集團",
+"獨立奢華酒店",
+"亞洲萬里通",
+"長榮無限萬哩遊",
+"華夏哩程",
+"外籍航空計畫",
+"台灣信用卡",
+"美國信用卡",
+"點數轉換",
+"首刷禮推薦",
+"專欄觀點"
+]
+
+{label: "新聞簡介 (顯示在首頁)", name: "description", widget: "text"}
+
+{label: "封面圖片", name: "thumbnail", widget: "image", required: false}
+
+{label: "完整內文", name: "body", widget: "markdown"}
