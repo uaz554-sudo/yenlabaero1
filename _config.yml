@@ -1,2 +1,5 @@
 # 文章時間以台灣時間計算，避免當天稍晚的文章被當成「未來文章」而不顯示
 timezone: Asia/Taipei
+# CMS 的發布時間沒有時區，Jekyll 會當成 UTC 解讀；不設定 timezone，網址和顯示日期才會跟後台填的一致
+# future: true 讓文章存檔後就發布（GitHub Pages 只在 commit 時建置，本來就沒辦法排程發文）
+future: true
