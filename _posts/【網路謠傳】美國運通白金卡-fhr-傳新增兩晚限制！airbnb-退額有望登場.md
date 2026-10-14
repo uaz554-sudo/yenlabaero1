@@ -1,7 +1,7 @@
 ---
 title: 【網路謠傳】美國運通白金卡 FHR 傳新增兩晚限制！Airbnb 退額有望登場
 slug: amex-platinum-fhr-airbnb-credit-rumor-2026
-date: 2026-10-13T14:44:00
+date: 2026-10-13T14:52:00
 main_category: 信用卡攻略
 sub_category: 美國信用卡
 tags: 美國運通白金卡、Amex Platinum、FHR、Lodging Credit、Airbnb Luxury Stays、Airbnb Experiences、美國信用卡、飯店退額
