@@ -2,6 +2,10 @@ backend:
   name: github
   repo: uaz554-sudo/yenlabaero1
   branch: main
+  # 後台登入方式：
+  # 1) 預設可在登入畫面選「Sign In with Token」，貼上 GitHub Personal Access Token（需 repo 的 Contents 讀寫權限）
+  # 2) 若要用「Sign In with GitHub」按鈕，需部署 OAuth 授權伺服器（例如 sveltia-cms-auth），再取消下一行註解並填入網址
+  # base_url: https://sveltia-cms-auth.<你的帳號>.workers.dev
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
@@ -11,7 +15,7 @@ collections:
     label: "新聞文章"
     folder: "_posts"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
     fields:
       - {label: "文章標題", name: "title", widget: "string"}
       - {label: "自訂網址英文代稱 (Slug，例如: cathay-a350-review)", name: "slug", widget: "string"}
