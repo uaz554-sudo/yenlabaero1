@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ page.description | default: site.description }}">
     <title>{{ page.title }} | 顏究所 Yen Lab Aero</title>
+    <!-- 社群分享預覽（Facebook、Threads、LINE） -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="顏究所 YEN LAB AERO">
+    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:description" content="{{ page.description | strip_html | strip_newlines | escape }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    {% if page.thumbnail %}<meta property="og:image" content="{{ site.url }}{{ page.thumbnail | uri_escape }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
     <!-- 載入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 載入 Google 字體 -->
