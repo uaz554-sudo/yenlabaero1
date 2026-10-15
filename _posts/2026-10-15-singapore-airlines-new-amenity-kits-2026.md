@@ -6,6 +6,29 @@ main_category: 航空資訊
 sub_category: 星空聯盟
 tags: 新加坡航空, Singapore Airlines, 過夜包, 商務艙睡衣, Sisley, BYREDO, 頭等艙, 商務艙
 description: 新加坡航空 2026 年 11 月起陸續換新各艙等過夜包：套房與頭等艙改用 Sisley，商務艙改用 BYREDO 並首度提供睡衣，豪華經濟艙與經濟艙也換上新款收納包。
+social_post: |
+  【新航過夜包大改版】
+
+  新加坡航空這次把各艙等的過夜包全部換新，11 月起飛行超過 6 小時的航班會陸續換上。
+
+  變化最大的是商務艙：
+  過夜包從 Le Labo 換成 BYREDO，裡面有 Blanche 淡香精、護手霜、護唇膏，眼罩、襪子、牙刷組也直接放進包裡，不用再去洗手間拿。
+
+  而且新航終於在商務艙提供睡衣了！
+  深藍色、寬鬆版型，長程航班都有，部分超過 6 小時的紅眼航班也會提供。
+
+  套房和頭等艙則是從 Lalique 換成 Sisley，分男女款，睡衣也改成純棉。
+
+  豪華經濟艙和經濟艙換成新的峇迪圖紋收納包，豪經提供過夜包的門檻也從 7 小時放寬到 6 小時。
+
+  不過要注意：台北飛新加坡不到 6 小時，直飛是拿不到新過夜包的，要經新加坡轉機飛長程才有。
+
+  新舊過夜包比較和更多照片，整理在網站：
+  https://yenlabaero.com/singapore-airlines-new-amenity-kits-2026
+
+  （圖片來源：新加坡航空）
+
+  #新加坡航空 #過夜包 #商務艙
 thumbnail: /assets/images/singapore-airlines-new-amenity-kits.jpg
 ---
 
