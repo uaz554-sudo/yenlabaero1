@@ -6,7 +6,7 @@
 
 文章 front matter 可用的欄位：
   social_post    社群貼文內容（留空時自動用「【標題】＋簡介」）
-  social_images  Instagram 輪播要加的圖片路徑清單（封面固定是第一張）
+  social_images  Instagram／Threads 輪播要加的圖片路徑清單（封面固定是第一張）
   social: false  這篇不要自動發文
 """
 import json
@@ -79,9 +79,11 @@ def build_texts(fm, url):
     if not base:
         base = f"【{fm.get('title', '')}】\n\n{fm.get('description', '')}".strip()
     with_link = base if url in base else f"{base}\n\n完整文章：{url}"
-    # Instagram 文字裡的連結點不了，改成提示到網站看
-    ig = re.sub(r"^.*https?://\S+.*$\n?", "", base, flags=re.M).strip()
-    ig = f"{ig}\n\n完整文章請上 yenlabaero.com"
+    # Instagram 文字裡的連結點不了，網址改成網站名稱
+    if re.search(r"https?://", base):
+        ig = re.sub(r"https?://\S+", "yenlabaero.com", base)
+    else:
+        ig = f"{base}\n\n完整文章請上 yenlabaero.com"
     threads = with_link
     if len(threads) > THREADS_LIMIT:
         room = THREADS_LIMIT - len(url) - 4
@@ -128,15 +130,36 @@ def post_instagram(images, caption):
     return call("POST", f"{GRAPH}/{ig_id}/media_publish", {"creation_id": container, "access_token": token}).get("id")
 
 
-def post_threads(text, image, url):
+def threads_wait(container_id, token):
+    for _ in range(30):
+        status = call("GET", f"{THREADS}/{container_id}", {"fields": "status", "access_token": token}).get("status")
+        if status in ("FINISHED", "PUBLISHED"):
+            return
+        if status in ("ERROR", "EXPIRED"):
+            raise RuntimeError(f"Threads 處理圖片失敗（{status}）")
+        time.sleep(10)
+    raise RuntimeError("Threads 處理圖片逾時")
+
+
+def post_threads(text, images, url):
     token = os.environ["THREADS_TOKEN"]
     user = os.environ.get("THREADS_USER_ID") or "me"
-    if image:
-        params = {"media_type": "IMAGE", "image_url": image, "text": text, "access_token": token}
+    if len(images) > 1:
+        children = []
+        for image in images[:20]:
+            child = call("POST", f"{THREADS}/{user}/threads", {
+                "media_type": "IMAGE", "image_url": image, "is_carousel_item": "true", "access_token": token})["id"]
+            children.append(child)
+        for child in children:
+            threads_wait(child, token)
+        params = {"media_type": "CAROUSEL", "children": ",".join(children), "text": text, "access_token": token}
+    elif images:
+        params = {"media_type": "IMAGE", "image_url": images[0], "text": text, "access_token": token}
     else:
         params = {"media_type": "TEXT", "text": text, "link_attachment": url, "access_token": token}
     container = call("POST", f"{THREADS}/{user}/threads", params)["id"]
     time.sleep(30)  # 官方建議建立後等約 30 秒再發布
+    threads_wait(container, token)
     return call("POST", f"{THREADS}/{user}/threads_publish", {"creation_id": container, "access_token": token}).get("id")
 
 
@@ -161,11 +184,11 @@ def publish(path, platforms, report):
         return False
     url = f"{SITE_URL}/{slug}"
     thumb = absolute(fm["thumbnail"]) if fm.get("thumbnail") else None
-    wait_until_live([url] + ([thumb] if thumb else []))
+    images = [u for u in [thumb] + [absolute(p) for p in fm.get("social_images") or []] if u]
+    wait_until_live([url] + images)
 
     fb_text, ig_text, threads_text = build_texts(fm, url)
-    jpgs = [u for u in [thumb] + [absolute(p) for p in fm.get("social_images") or []]
-            if u and u.lower().split("?")[0].endswith((".jpg", ".jpeg"))]
+    jpgs = [u for u in images if u.lower().split("?")[0].endswith((".jpg", ".jpeg"))]
 
     ok = True
     for platform in platforms:
@@ -181,7 +204,7 @@ def publish(path, platforms, report):
                     continue
                 pid = post_instagram(jpgs, ig_text)
             else:
-                pid = post_threads(threads_text, thumb, url)
+                pid = post_threads(threads_text, jpgs, url)
             report.append(f"| {name} | {platform} | ✅ 已發文（{pid}） |")
         except Exception as e:  # 單一平台失敗不影響其他平台
             ok = False
