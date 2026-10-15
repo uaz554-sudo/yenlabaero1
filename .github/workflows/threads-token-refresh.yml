@@ -1,0 +1,34 @@
+# Threads 權杖 60 天到期，每月 1 日、15 日自動續期並寫回 THREADS_TOKEN。
+# 需要 GH_SECRETS_PAT：只授權這個 repo、權限「Secrets: Read and write」的 fine-grained token。
+name: Threads 權杖自動續期
+
+on:
+  schedule:
+    - cron: "0 1 1,15 * *"  # UTC 01:00 = 台灣時間上午 9 點
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 續期並更新 THREADS_TOKEN
+        env:
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_SECRETS_PAT }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ -z "$THREADS_TOKEN" ] || [ -z "$GH_TOKEN" ]; then
+            echo "::warning::尚未設定 THREADS_TOKEN 或 GH_SECRETS_PAT，略過續期"
+            exit 0
+          fi
+          resp=$(curl -sS -G "https://graph.threads.net/refresh_access_token" \
+            --data-urlencode "grant_type=th_refresh_token" \
+            --data-urlencode "access_token=$THREADS_TOKEN")
+          new=$(echo "$resp" | jq -r '.access_token // empty')
+          if [ -z "$new" ]; then
+            echo "::error::Threads 權杖續期失敗：$(echo "$resp" | jq -r '.error.message // "未知錯誤"')"
+            exit 1
+          fi
+          echo "::add-mask::$new"
+          gh secret set THREADS_TOKEN --repo "$REPO" --body "$new"
+          echo "已續期，有效 $(( $(echo "$resp" | jq -r '.expires_in') / 86400 )) 天"

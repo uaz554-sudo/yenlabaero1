@@ -1,0 +1,67 @@
+# 新文章上傳到 _posts 後，等網站上線再自動發到 Facebook 粉專、Instagram、Threads。
+# 憑證放在 Settings → Secrets and variables → Actions，沒設定的平台會略過。
+# 也可以到 Actions 分頁手動執行，指定某一篇文章重新發文。
+name: 社群自動發文
+
+on:
+  push:
+    branches: [main]
+    paths: ["_posts/**"]
+  workflow_dispatch:
+    inputs:
+      post:
+        description: "_posts 底下的檔名，例如 2026-10-15-singapore-airlines-new-amenity-kits-2026.md"
+        required: true
+      platforms:
+        description: "要發的平台，用逗號分隔"
+        default: "facebook,instagram,threads"
+
+concurrency:
+  group: social-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - name: 找出這次新增的文章
+        id: find
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          INPUT_POST: ${{ inputs.post }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            posts="_posts/$INPUT_POST"
+          elif [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            posts=""
+          else
+            # 只發「新增」的文章，修改舊文章不會重發
+            posts=$(git -c core.quotepath=false diff --name-only --diff-filter=A "$BEFORE" "$AFTER" -- '_posts/*.md' | paste -sd '|' -)
+          fi
+          echo "posts=$posts" >> "$GITHUB_OUTPUT"
+          echo "要發的文章：${posts:-（沒有新文章）}"
+
+      - name: 發文
+        if: steps.find.outputs.posts != ''
+        env:
+          POSTS: ${{ steps.find.outputs.posts }}
+          PLATFORMS: ${{ inputs.platforms || 'facebook,instagram,threads' }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: python .github/scripts/social_publish.py "$POSTS"
