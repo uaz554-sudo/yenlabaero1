@@ -26,9 +26,17 @@ social_post: |
   新舊過夜包比較和更多照片，整理在網站：
   https://yenlabaero.com/singapore-airlines-new-amenity-kits-2026
 
-  （圖片來源：新加坡航空）
+  （封面：Julian Herzog／CC BY 4.0；過夜包照片：新加坡航空）
 
   #新加坡航空 #過夜包 #商務艙
+social_images:
+  - /assets/images/sq-business-byredo-kit.jpg
+  - /assets/images/sq-business-sleeper-suit.jpg
+  - /assets/images/sq-first-sisley-women-kit.jpg
+  - /assets/images/sq-first-sisley-men-kit.jpg
+  - /assets/images/sq-first-sleeper-suit.jpg
+  - /assets/images/sq-premium-economy-kit.jpg
+  - /assets/images/sq-economy-kit.jpg
 thumbnail: /assets/images/singapore-airlines-new-amenity-kits.jpg
 ---
 
