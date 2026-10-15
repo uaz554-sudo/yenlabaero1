@@ -74,8 +74,6 @@ thumbnail: /assets/images/starlux-cosmile-buy-miles.jpg
 
 1. 星宇航空：購買哩程（COSMILE 官方頁面）
 2. Points.com：COSMILE 購買哩程頁面與銷售條款
-3. One Mile at a Time：Buy STARLUX Miles（2026/08/19）
-4. Upgraded Points：Buy STARLUX COSMILE Miles（2026/08/19）
 
 _封面照片：搭乘星宇航空時從窗外看到的機翼與雲海，顏究生旅行趣攝。_
 
