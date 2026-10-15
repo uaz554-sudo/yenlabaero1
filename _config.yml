@@ -4,8 +4,9 @@ timezone: Asia/Taipei
 # future: true 讓文章存檔後就發布（GitHub Pages 只在 commit 時建置，本來就沒辦法排程發文）
 future: true
 
-# 文章網址只用英文代稱（slug），不含日期與中文，例如 /world-of-hyatt-online-points-transfer-2026.html
-permalink: /:title:output_ext
+# 文章網址只用英文代稱（slug），不含日期、中文與 .html，例如 /world-of-hyatt-online-points-transfer-2026
+# （檔案仍輸出成 .html，所以帶 .html 的舊連結也能開）
+permalink: /:title
 
 # 舊網址自動轉到新網址（寫在各文章的 redirect_from）
 plugins:
