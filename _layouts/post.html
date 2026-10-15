@@ -106,9 +106,13 @@
                 {% if page.tags %}
                 <div class="mt-8 pt-6 border-t border-gray-100 flex items-center gap-2 flex-wrap">
                     <span class="text-xs font-bold text-gray-500"><i class="fas fa-tags mr-1"></i> 關鍵字：</span>
-                    {% assign tags_array = page.tags | split: "," %}
+                    {% comment %}Jekyll 會用空白把 tags 字串拆開，先接回原字串，再用逗號、頓號或全形逗號分隔{% endcomment %}
+                    {% assign tags_array = page.tags | join: " " | replace: "、", "," | replace: "，", "," | split: "," %}
                     {% for tag in tags_array %}
-                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md"># {{ tag | strip }}</span>
+                    {% assign tag_name = tag | strip %}
+                    {% if tag_name != "" %}
+                    <span class="bg-gray-100 text-gray-600 text-xs px-2.5 py-1 rounded-md"># {{ tag_name }}</span>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}
