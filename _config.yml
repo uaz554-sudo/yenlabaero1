@@ -3,3 +3,10 @@ timezone: Asia/Taipei
 # CMS 的發布時間沒有時區，Jekyll 會當成 UTC 解讀；不設定 timezone，網址和顯示日期才會跟後台填的一致
 # future: true 讓文章存檔後就發布（GitHub Pages 只在 commit 時建置，本來就沒辦法排程發文）
 future: true
+
+# 文章網址只用英文代稱（slug），不含日期與中文，例如 /world-of-hyatt-online-points-transfer-2026.html
+permalink: /:title:output_ext
+
+# 舊網址自動轉到新網址（寫在各文章的 redirect_from）
+plugins:
+  - jekyll-redirect-from
