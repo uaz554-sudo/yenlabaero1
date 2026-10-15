@@ -39,5 +39,6 @@ collections:
         
       - {label: "關鍵字 (用半角逗號隔開，例: 長榮航空, 商務艙, A350)", name: "tags", widget: "string", required: false}
       - {label: "新聞簡介 (顯示在首頁)", name: "description", widget: "text"}
+      - {label: "社群貼文（自動發到 FB／IG／Threads，選填；留空會用標題＋簡介）", name: "social_post", widget: "text", required: false}
       - {label: "封面圖片", name: "thumbnail", widget: "image", required: false}
       - {label: "完整內文", name: "body", widget: "markdown"}
