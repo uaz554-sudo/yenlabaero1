@@ -7,6 +7,8 @@ sub_category: 點數轉換
 tags: 凱悅, World of Hyatt, Hyatt, 轉點, 點數合併, 飯店點數, Hilton Honors
 description: 凱悅 World of Hyatt 預計 10/15 起開放會員線上互轉點數，不用再寄紙本表單，但新增每年轉出、轉入各 525,000 點的上限。一次整理新舊制度差異與仍待確認的細節。
 thumbnail: /assets/images/world-of-hyatt-online-transfer.jpg
+redirect_from:
+  - "/2026/10/15/world-of-hyatt-online-points-transfer-2026.html"
 ---
 
 # 凱悅 World of Hyatt 開放線上轉點！會員互轉不用再填表，每年上限 52.5 萬點

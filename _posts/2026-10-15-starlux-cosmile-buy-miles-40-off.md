@@ -7,6 +7,8 @@ category: 哩程資訊
 tags: 星宇航空, STARLUX, COSMILE, 購買哩程, 哩程特賣, Points.com, 頭等艙
 description: 星宇航空 COSMILE 購買哩程推出上線優惠，即日起至 2026/11/9 購買哩程享 40% 折扣，每 1,000 哩從 1,310 元降到 786 元。一次整理價格、購買上限、購買方式與注意事項。
 thumbnail: /assets/images/starlux-cosmile-buy-miles.jpg
+redirect_from:
+  - "/哩程資訊/2026/10/15/starlux-cosmile-buy-miles-40-off.html"
 ---
 
 # 星宇航空哩程特賣！COSMILE 購買哩程享 6 折，限時到 11/9

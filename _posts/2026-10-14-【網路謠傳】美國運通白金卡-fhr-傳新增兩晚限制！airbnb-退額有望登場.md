@@ -7,6 +7,8 @@ sub_category: 美國信用卡
 tags: 美國運通白金卡、Amex Platinum、FHR、Lodging Credit、Airbnb Luxury Stays、Airbnb Experiences、美國信用卡、飯店退額
 description: 美國運通美國版白金卡傳出福利調整，FHR 額度可能改名為 Lodging Credit，並納入 Airbnb Luxury Stays，另傳新增每年最高 250 美元 Airbnb Experiences 額度。FHR 兩晚限制是否將於 2027 年上路，仍待官方確認。
 thumbnail: /assets/images/chg_plat_metal_2018_di_300x190.png
+redirect_from:
+  - "/2026/10/14/amex-platinum-fhr-airbnb-credit-rumor-2026.html"
 ---
 
 # 【網路謠傳】美國運通美國白金卡福利恐再調整！FHR 傳新增兩晚限制，Airbnb 退額也有新消息
