@@ -17,6 +17,28 @@ redirect_from:
 **發布日期：2026 年 10 月 15 日**
 **活動期間：即日起至 2026 年 11 月 9 日**
 
+<div id="sale-countdown" style="margin:24px 0;padding:20px 24px;border-radius:12px;background:#0a192f;color:#ffffff;text-align:center;">
+  <div style="font-size:15px;font-weight:700;color:#cba052;letter-spacing:0.1em;">優惠倒數</div>
+  <div id="sale-countdown-time" style="margin:8px 0;font-size:30px;font-weight:900;line-height:1.3;">還剩 -- 天 -- 小時 -- 分 -- 秒</div>
+  <div style="font-size:16px;font-weight:700;">結束日期：2026 年 11 月 9 日（星期一）</div>
+  <div style="margin-top:4px;font-size:12px;color:#94a3b8;">倒數以台灣時間 11/9 23:59 計算，實際以星宇航空官網為準</div>
+</div>
+<script>
+(function () {
+  var end = new Date("2026-11-09T23:59:59+08:00").getTime();
+  var el = document.getElementById("sale-countdown-time");
+  function tick() {
+    var s = Math.floor((end - Date.now()) / 1000);
+    if (s <= 0) { el.textContent = "優惠已結束"; return; }
+    var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
+    el.textContent = "還剩 " + d + " 天 " + h + " 小時 " + m + " 分 " + sec + " 秒";
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
+
+
 星宇航空 COSMILE 會員的購買哩程服務推出上線優惠：即日起至 2026 年 11 月 9 日，購買哩程享 40% 折扣，也就是 6 折。
 
 購買哩程原價為每 1,000 哩新台幣 1,310 元，打 6 折後為每 1,000 哩 786 元，等於每哩約 0.79 元。
