@@ -6,7 +6,8 @@
 
 文章 front matter 可用的欄位：
   social_post    社群貼文內容（留空時自動用「【標題】＋簡介」）
-  social_images  Instagram／Threads 輪播要加的圖片路徑清單（封面固定是第一張）
+  social_cards   Instagram／Threads 的社群圖卡清單（1080×1350 直式，3～5 張，第一張已含封面照片）；沒有時改用封面
+  social_images  Instagram／Threads 輪播額外要加的圖片（接在圖卡之後；IG 會裁成第一張的比例）
   social: false  這篇不要自動發文
 """
 import json
@@ -184,8 +185,10 @@ def publish(path, platforms, report):
         return False
     url = f"{SITE_URL}/{slug}"
     thumb = absolute(fm["thumbnail"]) if fm.get("thumbnail") else None
-    images = [u for u in [thumb] + [absolute(p) for p in fm.get("social_images") or []] if u]
-    wait_until_live([url] + images)
+    # 有社群圖卡就用圖卡（第一張已含封面照片），沒有才用封面
+    cards = [absolute(p) for p in fm.get("social_cards") or []]
+    images = [u for u in (cards or [thumb]) + [absolute(p) for p in fm.get("social_images") or []] if u]
+    wait_until_live([url] + [u for u in [thumb] + images if u])
 
     fb_text, ig_text, threads_text = build_texts(fm, url)
     jpgs = [u for u in images if u.lower().split("?")[0].endswith((".jpg", ".jpeg"))]
