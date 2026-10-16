@@ -11,3 +11,6 @@ permalink: /:title
 # 舊網址自動轉到新網址（寫在各文章的 redirect_from）
 plugins:
   - jekyll-redirect-from
+
+# Google Analytics 流量統計的評估 ID（GA4）
+google_analytics: G-ZHDDK03W8F
