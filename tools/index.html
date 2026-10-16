@@ -1,0 +1,79 @@
+---
+layout: null
+permalink: /tools/
+title: 哩程工具
+---
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哩程工具 | 顏究所 YEN LAB AERO</title>
+    <meta name="description" content="顏究所的免費哩程小工具：Asia Miles 混艙計算機、買哩程成本計算機，幫你算清楚每一張獎勵機票。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="顏究所 YEN LAB AERO">
+    <meta property="og:title" content="哩程工具 | 顏究所 YEN LAB AERO">
+    <meta property="og:description" content="免費哩程小工具：混艙計算、買哩程成本換算。">
+    <meta property="og:url" content="https://yenlabaero.com/tools/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>body { font-family: "Noto Sans TC", sans-serif; }</style>
+    {% include analytics.html %}
+</head>
+<body class="bg-[#f0f4f8] text-slate-800 min-h-screen flex flex-col">
+
+    <!-- 導覽列 -->
+    <nav class="bg-[#0a192f] text-white p-4 shadow-md sticky top-0 z-[60]">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <a href="/" class="text-2xl font-serif font-bold text-[#cba052] flex items-baseline">
+                YEN LAB AERO <span class="text-white text-lg ml-2 font-sans">顏究所</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
+                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
+                <a href="/hotel.html" class="hover:text-[#cba052] transition">飯店資訊</a>
+                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
+                <a href="/tools/" class="text-[#cba052] transition">哩程工具</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-[#0a192f] to-[#13294b] text-white border-b-4 border-[#cba052]">
+        <div class="max-w-6xl mx-auto px-4 py-10">
+            <h1 class="text-3xl md:text-4xl font-black tracking-wide">哩程工具</h1>
+            <p class="text-slate-300 mt-3">免費小工具，幫你把哩程算清楚</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 w-full flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% assign tools = site.pages | where_exp: "p", "p.url contains '/tools/'" | where_exp: "p", "p.url != '/tools/'" | sort: "tool_order" %}
+            {% for t in tools %}
+            <a href="{{ t.url }}" class="group bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-lg hover:border-[#cba052] transition flex gap-4">
+                <div class="w-14 h-14 shrink-0 rounded-2xl bg-[#0a192f] flex items-center justify-center">
+                    <i data-lucide="{{ t.tool_icon | default: 'plane' }}" class="w-7 h-7 text-[#cba052]"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-[#0a192f] group-hover:text-[#a07c34]">{{ t.title }}</h2>
+                    <p class="text-slate-500 text-sm mt-1 leading-relaxed">{{ t.tool_desc }}</p>
+                    <span class="inline-block mt-3 text-sm font-bold text-[#a07c34]">開始使用 →</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer class="bg-[#0a192f] text-gray-400 py-8 border-t-4 border-[#cba052]">
+        <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="/about.html" class="hover:text-white transition">關於我們</a>
+                <a href="/contact.html" class="hover:text-white transition">聯絡編輯</a>
+                <a href="/privacy.html" class="hover:text-white transition">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+    <script>try { lucide.createIcons(); } catch (e) {}</script>
+</body>
+</html>

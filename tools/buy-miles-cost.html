@@ -1,0 +1,356 @@
+---
+layout: null
+permalink: /tools/buy-miles-cost
+title: 買哩程成本計算機
+tool_order: 2
+tool_icon: calculator
+tool_desc: 哩程特賣每哩到底多少台幣？輸入價格與加贈，用 Mastercard 匯率換算，還能比較方案、判斷換機票划不划算。
+---
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>買哩程成本計算機 | 顏究所 YEN LAB AERO</title>
+    <meta name="description" content="輸入哩程特賣的價格、幣別與加贈比例，用 Mastercard 匯率換算每哩台幣成本，並算出拿來換機票划不划算。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="顏究所 YEN LAB AERO">
+    <meta property="og:title" content="買哩程成本計算機">
+    <meta property="og:description" content="哩程特賣每哩到底多少台幣？輸入價格與加贈，用 Mastercard 匯率一秒算出。">
+    <meta property="og:url" content="https://yenlabaero.com/tools/buy-miles-cost">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: "Noto Sans TC", sans-serif; }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type="number"] { -moz-appearance: textfield; }
+        .field { width:100%; padding:.65rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:.75rem; outline:none; transition:all .15s; }
+        .field:focus { background:#fff; border-color:#cba052; box-shadow:0 0 0 3px rgba(203,160,82,.25); }
+        .label { display:block; font-size:.875rem; font-weight:600; color:#334155; margin-bottom:.25rem; }
+    </style>
+    {% include analytics.html %}
+</head>
+<body class="bg-[#f0f4f8] text-slate-800 min-h-screen flex flex-col">
+
+    <!-- 導覽列 -->
+    <nav class="bg-[#0a192f] text-white p-4 shadow-md sticky top-0 z-[60]">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <a href="/" class="text-2xl font-serif font-bold text-[#cba052] flex items-baseline">
+                YEN LAB AERO <span class="text-white text-lg ml-2 font-sans">顏究所</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
+                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
+                <a href="/hotel.html" class="hover:text-[#cba052] transition">飯店資訊</a>
+                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
+                <a href="/tools/" class="text-[#cba052] transition">哩程工具</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 標題 -->
+    <header class="bg-gradient-to-r from-[#0a192f] to-[#13294b] text-white border-b-4 border-[#cba052]">
+        <div class="max-w-6xl mx-auto px-4 py-8 md:py-10">
+            <a href="/tools/" class="text-[#cba052] text-sm font-bold tracking-widest mb-2 inline-block hover:underline">哩程工具</a>
+            <h1 class="text-2xl md:text-4xl font-black tracking-wide flex items-center gap-3">
+                <i data-lucide="calculator" class="w-8 h-8 text-[#cba052]"></i>買哩程成本計算機
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base mt-3">哩程特賣每哩到底多少台幣？輸入價格與加贈比例，用 Mastercard 匯率一秒算出</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-8 pb-12 w-full flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <!-- 左側：輸入 -->
+            <div class="lg:col-span-7 space-y-6">
+
+                <!-- 範例 -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+                    <p class="text-sm text-slate-500 mb-3">不知道怎麼填？先帶入範例看看：</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="preset('lh')" class="text-sm font-bold px-4 py-2 rounded-full bg-[#faf6ec] text-[#0a192f] border border-[#e6d3a8] hover:bg-[#f6efe0]">漢莎 Miles & More：€2,650 買 150,000 哩＋加贈 50%</button>
+                        <button type="button" onclick="preset('jx')" class="text-sm font-bold px-4 py-2 rounded-full bg-[#faf6ec] text-[#0a192f] border border-[#e6d3a8] hover:bg-[#f6efe0]">星宇 COSMILE：NT$786 買 1,000 哩</button>
+                    </div>
+                </div>
+
+                <!-- 購買內容 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-[#cba052]"></div>
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                        <span class="bg-[#f6efe0] text-[#8a6a2a] w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                        購買內容
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="label" for="price">購買金額</label>
+                            <input type="number" id="price" class="field" placeholder="例如 2650" min="0" step="any">
+                        </div>
+                        <div>
+                            <label class="label" for="currency">付款幣別</label>
+                            <select id="currency" class="field"></select>
+                        </div>
+                        <div>
+                            <label class="label" for="miles">購買哩程數（不含加贈）</label>
+                            <input type="number" id="miles" class="field" placeholder="例如 150000" min="0" step="any">
+                        </div>
+                        <div>
+                            <label class="label" for="bonus">加贈比例（%）</label>
+                            <input type="number" id="bonus" class="field" placeholder="沒有就填 0" min="0" step="any" value="0">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="label" for="discount">價格折扣（%）<span class="font-normal text-slate-400">例如 6 折請填 40；金額已是折後價就填 0</span></label>
+                            <input type="number" id="discount" class="field" placeholder="沒有就填 0" min="0" max="100" step="any" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 匯率與手續費 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-[#cba052]"></div>
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                        <span class="bg-[#f6efe0] text-[#8a6a2a] w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                        匯率與刷卡費用
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="label" for="rate">匯率（1 外幣＝台幣）</label>
+                            <input type="number" id="rate" class="field" step="any" min="0">
+                            <p id="rateNote" class="text-xs text-slate-400 mt-1"></p>
+                        </div>
+                        <div>
+                            <label class="label" for="fee">國外交易手續費（%）</label>
+                            <input type="number" id="fee" class="field" step="any" min="0" value="1.5">
+                            <p class="text-xs text-slate-400 mt-1">Points.com 等境外平台，用台幣付也會收</p>
+                        </div>
+                        <div>
+                            <label class="label" for="cashback">信用卡回饋（%）</label>
+                            <input type="number" id="cashback" class="field" step="any" min="0" value="0">
+                            <p class="text-xs text-slate-400 mt-1">選填，會從成本中扣除</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 兌換用途 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-slate-300"></div>
+                    <h2 class="text-lg font-bold text-slate-800 mb-1 flex items-center">
+                        <span class="bg-slate-100 text-slate-600 w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">3</span>
+                        拿來換機票划算嗎？<span class="ml-2 text-xs font-normal text-slate-400">選填</span>
+                    </h2>
+                    <p class="text-sm text-slate-500 mb-4">填入想兌換的機票，算出這張票的每哩價值，和買哩程的成本比較。</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="label" for="cash">現金票價（台幣）</label>
+                            <input type="number" id="cash" class="field" placeholder="例如 180000" min="0" step="any">
+                        </div>
+                        <div>
+                            <label class="label" for="need">兌換所需哩程</label>
+                            <input type="number" id="need" class="field" placeholder="例如 110000" min="0" step="any">
+                        </div>
+                        <div>
+                            <label class="label" for="tax">兌換要付的稅金（台幣）</label>
+                            <input type="number" id="tax" class="field" placeholder="例如 3500" min="0" step="any">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右側：結果 -->
+            <div class="lg:col-span-5">
+                <div class="bg-gradient-to-br from-[#0a192f] to-[#06101f] text-white p-6 md:p-8 rounded-3xl shadow-xl lg:sticky lg:top-24">
+                    <h2 class="text-xl font-bold mb-6 flex items-center text-[#cba052]">
+                        <i data-lucide="coins" class="mr-2"></i> 計算結果
+                    </h2>
+
+                    <div id="placeholder" class="flex flex-col items-center justify-center text-center py-16">
+                        <i data-lucide="plane" class="w-16 h-16 mb-4 opacity-50 text-[#cba052]"></i>
+                        <p class="text-lg font-medium text-slate-300">等待輸入資訊</p>
+                        <p class="text-sm mt-2 text-slate-400">填入購買金額與哩程數，結果會即時顯示</p>
+                    </div>
+
+                    <div id="result" class="hidden">
+                        <p class="text-slate-400 text-sm">每哩成本</p>
+                        <div class="text-5xl font-black text-[#cba052] mt-1">NT$<span id="perMile">0</span></div>
+                        <p class="text-slate-300 mt-2">每 1,000 哩約 <b class="text-white">NT$<span id="perK">0</span></b></p>
+
+                        <div class="mt-6 grid grid-cols-2 gap-3">
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                                <p class="text-xs text-slate-400">實得哩程</p>
+                                <p class="text-2xl font-bold mt-1"><span id="totalMiles">0</span></p>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                                <p class="text-xs text-slate-400">台幣總成本</p>
+                                <p class="text-2xl font-bold mt-1">NT$<span id="totalTwd">0</span></p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-xs text-slate-400 leading-relaxed space-y-1" id="breakdown"></div>
+
+                        <!-- 划算度 -->
+                        <div id="verdict" class="hidden mt-6 pt-6 border-t border-white/10">
+                            <p class="text-slate-400 text-sm">這張機票的每哩價值</p>
+                            <div class="text-3xl font-black mt-1">NT$<span id="valuePerMile">0</span></div>
+                            <div id="verdictBox" class="mt-3 rounded-2xl p-4 font-bold"></div>
+                        </div>
+                    </div>
+
+                    <button type="button" id="addCompare" onclick="addCompare()" class="hidden mt-6 w-full border-2 border-[#cba052] text-[#cba052] font-bold py-3 rounded-full hover:bg-[#cba052] hover:text-[#0a192f] transition">
+                        ＋ 加入下方比較表
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 比較表 -->
+        <section id="compareWrap" class="hidden mt-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold text-[#0a192f] border-l-4 border-[#cba052] pl-3">方案比較</h2>
+                <button type="button" onclick="clearCompare()" class="text-sm text-slate-400 hover:text-slate-600">清除</button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead><tr class="text-left text-slate-500 border-b">
+                        <th class="py-2 pr-4">方案</th><th class="py-2 pr-4">實得哩程</th><th class="py-2 pr-4">台幣總成本</th><th class="py-2">每哩</th>
+                    </tr></thead>
+                    <tbody id="compareBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 說明 -->
+        <section class="mt-8 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-[#0a192f] mb-4 border-l-4 border-[#cba052] pl-3">怎麼算的？</h2>
+            <ul class="list-disc pl-6 space-y-2 text-slate-600 leading-relaxed">
+                <li><b>實得哩程</b>＝購買哩程數 ×（1＋加贈比例）。</li>
+                <li><b>台幣總成本</b>＝購買金額 ×（1－折扣）× 匯率 ×（1＋國外交易手續費）×（1－信用卡回饋）。</li>
+                <li><b>每哩成本</b>＝台幣總成本 ÷ 實得哩程。</li>
+                <li><b>機票每哩價值</b>＝（現金票價－兌換稅金）÷ 兌換所需哩程。每哩價值高於買哩程的成本，買哩程來換這張票才划算。</li>
+                <li>預設匯率為 Mastercard 匯率（<span id="rateDate"></span>），實際刷卡金額依發卡銀行結匯當天的匯率為準，可自行修改。</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-[#0a192f] text-gray-400 py-8 border-t-4 border-[#cba052]">
+        <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="/about.html" class="hover:text-white transition">關於我們</a>
+                <a href="/contact.html" class="hover:text-white transition">聯絡編輯</a>
+                <a href="/privacy.html" class="hover:text-white transition">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mastercard 匯率（由 _data/mastercard_rates.yml 產生）
+        const RATES = {{ site.data.mastercard_rates.rates | jsonify }};
+        const RATE_DATE = "{{ site.data.mastercard_rates.date | date: '%Y/%m/%d' }}";
+
+        const $ = id => document.getElementById(id);
+        const num = id => parseFloat($(id).value) || 0;
+        const fmt = (n, d = 0) => n.toLocaleString("zh-TW", { minimumFractionDigits: d, maximumFractionDigits: d });
+        const compare = [];
+        let last = null;
+
+        function fillCurrencies() {
+            const sel = $("currency");
+            sel.innerHTML = `<option value="TWD">新台幣 TWD</option>` +
+                Object.keys(RATES).map(c => `<option value="${c}">${RATES[c].name} ${c}</option>`).join("");
+            sel.value = "EUR";
+            $("rateDate").textContent = RATE_DATE;
+            setRate();
+        }
+
+        function setRate() {
+            const c = $("currency").value;
+            if (c === "TWD") {
+                $("rate").value = 1; $("rate").readOnly = true;
+                $("rateNote").textContent = "台幣付款不需換匯";
+            } else {
+                $("rate").value = RATES[c].rate; $("rate").readOnly = false;
+                $("rateNote").textContent = `Mastercard 匯率（${RATE_DATE}）`;
+            }
+            calc();
+        }
+
+        function calc() {
+            const price = num("price"), miles = num("miles"), rate = num("rate");
+            if (!price || !miles || !rate) {
+                $("result").classList.add("hidden"); $("placeholder").classList.remove("hidden");
+                $("addCompare").classList.add("hidden"); last = null; return;
+            }
+            const totalMiles = miles * (1 + num("bonus") / 100);
+            const paid = price * (1 - num("discount") / 100);
+            const twdBase = paid * rate;
+            const feeAmt = twdBase * num("fee") / 100;
+            const cashbackAmt = (twdBase + feeAmt) * num("cashback") / 100;
+            const totalTwd = twdBase + feeAmt - cashbackAmt;
+            const perMile = totalTwd / totalMiles;
+            const cur = $("currency").value;
+
+            $("placeholder").classList.add("hidden"); $("result").classList.remove("hidden"); $("addCompare").classList.remove("hidden");
+            $("perMile").textContent = fmt(perMile, 3);
+            $("perK").textContent = fmt(perMile * 1000);
+            $("totalMiles").textContent = fmt(totalMiles);
+            $("totalTwd").textContent = fmt(totalTwd);
+            $("breakdown").innerHTML =
+                `<p>付款金額：${cur === "TWD" ? "NT$" : cur + " "}${fmt(paid, cur === "TWD" ? 0 : 2)}${cur === "TWD" ? "" : `，換算 NT$${fmt(twdBase)}`}</p>` +
+                `<p>國外交易手續費：NT$${fmt(feeAmt)}${cashbackAmt ? `；信用卡回饋：－NT$${fmt(cashbackAmt)}` : ""}</p>`;
+
+            // 划算度
+            const cash = num("cash"), need = num("need"), tax = num("tax");
+            if (cash && need) {
+                const value = (cash - tax) / need;
+                $("verdict").classList.remove("hidden");
+                $("valuePerMile").textContent = fmt(value, 3);
+                const box = $("verdictBox");
+                if (value > perMile) {
+                    const save = (cash - tax) - perMile * need;
+                    box.className = "mt-3 rounded-2xl p-4 font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-400/30";
+                    box.innerHTML = `划算！買 ${fmt(need)} 哩約 NT$${fmt(perMile * need)}，加上稅金，比直接買票省約 NT$${fmt(save)}`;
+                } else {
+                    box.className = "mt-3 rounded-2xl p-4 font-bold bg-rose-500/15 text-rose-300 border border-rose-400/30";
+                    box.innerHTML = `不划算：這張票每哩價值低於買哩程成本，直接買現金票比較省`;
+                }
+            } else {
+                $("verdict").classList.add("hidden");
+            }
+            last = { label: `${cur === "TWD" ? "NT$" : cur + " "}${fmt(paid, cur === "TWD" ? 0 : 2)}／${fmt(totalMiles)} 哩`, totalMiles, totalTwd, perMile };
+        }
+
+        function addCompare() {
+            if (!last) return;
+            compare.push({ ...last });
+            renderCompare();
+        }
+        function clearCompare() { compare.length = 0; renderCompare(); }
+        function renderCompare() {
+            $("compareWrap").classList.toggle("hidden", compare.length === 0);
+            const best = Math.min(...compare.map(r => r.perMile));
+            $("compareBody").innerHTML = compare.map(r => `<tr class="border-b last:border-0 ${r.perMile === best ? "bg-[#faf6ec] font-bold" : ""}">
+                <td class="py-2 pr-4">${r.label}${r.perMile === best ? ' <span class="text-[#a07c34]">最便宜</span>' : ""}</td>
+                <td class="py-2 pr-4">${fmt(r.totalMiles)}</td><td class="py-2 pr-4">NT$${fmt(r.totalTwd)}</td>
+                <td class="py-2">NT$${fmt(r.perMile, 3)}</td></tr>`).join("");
+        }
+
+        function preset(k) {
+            const p = {
+                lh: { price: 2650, currency: "EUR", miles: 150000, bonus: 50, discount: 0 },
+                jx: { price: 786, currency: "TWD", miles: 1000, bonus: 0, discount: 0 }
+            }[k];
+            $("price").value = p.price; $("miles").value = p.miles; $("bonus").value = p.bonus; $("discount").value = p.discount;
+            $("currency").value = p.currency; setRate();
+        }
+
+        ["price", "miles", "bonus", "discount", "rate", "fee", "cashback", "cash", "need", "tax"].forEach(id => $(id).addEventListener("input", calc));
+        $("currency").addEventListener("change", setRate);
+
+        fillCurrencies();
+        try { lucide.createIcons(); } catch (e) {}
+    </script>
+</body>
+</html>
