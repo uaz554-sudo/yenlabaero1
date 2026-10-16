@@ -1,0 +1,68 @@
+# 定時發文：把 _scheduled 資料夾裡到時間的文章移到 _posts，網站上線後自動發社群。
+# 文章開頭加 publish_at（台灣時間），例如 publish_at: 2026-10-16T21:00:00+08:00
+# GitHub 排程可能延遲幾分鐘到十幾分鐘，所以實際上線時間會比 publish_at 稍晚。
+name: 定時發文
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+  pages: write
+
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 找出到時間的文章並移到 _posts
+        id: move
+        run: |
+          shopt -s nullglob
+          now=$(date -u +%s)
+          moved=""
+          for f in _scheduled/*.md; do
+            at=$(awk '/^---$/{c++; next} c==1 && /^publish_at:/{sub(/^publish_at:[[:space:]]*/, ""); gsub(/["\047]/, ""); print; exit}' "$f")
+            if [ -z "$at" ]; then echo "::warning::$f 沒有 publish_at，略過"; continue; fi
+            due=$(date -u -d "$at" +%s)
+            if [ "$due" -le "$now" ]; then
+              name=$(basename "$f")
+              git mv "$f" "_posts/$name"
+              moved="$moved $name"
+              echo "發布：$name（預定 $at）"
+            else
+              echo "還沒到時間：$(basename "$f")（預定 $at）"
+            fi
+          done
+          echo "moved=$moved" >> "$GITHUB_OUTPUT"
+
+      - name: 提交到 main
+        if: steps.move.outputs.moved != ''
+        run: |
+          git config user.name "顏究所定時發文"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "定時發文：${{ steps.move.outputs.moved }}"
+          git push
+          # 保險起見主動要求 GitHub Pages 重新建置網站
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "::warning::無法觸發 Pages 建置，等待自動建置"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: 觸發社群自動發文
+        if: steps.move.outputs.moved != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MOVED: ${{ steps.move.outputs.moved }}
+        run: |
+          # 用 GITHUB_TOKEN 推送不會觸發其他工作流程，所以這裡手動觸發社群發文
+          for name in $MOVED; do
+            gh workflow run social-publish.yml --ref main -f post="$name"
+          done
