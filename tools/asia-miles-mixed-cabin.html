@@ -1,0 +1,898 @@
+---
+layout: null
+permalink: /tools/asia-miles-mixed-cabin
+title: Asia Miles 混艙哩程計算機
+---
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia Miles 混艙哩程計算機 | 顏究所 YEN LAB AERO</title>
+    <meta name="description" content="國泰航空亞洲萬里通（Asia Miles）混艙兌換哩程計算機：選擇航點與艙等，自動計算經香港轉機的混艙開票所需哩程。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="顏究所 YEN LAB AERO">
+    <meta property="og:title" content="Asia Miles 混艙哩程計算機">
+    <meta property="og:description" content="選擇航點與艙等，自動計算國泰亞洲萬里通混艙開票所需哩程。">
+    <meta property="og:url" content="https://yenlabaero.com/tools/asia-miles-mixed-cabin">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: "Noto Sans TC", sans-serif; }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type="number"] { -moz-appearance: textfield; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 8px;}
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px;}
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+    {% include analytics.html %}
+</head>
+<body class="bg-[#f0f4f8] text-slate-800 min-h-screen flex flex-col">
+
+    <!-- 導覽列 -->
+    <nav class="bg-[#0a192f] text-white p-4 shadow-md sticky top-0 z-[60]">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center">
+            <a href="/" class="text-2xl font-serif font-bold text-[#cba052] flex items-baseline">
+                YEN LAB AERO <span class="text-white text-lg ml-2 font-sans">顏究所</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="/aviation.html" class="hover:text-[#cba052] transition">航空資訊</a>
+                <a href="/mileage.html" class="hover:text-[#cba052] transition">哩程資訊</a>
+                <a href="/hotel.html" class="hover:text-[#cba052] transition">飯店資訊</a>
+                <a href="/credit.html" class="hover:text-[#cba052] transition">信用卡</a>
+                <a href="/tools/asia-miles-mixed-cabin" class="text-[#cba052] transition">哩程工具</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 標題 -->
+    <header class="bg-gradient-to-r from-[#0a192f] to-[#13294b] text-white border-b-4 border-[#cba052]">
+        <div class="max-w-6xl mx-auto px-4 py-8 md:py-10">
+            <p class="text-[#cba052] text-sm font-bold tracking-widest mb-2">哩程工具</p>
+            <h1 class="text-2xl md:text-4xl font-black tracking-wide flex items-center gap-3">
+                <i data-lucide="plane" class="w-8 h-8 text-[#cba052]"></i>Asia Miles 混艙哩程計算機
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base mt-3">國泰亞洲萬里通基礎兌換表格・經香港轉機的混艙開票・支援航點搜尋</p>
+        </div>
+    </header>
+
+    <div class="flex-grow pb-12">
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 mt-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- 左側：輸入表單 -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <!-- 介紹與開關區塊 -->
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="flex-1">
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            請選擇航點（<strong class="text-[#a07c34]">可直接輸入代碼或名稱查找</strong>），系統將自動限制轉機點為香港。你也可以不選航點，手動輸入距離計算。
+                        </p>
+                    </div>
+                    <label class="inline-flex relative items-center cursor-pointer shrink-0">
+                        <input type="checkbox" id="customBase" class="sr-only peer" onchange="toggleCustom(); calculate()">
+                        <div class="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#cba052]"></div>
+                        <span class="ml-3 text-sm font-bold text-slate-700">自訂基準哩程</span>
+                    </label>
+                </div>
+
+                <!-- 第一段航程 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-[#cba052]"></div>
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                        <span class="bg-[#f6efe0] text-[#8a6a2a] w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">1</span>
+                        第一段航程
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- 自訂智慧下拉選單 1-起 -->
+                            <div class="relative" id="wrapper-origin1">
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">起飛航點</label>
+                                <input type="text" id="input-origin1" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] outline-none transition placeholder-slate-400 cursor-text" placeholder="輸入名稱或代碼" autocomplete="off" oninput="filterOptions('origin1')" onclick="toggleDropdown('origin1', true)">
+                                <i data-lucide="chevron-down" class="absolute right-3 top-9 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                                <input type="hidden" id="origin1">
+                                <div id="dropdown-origin1" class="absolute z-50 w-full mt-1 bg-white border border-slate-200 rounded-xl shadow-xl max-h-64 overflow-y-auto hidden custom-scrollbar"></div>
+                            </div>
+                            <!-- 自訂智慧下拉選單 1-迄 -->
+                            <div class="relative" id="wrapper-dest1">
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">抵達航點</label>
+                                <input type="text" id="input-dest1" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] outline-none transition placeholder-slate-400 cursor-text" placeholder="輸入名稱或代碼" autocomplete="off" oninput="filterOptions('dest1')" onclick="toggleDropdown('dest1', true)">
+                                <i data-lucide="chevron-down" class="absolute right-3 top-9 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                                <input type="hidden" id="dest1">
+                                <div id="dropdown-dest1" class="absolute z-50 w-full mt-1 bg-white border border-slate-200 rounded-xl shadow-xl max-h-64 overflow-y-auto hidden custom-scrollbar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1 flex items-center justify-between">
+                                飛行距離 (miles)
+                                <span class="text-[10px] font-normal text-[#8a6a2a] bg-[#f6efe0] px-1.5 py-0.5 rounded">可手動修正</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="dist1" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] focus:bg-white outline-none transition" placeholder="自動計算或手動" oninput="calculate()">
+                                <span class="absolute right-3 top-2.5 text-slate-400 text-sm font-medium">mi</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">客艙級別</label>
+                            <div class="relative">
+                                <select id="cabin1" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] focus:bg-white outline-none transition appearance-none" onchange="calculate()">
+                                    <option value="eco">經濟艙 (Economy)</option>
+                                    <option value="pey">特選經濟艙 (Premium Eco)</option>
+                                    <option value="biz">商務艙 (Business)</option>
+                                    <option value="fir" selected>頭等艙 (First)</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-3 top-3 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 mt-2">
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">對應總距離級距的基準哩數 (可開啟右上角自訂)</label>
+                            <input type="number" id="base1" class="w-full px-4 py-2 border border-slate-200 bg-slate-100 text-slate-500 rounded-xl outline-none transition" readonly oninput="calculate()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第二段航程 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-[#cba052]"></div>
+                    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+                        <span class="bg-[#f6efe0] text-[#8a6a2a] w-6 h-6 rounded-full flex items-center justify-center text-sm mr-2">2</span>
+                        第二段航程
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- 自訂智慧下拉選單 2-起 -->
+                            <div class="relative" id="wrapper-origin2">
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">起飛航點</label>
+                                <input type="text" id="input-origin2" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] outline-none transition placeholder-slate-400 cursor-text" placeholder="輸入名稱或代碼" autocomplete="off" oninput="filterOptions('origin2')" onclick="toggleDropdown('origin2', true)">
+                                <i data-lucide="chevron-down" class="absolute right-3 top-9 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                                <input type="hidden" id="origin2">
+                                <div id="dropdown-origin2" class="absolute z-50 w-full mt-1 bg-white border border-slate-200 rounded-xl shadow-xl max-h-64 overflow-y-auto hidden custom-scrollbar"></div>
+                            </div>
+                            <!-- 自訂智慧下拉選單 2-迄 -->
+                            <div class="relative" id="wrapper-dest2">
+                                <label class="block text-sm font-semibold text-slate-700 mb-1">抵達航點</label>
+                                <input type="text" id="input-dest2" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] outline-none transition placeholder-slate-400 cursor-text" placeholder="輸入名稱或代碼" autocomplete="off" oninput="filterOptions('dest2')" onclick="toggleDropdown('dest2', true)">
+                                <i data-lucide="chevron-down" class="absolute right-3 top-9 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                                <input type="hidden" id="dest2">
+                                <div id="dropdown-dest2" class="absolute z-50 w-full mt-1 bg-white border border-slate-200 rounded-xl shadow-xl max-h-64 overflow-y-auto hidden custom-scrollbar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1 flex items-center justify-between">
+                                飛行距離 (miles)
+                                <span class="text-[10px] font-normal text-[#8a6a2a] bg-[#f6efe0] px-1.5 py-0.5 rounded">可手動修正</span>
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="dist2" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] focus:bg-white outline-none transition" placeholder="自動計算或手動" oninput="calculate()">
+                                <span class="absolute right-3 top-2.5 text-slate-400 text-sm font-medium">mi</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">客艙級別</label>
+                            <div class="relative">
+                                <select id="cabin2" class="w-full pl-4 pr-10 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#cba052] focus:border-[#cba052] focus:bg-white outline-none transition appearance-none" onchange="calculate()">
+                                    <option value="eco" selected>經濟艙 (Economy)</option>
+                                    <option value="pey">特選經濟艙 (Premium Eco)</option>
+                                    <option value="biz">商務艙 (Business)</option>
+                                    <option value="fir">頭等艙 (First)</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-3 top-3 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 mt-2">
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">對應總距離級距的基準哩數 (可開啟右上角自訂)</label>
+                            <input type="number" id="base2" class="w-full px-4 py-2 border border-slate-200 bg-slate-100 text-slate-500 rounded-xl outline-none transition" readonly oninput="calculate()">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 參考文章按鈕 -->
+                <div class="mt-8 pt-6 border-t border-slate-200 flex justify-center sm:justify-start">
+                    <a href="https://www.scottt.org/cathay-pacific-asia-miles-mixed-cabin/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-[#faf6ec] hover:bg-[#f6efe0] text-[#0a192f] border border-[#e6d3a8] font-bold px-6 py-3 rounded-full shadow-sm transition-transform hover:scale-105">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                        <span>完整教學：Asia Miles 混艙大法</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 右側：計算結果面板 -->
+            <div class="lg:col-span-5">
+                <div class="bg-gradient-to-br from-[#0a192f] to-[#06101f] text-white p-6 md:p-8 rounded-3xl shadow-xl lg:sticky lg:top-8 flex flex-col min-h-[320px] lg:min-h-[480px]">
+                    
+                    <h2 class="text-xl font-bold mb-6 flex items-center text-[#cba052]">
+                        <i data-lucide="calculator" class="mr-2"></i> 計算結果
+                    </h2>
+
+                    <!-- 尚未輸入時顯示 -->
+                    <div id="placeholder" class="flex-1 flex flex-col items-center justify-center text-slate-400/70 text-center">
+                        <i data-lucide="plane" class="w-16 h-16 mb-4 opacity-50 text-[#cba052]"></i>
+                        <p class="text-lg font-medium text-slate-300">等待輸入資訊</p>
+                        <p class="text-sm mt-2">選擇航點或輸入航距，結果將即時顯示</p>
+                    </div>
+
+                    <!-- 有資料時顯示 -->
+                    <div id="result" class="hidden flex-1 flex flex-col">
+                        
+                        <!-- 總距離與級別 -->
+                        <div class="bg-slate-800/80 rounded-2xl p-4 mb-6 border border-slate-700">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-slate-400 text-sm">單程總距離</span>
+                                <span class="text-[#cba052] text-sm font-bold bg-[#cba052]/15 px-2 py-1 rounded" id="resCategory">短途 - 類別 2</span>
+                            </div>
+                            <div class="text-3xl font-bold"><span id="resTotalDist">0</span> <span class="text-lg font-medium text-slate-400">mi</span></div>
+                        </div>
+
+                        <!-- 運算細節 -->
+                        <div class="space-y-4 flex-1">
+                            
+                            <!-- 段1結果 -->
+                            <div id="resBox1" class="relative pl-4 border-l-2 border-[#cba052]/50">
+                                <p class="text-sm font-medium text-slate-300 mb-1 flex justify-between">
+                                    <span>段1 (<span id="resCabin1">頭等艙</span>) 所佔比例</span>
+                                    <span class="text-[#cba052]"><span id="resRatio1">0</span>%</span>
+                                </p>
+                                <p class="text-xs text-slate-400 mb-1">
+                                    <span id="resDist1">0</span> / <span class="resTotalDistText">0</span> × <span id="resBase1">0</span> 哩
+                                </p>
+                                <p class="text-lg font-bold">小計: <span id="resReq1">0</span> 哩</p>
+                            </div>
+
+                            <!-- 段2結果 -->
+                            <div id="resBox2" class="relative pl-4 border-l-2 border-[#cba052]/50 hidden">
+                                <p class="text-sm font-medium text-slate-300 mb-1 flex justify-between">
+                                    <span>段2 (<span id="resCabin2">經濟艙</span>) 所佔比例</span>
+                                    <span class="text-[#cba052]"><span id="resRatio2">0</span>%</span>
+                                </p>
+                                <p class="text-xs text-slate-400 mb-1">
+                                    <span id="resDist2">0</span> / <span class="resTotalDistText">0</span> × <span id="resBase2">0</span> 哩
+                                </p>
+                                <p class="text-lg font-bold">小計: <span id="resReq2">0</span> 哩</p>
+                            </div>
+                        </div>
+
+                        <!-- 總計 -->
+                        <div class="mt-8 pt-6 border-t border-slate-700">
+                            <p class="text-slate-400 text-sm font-medium mb-1">所需總哩程 (末兩位自動抹零)</p>
+                            <div class="text-4xl md:text-5xl font-bold text-[#cba052] flex items-end">
+                                <span id="resTotalMiles">0</span>
+                                <span class="text-lg md:text-xl text-slate-400 ml-2 mb-1">Miles</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- 抖內按鈕 -->
+                    <div class="mt-8 flex justify-center shrink-0">
+                        <a href="https://buymeacoffee.com/yen.travel" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-[#FFDD00] hover:bg-[#ffea5c] text-slate-900 font-bold px-8 py-3 rounded-full shadow-lg transition-transform hover:scale-105">
+                            <i data-lucide="coffee" class="w-5 h-5"></i>
+                            <span>支持作者・請我喝杯咖啡</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // --- 航點資料庫 ---
+        const airportData = {
+            "台港澳": {
+                "HKG": { name: "香港", lat: 22.3089, lon: 113.9146 },
+                "TPE": { name: "台北桃園", lat: 25.0777, lon: 121.2328 },
+                "KHH": { name: "高雄", lat: 22.5771, lon: 120.3500 }
+            },
+            "日本": {
+                "NRT": { name: "東京成田", lat: 35.7647, lon: 140.3863 },
+                "HND": { name: "東京羽田", lat: 35.5522, lon: 139.7796 },
+                "KIX": { name: "大阪關西", lat: 34.4273, lon: 135.2440 },
+                "NGO": { name: "名古屋", lat: 34.8583, lon: 136.8054 },
+                "CTS": { name: "札幌", lat: 42.7752, lon: 141.6923 },
+                "FUK": { name: "福岡", lat: 33.5859, lon: 130.4507 }
+            },
+            "韓國": {
+                "ICN": { name: "首爾仁川", lat: 37.4692, lon: 126.4510 }
+            },
+            "中國大陸": {
+                "PEK": { name: "北京首都", lat: 40.0799, lon: 116.6031 },
+                "PKX": { name: "北京大興", lat: 39.5097, lon: 116.4106 },
+                "PVG": { name: "上海浦東", lat: 31.1443, lon: 121.8083 },
+                "SHA": { name: "上海虹橋", lat: 31.1979, lon: 121.3363 },
+                "CAN": { name: "廣州", lat: 23.3924, lon: 113.2988 },
+                "TFU": { name: "成都天府", lat: 30.2736, lon: 104.4419 },
+                "CKG": { name: "重慶", lat: 29.7192, lon: 106.6417 },
+                "HGH": { name: "杭州", lat: 30.2295, lon: 120.4345 },
+                "NKG": { name: "南京", lat: 31.7420, lon: 118.8620 },
+                "TAO": { name: "青島", lat: 36.2661, lon: 120.1214 },
+                "WUH": { name: "武漢", lat: 30.7838, lon: 114.2081 },
+                "XMN": { name: "廈門", lat: 24.5440, lon: 118.1277 },
+                "XIY": { name: "西安", lat: 34.4471, lon: 108.7516 },
+                "CGO": { name: "鄭州", lat: 34.5197, lon: 113.8409 },
+                "WNZ": { name: "溫州", lat: 27.9122, lon: 120.8520 },
+                "URC": { name: "烏魯木齊", lat: 43.9071, lon: 87.4743 }
+            },
+            "東南亞": {
+                "BKK": { name: "曼谷蘇凡納布", lat: 13.6811, lon: 100.7470 },
+                "HKT": { name: "普吉島", lat: 8.1132, lon: 98.3169 },
+                "SIN": { name: "新加坡", lat: 1.3644, lon: 103.9915 },
+                "KUL": { name: "吉隆坡", lat: 2.7456, lon: 101.7099 },
+                "PEN": { name: "檳城", lat: 5.2971, lon: 100.2769 },
+                "SGN": { name: "胡志明市", lat: 10.8188, lon: 106.6519 },
+                "HAN": { name: "河內", lat: 21.2212, lon: 105.8072 },
+                "MNL": { name: "馬尼拉", lat: 14.5086, lon: 121.0194 },
+                "CEB": { name: "宿霧", lat: 10.3075, lon: 123.9790 },
+                "CGK": { name: "雅加達", lat: -6.1256, lon: 106.6558 },
+                "DPS": { name: "峇里島", lat: -8.7482, lon: 115.1670 },
+                "SUB": { name: "泗水", lat: -7.3798, lon: 112.7840 },
+                "PNH": { name: "金邊", lat: 11.5466, lon: 104.8440 }
+            },
+            "南亞與中東": {
+                "DEL": { name: "德里", lat: 28.5562, lon: 77.1000 },
+                "BOM": { name: "孟買", lat: 19.0887, lon: 72.8679 },
+                "MAA": { name: "真奈", lat: 12.9822, lon: 80.1636 },
+                "BLR": { name: "班加羅爾", lat: 13.1994, lon: 77.7066 },
+                "HYD": { name: "海得拉巴", lat: 17.2313, lon: 78.4299 },
+                "DAC": { name: "達卡", lat: 23.8433, lon: 90.4013 },
+                "KTM": { name: "加德滿都", lat: 27.6966, lon: 85.3592 },
+                "CMB": { name: "可倫坡", lat: 7.1803, lon: 79.8833 },
+                "DXB": { name: "杜拜", lat: 25.2528, lon: 55.3644 },
+                "RUH": { name: "利雅德", lat: 24.9576, lon: 46.6988 }
+            },
+            "歐洲": {
+                "LHR": { name: "倫敦", lat: 51.4700, lon: -0.4543 },
+                "MAN": { name: "曼徹斯頓", lat: 53.3537, lon: -2.2749 },
+                "CDG": { name: "巴黎", lat: 49.0097, lon: 2.5479 },
+                "FRA": { name: "法蘭克福", lat: 50.0333, lon: 8.5706 },
+                "MUC": { name: "慕尼黑", lat: 48.3538, lon: 11.7861 },
+                "AMS": { name: "阿姆斯特丹", lat: 52.3086, lon: 4.7639 },
+                "MAD": { name: "馬德里", lat: 40.4936, lon: -3.5668 },
+                "BCN": { name: "巴賽隆納", lat: 41.2971, lon: 2.0785 },
+                "ZRH": { name: "蘇黎世", lat: 47.4647, lon: 8.5492 },
+                "MXP": { name: "米蘭", lat: 45.6306, lon: 8.7281 },
+                "FCO": { name: "羅馬", lat: 41.8003, lon: 12.2389 },
+                "BRU": { name: "比利時", lat: 50.9014, lon: 4.4844 }
+            },
+            "北美洲": {
+                "YYZ": { name: "多倫多", lat: 43.6777, lon: -79.6248 },
+                "YVR": { name: "溫哥華", lat: 49.1967, lon: -123.1815 },
+                "BOS": { name: "波士頓", lat: 42.3656, lon: -71.0096 },
+                "LAX": { name: "洛杉磯", lat: 33.9416, lon: -118.4085 },
+                "SFO": { name: "舊金山", lat: 37.6189, lon: -122.3750 },
+                "JFK": { name: "紐約", lat: 40.6413, lon: -73.7781 },
+                "ORD": { name: "芝加哥", lat: 41.9742, lon: -87.9073 },
+                "SEA": { name: "西雅圖", lat: 47.4489, lon: -122.3094 },
+                "DFW": { name: "達拉斯", lat: 32.8998, lon: -97.0403 }
+            },
+            "大洋洲": {
+                "SYD": { name: "雪梨", lat: -33.9461, lon: 151.1772 },
+                "MEL": { name: "墨爾本", lat: -37.6690, lon: 144.8410 },
+                "BNE": { name: "布里斯本", lat: -27.3842, lon: 153.1175 },
+                "PER": { name: "伯斯", lat: -31.9403, lon: 115.9670 },
+                "ADL": { name: "阿德雷德", lat: -34.9450, lon: 138.5310 },
+                "CNS": { name: "凱恩斯", lat: -16.8858, lon: 145.7550 },
+                "AKL": { name: "奧克蘭", lat: -37.0082, lon: 174.7925 },
+                "CHC": { name: "基督城", lat: -43.4894, lon: 172.5320 }
+            },
+            "非洲": {
+                "JNB": { name: "約翰尼斯堡", lat: -26.1392, lon: 28.2460 }
+            }
+        };
+
+        const airportsMap = {};
+        for (const region in airportData) {
+            for (const code in airportData[region]) {
+                airportsMap[code] = airportData[region][code];
+            }
+        }
+
+        // --- 自訂智慧搜尋下拉選單 (解決原生 Select 限制) ---
+        let currentOpenDropdown = null;
+
+        // 狀態管理：管理哪些選項被鎖定 (例如不允許選 HKG)
+        const selectConfig = {
+            origin1: { disabled: false, disabledOptions: [] },
+            dest1:   { disabled: false, disabledOptions: [] },
+            origin2: { disabled: false, disabledOptions: [] },
+            dest2:   { disabled: false, disabledOptions: [] }
+        };
+
+        // 渲染選單內容，支援文字搜尋
+        function renderDropdownList(id, filterText) {
+            const dropdownEl = document.getElementById('dropdown-' + id);
+            if (!dropdownEl) return;
+
+            let html = '';
+            const search = filterText.trim().toLowerCase();
+            
+            for (const region in airportData) {
+                let hasMatch = false;
+                let groupHtml = `<div class="px-3 py-1.5 bg-slate-100 text-[#0a192f] font-bold text-xs sticky top-0 border-b border-slate-200">${region}</div>`;
+                
+                for (const code in airportData[region]) {
+                    const item = airportData[region][code];
+                    const text = `${code} - ${item.name}`;
+                    
+                    // 檢查是否符合搜尋條件
+                    if (search === '' || text.toLowerCase().includes(search) || region.toLowerCase().includes(search)) {
+                        // 檢查是否被國泰規則禁用
+                        const isDisabled = selectConfig[id].disabledOptions.includes(code);
+                        const disabledClass = isDisabled ? 'opacity-40 cursor-not-allowed bg-slate-50' : 'hover:bg-[#faf6ec] cursor-pointer text-slate-700';
+                        const clickEvent = isDisabled ? '' : `onclick="selectOption('${id}', '${code}', '${item.name}')"`;
+                        
+                        groupHtml += `<div class="px-3 py-2.5 text-sm transition-colors ${disabledClass}" ${clickEvent}>${text}</div>`;
+                        hasMatch = true;
+                    }
+                }
+                if (hasMatch) {
+                    html += groupHtml;
+                }
+            }
+            
+            if (!html) html = `<div class="px-3 py-4 text-sm text-slate-500 text-center">查無符合的航點</div>`;
+            dropdownEl.innerHTML = html;
+        }
+
+        function buildDropdowns() {
+            ['origin1', 'dest1', 'origin2', 'dest2'].forEach(id => {
+                renderDropdownList(id, '');
+            });
+        }
+
+        // 開啟/關閉下拉選單
+        function toggleDropdown(id, show) {
+            if (selectConfig[id].disabled) return; // 若整個欄位被禁用則不反應
+            
+            const dropdownEl = document.getElementById('dropdown-' + id);
+            const inputEl = document.getElementById('input-' + id);
+            if (!dropdownEl || !inputEl) return;
+
+            if (show) {
+                if (currentOpenDropdown && currentOpenDropdown !== id) {
+                    toggleDropdown(currentOpenDropdown, false);
+                }
+                inputEl.value = ''; // 清空讓使用者直接打字
+                renderDropdownList(id, ''); // 展開全部
+                dropdownEl.classList.remove('hidden');
+                currentOpenDropdown = id;
+            } else {
+                dropdownEl.classList.add('hidden');
+                // 恢復顯示選中的值
+                const hiddenValue = document.getElementById(id).value;
+                if (hiddenValue && airportsMap[hiddenValue]) {
+                    inputEl.value = `${hiddenValue} - ${airportsMap[hiddenValue].name}`;
+                } else {
+                    inputEl.value = '';
+                }
+                if (currentOpenDropdown === id) currentOpenDropdown = null;
+            }
+        }
+
+        // 過濾選單
+        function filterOptions(id) {
+            const inputEl = document.getElementById('input-' + id);
+            const dropdownEl = document.getElementById('dropdown-' + id);
+            if (!inputEl || !dropdownEl) return;
+            
+            dropdownEl.classList.remove('hidden');
+            currentOpenDropdown = id;
+            renderDropdownList(id, inputEl.value);
+        }
+
+        // 使用者點擊選項
+        function selectOption(id, code, name) {
+            const hiddenEl = document.getElementById(id);
+            const inputEl = document.getElementById('input-' + id);
+            if (!hiddenEl || !inputEl) return;
+
+            hiddenEl.value = code;
+            inputEl.value = `${code} - ${name}`;
+            toggleDropdown(id, false);
+
+            enforceRouting(id); // 觸發連動邏輯
+        }
+
+        // 點擊外部關閉選單
+        document.addEventListener('click', (e) => {
+            if (currentOpenDropdown) {
+                const wrapper = document.getElementById('wrapper-' + currentOpenDropdown);
+                if (wrapper && !wrapper.contains(e.target)) {
+                    toggleDropdown(currentOpenDropdown, false);
+                }
+            }
+        });
+
+        // --- 核心邏輯：控制國泰航空轉機限制 ---
+        // 設定單一輸入框的禁用狀態與強制值
+        function setInputDisabled(id, disabled, forceValue = null) {
+            const inputEl = document.getElementById('input-' + id);
+            const hiddenEl = document.getElementById(id);
+            if (!inputEl || !hiddenEl) return;
+
+            selectConfig[id].disabled = disabled;
+            inputEl.readOnly = disabled;
+            
+            if (disabled) {
+                inputEl.classList.add('bg-slate-200', 'text-slate-500', 'cursor-not-allowed', 'opacity-70');
+                inputEl.classList.remove('bg-white', 'cursor-text');
+            } else {
+                inputEl.classList.remove('bg-slate-200', 'text-slate-500', 'cursor-not-allowed', 'opacity-70');
+                inputEl.classList.add('bg-slate-50', 'cursor-text');
+            }
+
+            if (forceValue !== null) {
+                if (forceValue === '') {
+                    hiddenEl.value = '';
+                    inputEl.value = '';
+                } else if (airportsMap[forceValue]) {
+                    hiddenEl.value = forceValue;
+                    inputEl.value = `${forceValue} - ${airportsMap[forceValue].name}`;
+                }
+            }
+        }
+
+        function enforceRouting(triggerId) {
+            const o1 = document.getElementById('origin1')?.value || '';
+            const d1 = document.getElementById('dest1')?.value || '';
+            
+            if (triggerId === 'origin1') {
+                if (o1 === 'HKG') {
+                    // 情境 B：從香港出發
+                    setInputDisabled('dest1', false);
+                    selectConfig.dest1.disabledOptions = ['HKG']; // 目的地不可是香港
+                    if (d1 === 'HKG') setInputDisabled('dest1', false, '');
+
+                    setInputDisabled('origin2', true, d1); // 段2起 綁定 段1迄
+                    setInputDisabled('dest2', true, 'HKG'); // 段2迄 綁定 回香港
+                } else if (o1 !== '') {
+                    // 情境 A：非香港出發
+                    setInputDisabled('dest1', true, 'HKG');
+                    setInputDisabled('origin2', true, 'HKG');
+                    
+                    setInputDisabled('dest2', false);
+                    selectConfig.dest2.disabledOptions = ['HKG'];
+                    const d2 = document.getElementById('dest2')?.value || '';
+                    if (d2 === 'HKG') setInputDisabled('dest2', false, '');
+                } else {
+                    // 清空情境
+                    setInputDisabled('dest1', false, '');
+                    selectConfig.dest1.disabledOptions = [];
+                    setInputDisabled('origin2', false, '');
+                    selectConfig.origin2.disabledOptions = [];
+                    setInputDisabled('dest2', false, '');
+                    selectConfig.dest2.disabledOptions = [];
+                }
+            } else if (triggerId === 'dest1') {
+                if (o1 === 'HKG') {
+                    setInputDisabled('origin2', true, d1);
+                    setInputDisabled('dest2', true, 'HKG');
+                }
+            }
+
+            buildDropdowns(); // 重新渲染下拉選單，套用 disabled 樣式
+            updateDistance(1);
+            updateDistance(2);
+        }
+
+        // --- 官方 TPM 精確距離字典 (優先使用此資料表，沒有才用經緯度算) ---
+        const tpmData = {
+            "HKG-TPE": 501,
+            "HKG-KHH": 412,
+            "HKG-NRT": 1842,
+            "HKG-HND": 1805,
+            "HKG-KIX": 1539,
+            "HKG-NGO": 1624,
+            "HKG-CTS": 2131,
+            "HKG-FUK": 1275,
+            "HKG-ICN": 1284,
+            "HKG-PEK": 1234,
+            "HKG-PVG": 779,
+            "HKG-SHA": 770,
+            "HKG-BKK": 1049,
+            "HKG-SIN": 1587,
+            "HKG-KUL": 1569,
+            "HKG-LHR": 5994,
+            "HKG-CDG": 5972,
+            "HKG-FRA": 5697,
+            "HKG-AMS": 5760,
+            "HKG-JFK": 8072,
+            "HKG-LAX": 7260,
+            "HKG-SFO": 6927,
+            "HKG-YVR": 6398,
+            "HKG-YYZ": 7810,
+            "HKG-SYD": 4581,
+            "HKG-MEL": 4604,
+            "HKG-BNE": 4253,
+            "HKG-AKL": 5688
+        };
+
+        // 依據經緯度計算大圓距離
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 3958.7558657; 
+            const rLat1 = lat1 * (Math.PI/180);
+            const rLat2 = lat2 * (Math.PI/180);
+            const dLat = (lat2-lat1) * (Math.PI/180);
+            const dLon = (lon2-lon1) * (Math.PI/180);
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                      Math.cos(rLat1) * Math.cos(rLat2) *
+                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return Math.round(R * c);
+        }
+
+        function updateDistance(segment) {
+            const originEl = document.getElementById('origin' + segment);
+            const destEl = document.getElementById('dest' + segment);
+            
+            if (!originEl || !destEl) return;
+
+            const originCode = originEl.value;
+            const destCode = destEl.value;
+            
+            if (originCode && destCode && airportsMap[originCode] && airportsMap[destCode]) {
+                const route1 = `${originCode}-${destCode}`;
+                const route2 = `${destCode}-${originCode}`;
+                let finalDist = 0;
+
+                if (tpmData[route1]) {
+                    finalDist = tpmData[route1];
+                } else if (tpmData[route2]) {
+                    finalDist = tpmData[route2];
+                } else {
+                    finalDist = calculateDistance(
+                        airportsMap[originCode].lat, airportsMap[originCode].lon,
+                        airportsMap[destCode].lat, airportsMap[destCode].lon
+                    );
+                }
+
+                const distEl = document.getElementById('dist' + segment);
+                if(distEl) distEl.value = finalDist;
+            } else {
+                const distEl = document.getElementById('dist' + segment);
+                if(distEl) distEl.value = '';
+            }
+            calculate(); 
+        }
+
+        // 國泰 Asia Miles 基礎兌換表格
+        const amChart = [
+            { name: "超短途 (1-750mi)", max: 750, eco: 7000, pey: 11000, biz: 16000, fir: 25000 },
+            { name: "短途 - 類別 1 (中/韓/東南亞)", max: 2750, eco: 9000, pey: 18000, biz: 27000, fir: 43000, type: 1 },
+            { name: "短途 - 類別 2 (日/印尼/南亞)", max: 2750, eco: 13000, pey: 23000, biz: 32000, fir: 50000, type: 2 },
+            { name: "中途", max: 5000, eco: 20000, pey: 38000, biz: 60000, fir: 90000 },
+            { name: "長途 - 歐洲", max: 7500, eco: 27000, pey: 50000, biz: 91000, fir: 125000, type: 'europe' },
+            { name: "長途 - 類別 1 (其他)", max: 7500, eco: 27000, pey: 50000, biz: 91000, fir: 125000, type: 3 },
+            { name: "超長途 (>7500mi)", max: 999999, eco: 38000, pey: 75000, biz: 119000, fir: 160000 }
+        ];
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function getCabinText(selectId) {
+            const sel = document.getElementById(selectId);
+            if (!sel || sel.selectedIndex === -1) return '';
+            let text = sel.options[sel.selectedIndex].text;
+            return text.split(' ')[0]; 
+        }
+
+        function toggleCustom() {
+            const isCustom = document.getElementById('customBase')?.checked;
+            const b1 = document.getElementById('base1');
+            const b2 = document.getElementById('base2');
+            
+            if (!b1 || !b2) return;
+
+            if (isCustom) {
+                b1.readOnly = false;
+                b2.readOnly = false;
+                b1.classList.remove('bg-slate-100', 'text-slate-500');
+                b2.classList.remove('bg-slate-100', 'text-slate-500');
+                b1.classList.add('bg-white', 'focus:ring-2', 'focus:ring-[#cba052]', 'focus:border-[#cba052]', 'text-slate-800');
+                b2.classList.add('bg-white', 'focus:ring-2', 'focus:ring-[#cba052]', 'focus:border-[#cba052]', 'text-slate-800');
+            } else {
+                b1.readOnly = true;
+                b2.readOnly = true;
+                b1.classList.add('bg-slate-100', 'text-slate-500');
+                b2.classList.add('bg-slate-100', 'text-slate-500');
+                b1.classList.remove('bg-white', 'focus:ring-2', 'focus:ring-[#cba052]', 'focus:border-[#cba052]', 'text-slate-800');
+                b2.classList.remove('bg-white', 'focus:ring-2', 'focus:ring-[#cba052]', 'focus:border-[#cba052]', 'text-slate-800');
+            }
+        }
+
+        function calculate() {
+            const dist1El = document.getElementById('dist1');
+            const dist2El = document.getElementById('dist2');
+            const cabin1El = document.getElementById('cabin1');
+            const cabin2El = document.getElementById('cabin2');
+            const base1El = document.getElementById('base1');
+            const base2El = document.getElementById('base2');
+
+            // 防呆：確保所有需要的 DOM 都存在
+            if (!dist1El || !dist2El || !cabin1El || !cabin2El || !base1El || !base2El) return;
+
+            const d1 = parseFloat(dist1El.value) || 0;
+            const c1 = cabin1El.value; 
+            
+            const d2 = parseFloat(dist2El.value) || 0;
+            const c2 = cabin2El.value;
+
+            const isCustom = document.getElementById('customBase')?.checked || false;
+            
+            const totalDist = d1 + d2;
+            let category = amChart[amChart.length - 1]; 
+            
+            const type2Airports = [
+                "FUK", "KIX", "NGO", "NRT", "HND", "CTS", 
+                "DEL", "BOM", "BLR", "MAA", "HYD", "DAC", "KTM", "CMB",        
+                "CGK", "DPS", "SUB"                                            
+            ];
+            const europeAirports = [
+                "LHR", "MAN", "CDG", "FRA", "MUC", "AMS", "MAD", "BCN", "ZRH", "MXP", "FCO", "BRU"
+            ];
+            
+            const selO1 = document.getElementById('origin1')?.value || '';
+            const selD1 = document.getElementById('dest1')?.value || '';
+            const selO2 = document.getElementById('origin2')?.value || '';
+            const selD2 = document.getElementById('dest2')?.value || '';
+            
+            const isType2 = type2Airports.includes(selO1) || type2Airports.includes(selD1) || 
+                            type2Airports.includes(selO2) || type2Airports.includes(selD2);
+                            
+            const isEurope = europeAirports.includes(selO1) || europeAirports.includes(selD1) || 
+                             europeAirports.includes(selO2) || europeAirports.includes(selD2);
+
+            for (let i = 0; i < amChart.length; i++) {
+                if (totalDist <= amChart[i].max) {
+                    if (amChart[i].max === 2750) {
+                        if (isType2 && amChart[i].type === 2) {
+                            category = amChart[i]; break;
+                        } else if (!isType2 && amChart[i].type === 1) {
+                            category = amChart[i]; break;
+                        }
+                    } else if (amChart[i].max === 7500) {
+                        if (isEurope && amChart[i].type === 'europe') {
+                            category = amChart[i]; break;
+                        } else if (!isEurope && amChart[i].type === 3) {
+                            category = amChart[i]; break;
+                        }
+                    } else {
+                        category = amChart[i]; break;
+                    }
+                }
+            }
+            
+            let defaultBase1 = category[c1];
+            let defaultBase2 = category[c2];
+
+            if (!isCustom) {
+                if(totalDist > 0) {
+                    base1El.value = defaultBase1;
+                    base2El.value = defaultBase2;
+                } else {
+                    base1El.value = '';
+                    base2El.value = '';
+                }
+            }
+
+            let base1 = isCustom ? (parseFloat(base1El.value) || 0) : defaultBase1;
+            let base2 = isCustom ? (parseFloat(base2El.value) || 0) : defaultBase2;
+
+            if (totalDist === 0) {
+                document.getElementById('result')?.classList.add('hidden');
+                document.getElementById('placeholder')?.classList.remove('hidden');
+                return;
+            } else {
+                document.getElementById('result')?.classList.remove('hidden');
+                document.getElementById('placeholder')?.classList.add('hidden');
+            }
+
+            const ratio1 = d1 / totalDist;
+            const ratio2 = d2 / totalDist;
+            
+            const req1 = ratio1 * base1;
+            const req2 = ratio2 * base2;
+            
+            // 捨入到整數，然後末兩位強制抹零
+            const final1 = Math.round(req1);
+            const final2 = Math.round(req2);
+            const rawTotal = final1 + final2;
+            const totalMiles = Math.floor(rawTotal / 100) * 100; 
+            
+            // UI 更新
+            const resTotalDistEl = document.getElementById('resTotalDist');
+            if (resTotalDistEl) resTotalDistEl.innerText = formatNumber(totalDist);
+            
+            document.querySelectorAll('.resTotalDistText').forEach(el => el.innerText = totalDist);
+            
+            const resCatEl = document.getElementById('resCategory');
+            if (resCatEl) resCatEl.innerText = category.name;
+
+            const resBox1 = document.getElementById('resBox1');
+            if (resBox1) {
+                if(d1 > 0) {
+                    resBox1.classList.remove('hidden');
+                    document.getElementById('resCabin1').innerText = getCabinText('cabin1');
+                    document.getElementById('resRatio1').innerText = (ratio1 * 100).toFixed(2);
+                    document.getElementById('resDist1').innerText = d1;
+                    document.getElementById('resBase1').innerText = formatNumber(base1);
+                    document.getElementById('resReq1').innerText = formatNumber(final1);
+                } else {
+                    resBox1.classList.add('hidden');
+                }
+            }
+
+            const resBox2 = document.getElementById('resBox2');
+            if (resBox2) {
+                if(d2 > 0) {
+                    resBox2.classList.remove('hidden');
+                    document.getElementById('resCabin2').innerText = getCabinText('cabin2');
+                    document.getElementById('resRatio2').innerText = (ratio2 * 100).toFixed(2);
+                    document.getElementById('resDist2').innerText = d2;
+                    document.getElementById('resBase2').innerText = formatNumber(base2);
+                    document.getElementById('resReq2').innerText = formatNumber(final2);
+                } else {
+                    resBox2.classList.add('hidden');
+                }
+            }
+
+            const resTotalEl = document.getElementById('resTotalMiles');
+            if (resTotalEl) resTotalEl.innerText = formatNumber(totalMiles);
+        }
+
+        // --- 全新啟動機制：保證絕對執行 ---
+        function initApp() {
+            try {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            } catch(e) {
+                console.warn('圖示套件載入失敗，但不影響主要功能。');
+            }
+            buildDropdowns();
+            calculate();
+        }
+
+        // 不論 DOMContentLoaded 是否已經觸發過，都能確保程式正常啟動
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
+    </script>
+
+    </div>
+
+    <!-- 使用說明 -->
+    <section class="max-w-6xl mx-auto px-4 mb-12 w-full">
+        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+            <h2 class="text-xl font-bold text-[#0a192f] mb-4 border-l-4 border-[#cba052] pl-3">怎麼算混艙哩程？</h2>
+            <ul class="list-disc pl-6 space-y-2 text-slate-600 leading-relaxed">
+                <li>混艙是指同一張兌換機票裡，不同航段搭乘不同艙等，例如東京飛香港搭頭等艙、香港飛台北搭經濟艙。</li>
+                <li>兩段航程要經香港轉機，以兩段距離加總決定兌換級距（超短途、短途、中途、長途、超長途）。</li>
+                <li>每一段依照「該段距離佔總距離的比例」乘上該艙等的兌換哩程，兩段相加後末兩位抹零，就是所需總哩程。</li>
+                <li>計算結果僅供參考，實際所需哩程與稅金以亞洲萬里通官網開票畫面為準。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-[#0a192f] text-gray-400 py-8 border-t-4 border-[#cba052]">
+        <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p>&copy; 2026 YEN LAB AERO 顏究所. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="/about.html" class="hover:text-white transition">關於我們</a>
+                <a href="/contact.html" class="hover:text-white transition">聯絡編輯</a>
+                <a href="/privacy.html" class="hover:text-white transition">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
