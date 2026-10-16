@@ -67,6 +67,14 @@ Bundle & Go 只用歐元計價，沒有台幣價格。本文以 2026 年 10 月 
 - **購買限制：** 每筆交易只能買一個方案，購買後不能退款。
 - **付款方式：** 透過 Points.com 以信用卡付款，用歐元付款最划算。
 
+<div style="margin:28px 0;padding:22px 20px;border-radius:14px;background:#0a192f;text-align:center;">
+  <div style="color:#cba052;font-weight:900;font-size:16px;letter-spacing:0.08em;margin-bottom:10px;">立即購買 Miles & More 哩程</div>
+  <a href="https://www.anrdoezrs.net/click-7304739-11759845" target="_blank" rel="sponsored noopener" style="display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;background:#cba052;color:#0a192f;">歐元付款（最划算）→</a>
+  <a href="https://www.jdoqocy.com/click-7304739-12523163" target="_blank" rel="sponsored noopener" style="display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">美元付款 →</a>
+  <a href="https://www.anrdoezrs.net/click-7304739-11089216" target="_blank" rel="sponsored noopener" style="display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">英鎊付款 →</a>
+  <div style="margin-top:10px;color:#94a3b8;font-size:12px;">連結前往 Miles &amp; More 官方購買頁（Points.com），本站可能因此獲得少量佣金，不影響您的購買價格</div>
+</div>
+
 ## 二、四種方案價格與每哩成本
 
 | 方案 | 原本哩程 | 加贈後哩程 | 歐元價格 | 約合新台幣 | 每哩（歐分） | 每哩（新台幣） |
@@ -126,9 +134,17 @@ Bundle & Go 只用歐元計價，沒有台幣價格。本文以 2026 年 10 月 
 ## 五、購買方式
 
 1. 先申請 Miles & More 會員，免費加入。
-2. 登入 Miles & More 帳戶，進入 Bundle & Go 購買頁面，頁面由 Points.com 營運。
+2. 點下方按鈕進入 Bundle & Go 購買頁面（由 Points.com 營運），登入 Miles & More 帳戶。
 3. 選擇方案，用信用卡付款，幣別選歐元。
 4. 哩程最慢 5 個工作天內入帳，多數情況幾小時內就會到帳。
+
+<div style="margin:28px 0;padding:22px 20px;border-radius:14px;background:#0a192f;text-align:center;">
+  <div style="color:#cba052;font-weight:900;font-size:16px;letter-spacing:0.08em;margin-bottom:10px;">前往購買頁面</div>
+  <a href="https://www.anrdoezrs.net/click-7304739-11759845" target="_blank" rel="sponsored noopener" style="display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;background:#cba052;color:#0a192f;">歐元付款（最划算）→</a>
+  <a href="https://www.jdoqocy.com/click-7304739-12523163" target="_blank" rel="sponsored noopener" style="display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">美元付款 →</a>
+  <a href="https://www.anrdoezrs.net/click-7304739-11089216" target="_blank" rel="sponsored noopener" style="display:inline-block;margin:6px;padding:14px 28px;border-radius:999px;font-weight:900;font-size:17px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">英鎊付款 →</a>
+  <div style="margin-top:10px;color:#94a3b8;font-size:12px;">連結前往 Miles &amp; More 官方購買頁（Points.com），本站可能因此獲得少量佣金，不影響您的購買價格</div>
+</div>
 
 ## 六、購買前要注意
 
