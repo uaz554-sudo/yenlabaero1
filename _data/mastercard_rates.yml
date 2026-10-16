@@ -1,0 +1,16 @@
+# Mastercard 匯率（1 單位外幣 = 多少新台幣，銀行手續費 0%）
+# 來源：Mastercard Currency Converter；更新時改 date 與數字即可，哩程工具會自動讀取
+date: 2026-10-16
+rates:
+  USD: { name: 美元, rate: 32.4236 }
+  EUR: { name: 歐元, rate: 36.1025 }
+  GBP: { name: 英鎊, rate: 43.0617 }
+  JPY: { name: 日圓, rate: 0.20582 }
+  HKD: { name: 港幣, rate: 4.1324 }
+  SGD: { name: 新加坡幣, rate: 25.3131 }
+  AUD: { name: 澳幣, rate: 22.6414 }
+  CAD: { name: 加幣, rate: 22.8867 }
+  CNY: { name: 人民幣, rate: 4.8461 }
+  KRW: { name: 韓圓, rate: 0.024221 }
+  CHF: { name: 瑞士法郎, rate: 39.2110 }
+  NZD: { name: 紐西蘭幣, rate: 18.2772 }
