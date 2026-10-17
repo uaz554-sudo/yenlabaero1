@@ -147,4 +147,6 @@ thumbnail: /assets/images/cathay-cube-tree-points-2027.jpg
 
 1. 國泰世華銀行：[2027 年小樹點(信用卡)權益公告](https://www.cathaybk.com.tw/cathaybk/promo/event/credit-card/discount/2027/pointannounceInfo/index.html)
 
+_封面照片：國泰世華銀行分行（Solomon203／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Chienchen_Branch,_Cathay_United_Bank_20191208.jpg)，CC BY-SA 4.0），經裁切。_
+
 _編輯註：本文整理截至 2026 年 10 月 17 日的公告內容，世界卡專屬比例與未列出的兌換計畫以國泰世華後續公告為準，實際兌換以國泰優惠 App 顯示為準。_
