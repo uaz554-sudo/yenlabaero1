@@ -128,7 +128,14 @@ def post_instagram(images, caption):
         container = call("POST", f"{GRAPH}/{ig_id}/media", {
             "media_type": "CAROUSEL", "children": ",".join(children), "caption": caption, "access_token": token})["id"]
     ig_wait(container, token)
-    return call("POST", f"{GRAPH}/{ig_id}/media_publish", {"creation_id": container, "access_token": token}).get("id")
+    # 輪播剛處理完時偶爾會回「Media ID is not available」，等一下再試
+    for attempt in range(4):
+        try:
+            return call("POST", f"{GRAPH}/{ig_id}/media_publish", {"creation_id": container, "access_token": token}).get("id")
+        except RuntimeError as e:
+            if "not available" not in str(e) or attempt == 3:
+                raise
+            time.sleep(30)
 
 
 def threads_wait(container_id, token):
