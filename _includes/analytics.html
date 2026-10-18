@@ -8,3 +8,8 @@
   gtag('config', '{{ site.google_analytics }}');
 </script>
 {% endif %}
+{% if jekyll.environment == "production" %}
+<!-- Google AdSense（顏究生旅行趣同一個發布商帳號） -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4807180060186585"
+     crossorigin="anonymous"></script>
+{% endif %}
