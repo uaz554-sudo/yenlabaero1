@@ -46,7 +46,7 @@ thumbnail: /assets/images/western-sydney-airport-rayleigh-lounge.jpg
 
 10 月 25 日啟用的**西雪梨國際機場（WSI）**，公布國際線貴賓室 **The Rayleigh Lounge**。貴賓室由 **dnata** 經營，會在 **11 月 23 日新加坡航空開航前**開幕。
 
-這是西雪梨機場目前唯一公布的貴賓室，不屬於任何一家航空公司，其他國際航空公司開航後也會陸續加入。
+這是西雪梨機場第一間公布的貴賓室，不屬於任何一家航空公司，其他國際航空公司開航後也會陸續加入。
 
 ## 一、重點整理
 
@@ -55,6 +55,10 @@ thumbnail: /assets/images/western-sydney-airport-rayleigh-lounge.jpg
 - **位置：** 航廈國際區的夾層，可以看到機坪和遠方的藍山。
 - **開幕：** 2026 年 11 月，新航 11/23 首航前。
 - **座位：** 初期約 80 席，之後擴大到約 130 席。
+
+![The Rayleigh Lounge 吧檯與座位區示意圖](/assets/images/wsi-rayleigh-lounge-bar.jpg)
+
+*The Rayleigh Lounge 吧檯與座位區示意圖（圖片來源：西雪梨國際機場）*
 
 ## 二、貴賓室設施
 
@@ -67,6 +71,14 @@ thumbnail: /assets/images/western-sydney-airport-rayleigh-lounge.jpg
 | 其他 | 高速 Wi-Fi、座位旁充電 |
 
 - **設計：** 航廈主建築師 COX Architecture 設計，雪梨設計師 Tom Fereday 負責家具，用溫暖的大地色系和天然材質。
+
+![可以看到機坪與藍山的用餐區示意圖](/assets/images/wsi-rayleigh-lounge-dining.jpg)
+
+*可以看到機坪與藍山的用餐區示意圖（圖片來源：西雪梨國際機場）*
+
+![入口與休息區示意圖](/assets/images/wsi-rayleigh-lounge-seating.jpg)
+
+*入口與休息區示意圖（圖片來源：西雪梨國際機場）*
 
 ## 三、誰可以使用？
 
@@ -95,8 +107,9 @@ thumbnail: /assets/images/western-sydney-airport-rayleigh-lounge.jpg
 
 ### 消息來源
 
-1. Executive Traveller：[Western Sydney Airport WSI lounge](https://www.executivetraveller.com/news/western-sydney-airport-wsi-lounge)（2026/10/17）
-2. The MileLion：[Singapore Airlines to use The Rayleigh Lounge at Western Sydney Airport](https://milelion.com/2026/10/18/singapore-airlines-to-use-the-rayleigh-lounge-at-western-sydney-airport/)（2026/10/18）
+1. 西雪梨國際機場：[Premium travel begins before boarding at WSI](https://www.wsiairport.com.au/corporate/media-releases/premium-travel-begins-boarding-wsi)（2026/10/18）
+2. Executive Traveller：[Western Sydney Airport WSI lounge](https://www.executivetraveller.com/news/western-sydney-airport-wsi-lounge)（2026/10/17）
+3. The MileLion：[Singapore Airlines to use The Rayleigh Lounge at Western Sydney Airport](https://milelion.com/2026/10/18/singapore-airlines-to-use-the-rayleigh-lounge-at-western-sydney-airport/)（2026/10/18）
 
 _封面照片：西雪梨國際機場航廈（Aebion／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Western_Sydney_Airport_b.jpg)，CC0），經裁切。_
 
