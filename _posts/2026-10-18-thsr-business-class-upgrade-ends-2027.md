@@ -1,12 +1,12 @@
 ---
-title: 信用卡高鐵商務車廂升等 2027 年起停辦！台新、國泰世華、永豐、一銀都公告，年底前怎麼用完
+title: 信用卡高鐵商務車廂升等 2027 年起停辦！台新、國泰世華、永豐、一銀、玉山都公告，年底前怎麼用完
 slug: thsr-business-class-upgrade-ends-2027
 date: 2026-10-18T07:00:00
 publish_at: 2026-10-18T15:00:00+08:00
 main_category: 信用卡
 sub_category: 台灣信用卡
 tags: 台灣高鐵, 商務車廂, 高鐵升等, 信用卡權益, 台新銀行, 國泰世華, 永豐銀行, 第一銀行, 世界卡, 無限卡
-description: 台灣高鐵通知 2027 年 1 月 1 日起停止信用卡商務車廂升等專案，台新、國泰世華、永豐、第一銀行已陸續公告，免費升等與 450 元加價升等都只到 2026 年 12 月 31 日。整理各銀行現行權益、已購車票怎麼變更，以及年底前怎麼把升等用完。
+description: 台灣高鐵通知 2027 年 1 月 1 日起停止信用卡商務車廂升等專案，台新、國泰世華、永豐、第一銀行、玉山已陸續公告，免費升等與 450 元加價升等都只到 2026 年 12 月 31 日。整理各銀行現行權益、已購車票怎麼變更，以及年底前怎麼把升等用完。
 social_post: |
   【信用卡高鐵升等 2027 年停辦】
 
@@ -17,6 +17,7 @@ social_post: |
   ・國泰世華：世界卡財管 VIP 免費升等
   ・永豐：永傳會員每月 2 張、滿額升等、450 元自費升等
   ・第一銀行：世界卡滿額免費升等、紅利 7,500 點升等、450 元加價升等
+  ・玉山：10/19 公告，升等活動同樣到 12/31
 
   免費升等和 450 元加價升等，都只能用到 2026/12/31。
   以「購票日」為準，不是搭乘日，年底前買好明年初的車票還能用。
@@ -37,13 +38,13 @@ social_cards:
 thumbnail: /assets/images/thsr-business-class-upgrade-ends-2027.jpg
 ---
 
-# 信用卡高鐵商務車廂升等 2027 年起停辦！台新、國泰世華、永豐、一銀都公告，年底前怎麼用完
+# 信用卡高鐵商務車廂升等 2027 年起停辦！台新、國泰世華、永豐、一銀、玉山都公告，年底前怎麼用完
 
 **新聞分類：信用卡／台灣信用卡**
 **發布日期：2026 年 10 月 18 日**
 **停辦日期：2027 年 1 月 1 日**
 
-台灣高鐵通知各發卡銀行，**2027 年 1 月 1 日起停止信用卡升等商務車廂專案**。台新、國泰世華、永豐、第一銀行已經陸續公告，信用卡的**免費升等**和 **450 元加價升等**都只能用到 **2026 年 12 月 31 日**。
+台灣高鐵通知各發卡銀行，**2027 年 1 月 1 日起停止信用卡升等商務車廂專案**。台新、國泰世華、永豐、第一銀行、玉山已經陸續公告，信用卡的**免費升等**和 **450 元加價升等**都只能用到 **2026 年 12 月 31 日**。
 
 不少世界卡、無限卡把高鐵升等當成重要權益，這次調整影響的是整個高鐵合作專案，不是單一銀行。
 
@@ -53,7 +54,7 @@ thumbnail: /assets/images/thsr-business-class-upgrade-ends-2027.jpg
 - **影響範圍：** 免費升等、紅利點數升等、450 元加價升等都停止。
 - **最後購票日：** 2026 年 12 月 31 日，優惠以「購票日」為準，不是搭乘日。
 - **已購車票：** 2026 年底前買的升等票，明年整筆改日期或車次仍保有升等優惠。
-- **已公告的銀行：** 台新、國泰世華、永豐、第一銀行。
+- **已公告的銀行：** 台新、國泰世華、永豐、第一銀行、玉山（10/19 公告）。
 
 <div style="margin:28px 0;padding:22px 20px;border-radius:14px;background:#0a192f;text-align:center;">
   <div style="color:#cba052;font-weight:900;font-size:16px;letter-spacing:0.08em;margin-bottom:10px;">各銀行官方公告</div>
@@ -61,6 +62,7 @@ thumbnail: /assets/images/thsr-business-class-upgrade-ends-2027.jpg
   <a href="https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/world" target="_blank" rel="noopener" style="display:inline-block;margin:6px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">國泰世華 →</a>
   <a href="https://bank.sinopac.com/sinopacBT/personal/credit-card/discount/536198523.html" target="_blank" rel="noopener" style="display:inline-block;margin:6px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">永豐 →</a>
   <a href="https://card.firstbank.com.tw/sites/card/zh_TW/1565707801631" target="_blank" rel="noopener" style="display:inline-block;margin:6px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">第一銀行 →</a>
+  <a href="https://www.esunbank.com/zh-tw/about/announcement" target="_blank" rel="noopener" style="display:inline-block;margin:6px;padding:12px 22px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;background:#ffffff;color:#0a192f;border:2px solid #cba052;">玉山 →</a>
 </div>
 
 ## 二、各銀行 2026 年高鐵升等權益（用到 12/31）
@@ -71,6 +73,7 @@ thumbnail: /assets/images/thsr-business-class-upgrade-ends-2027.jpg
 | 國泰世華 | 世界卡一般消費達門檻：財管鑽石 VIP 最高 6 張、白金 VIP 最高 4 張、黃金 VIP 最高 2 張 | － |
 | 永豐 | 永傳會員（永傳世界卡、永富世界卡、財富無限卡）每月 2 張；財富無限卡、美安悠遊無限卡前月消費滿 8 萬，當月 2 張 | 白金卡以上每張 450 元 |
 | 第一銀行 | GLORY+ 世界卡等指定卡別，上月消費滿 8 萬，當月 2 張；一般卡友每張扣紅利 7,500 點，每月最多 4 張 | 每張 450 元 |
+| 玉山 | 2026/10/19 公告升等活動終止，詳細權益依玉山信用卡活動頁 | 同左 |
 
 - **每月發放的要當月用完：** 永豐、一銀的免費升等是每月發放，12 月的名額要在 12 月用完，2026 年 12 月帳單的消費不會再給 2027 年 1 月的名額。
 - **年度張數到年底歸零：** 台新以 2026 全年度張數計算，沒用完的不會延到明年。
@@ -100,7 +103,7 @@ thumbnail: /assets/images/thsr-business-class-upgrade-ends-2027.jpg
 
 ## 六、總結
 
-**台灣高鐵 2027 年 1 月 1 日起停止信用卡升等商務車廂專案，台新、國泰世華、永豐、第一銀行已經公告，免費升等與 450 元加價升等都只到 2026 年 12 月 31 日。** 優惠以購票日為準，手上還有免費升等的人，年底前把明年初的車票先買好；已經買好的票明年整筆改日期，也還能保有升等。
+**台灣高鐵 2027 年 1 月 1 日起停止信用卡升等商務車廂專案，台新、國泰世華、永豐、第一銀行、玉山已經公告，免費升等與 450 元加價升等都只到 2026 年 12 月 31 日。** 優惠以購票日為準，手上還有免費升等的人，年底前把明年初的車票先買好；已經買好的票明年整筆改日期，也還能保有升等。
 
 ### 消息來源
 
@@ -108,7 +111,8 @@ thumbnail: /assets/images/thsr-business-class-upgrade-ends-2027.jpg
 2. 國泰世華銀行：[世界卡](https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/world)
 3. 永豐銀行：[交通優惠](https://bank.sinopac.com/sinopacBT/personal/credit-card/discount/536198523.html)
 4. 第一銀行：[尊榮禮遇高鐵旅程](https://card.firstbank.com.tw/sites/card/zh_TW/1565707801631)
+5. 玉山銀行：[玉山信用卡高鐵商務車廂升等活動終止公告](https://www.esunbank.com/zh-tw/about/announcement)（2026/10/19）
 
 _封面照片：台灣高鐵商務車廂（Chi-Hung Lin／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:THSR_700T_Biz_Car_interior_20151206.jpg)，CC BY-SA 2.0），經裁切。_
 
-_編輯註：本文整理截至 2026 年 10 月 18 日各銀行公告內容，其他銀行的安排以各自公告為準。_
+_編輯註：本文整理截至 2026 年 10 月 20 日各銀行公告內容（10/20 補上玉山銀行），其他銀行的安排以各自公告為準。_
