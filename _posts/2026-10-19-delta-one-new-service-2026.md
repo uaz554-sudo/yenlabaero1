@@ -65,6 +65,14 @@ thumbnail: /assets/images/delta-one-new-service-2026.jpg
 | 雞尾酒與無酒精調飲 | Hugo Spritz、Paloma | 國際線 2027 年 3 月、美國國內線 4 月 |
 | 主餐預選 | 起飛前 18 小時都能選，新增無麩質、輕食選項 | 已公布 |
 
+![Delta One 新菜單主菜與酒款](/assets/images/delta-one-dining.jpg)
+
+*Delta One 新菜單主菜與酒款（圖片來源：達美航空）*
+
+![Missoni 新過夜包](/assets/images/delta-one-amenity-kit.jpg)
+
+*Missoni 新過夜包（圖片來源：達美航空）*
+
 ## 三、服務流程也改了
 
 - **Sip & Settle：** 起飛後先送上熱毛巾、溫堅果和想喝的飲料。
@@ -74,6 +82,10 @@ thumbnail: /assets/images/delta-one-new-service-2026.jpg
 - **甜點車保留：** 經典聖代換新巧克力醬，新增無乳製品雪酪，可以加 Taittinger 香檳。
 - **酒單：** 和侍酒大師 Andrea Robinson 合作，從 1,600 多款酒選出 13 款，每年換 2 次。
 - **Bombas 襪子：** 部分航線隨機發送限量款。
+
+![Delta One 寢具、枕頭與過夜包](/assets/images/delta-one-bedding.jpg)
+
+*Delta One 寢具、枕頭與過夜包（圖片來源：達美航空）*
 
 ## 四、2027 年還有新座椅
 
