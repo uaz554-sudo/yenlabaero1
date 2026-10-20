@@ -92,10 +92,18 @@ def build_texts(fm, url):
     return with_link, ig, threads
 
 
-def post_facebook(text, url):
+def post_facebook(text, url, cards=None):
+    """有社群圖卡就發多圖貼文（文字裡附文章連結），沒有圖卡才發連結貼文。"""
     page_id, token = os.environ["FB_PAGE_ID"], os.environ["FB_PAGE_TOKEN"]
-    res = call("POST", f"{GRAPH}/{page_id}/feed", {"message": text, "link": url, "access_token": token})
-    return res.get("id")
+    if not cards:
+        res = call("POST", f"{GRAPH}/{page_id}/feed", {"message": text, "link": url, "access_token": token})
+        return res.get("id")
+    # 先把每張圖卡上傳成未發布的相片，再一次附在同一則貼文裡
+    params = {"message": text, "access_token": token}
+    for i, image in enumerate(cards[:10]):
+        photo = call("POST", f"{GRAPH}/{page_id}/photos", {"url": image, "published": "false", "access_token": token})
+        params[f"attached_media[{i}]"] = json.dumps({"media_fbid": photo["id"]})
+    return call("POST", f"{GRAPH}/{page_id}/feed", params).get("id")
 
 
 def ig_wait(container_id, token):
@@ -207,7 +215,7 @@ def publish(path, platforms, report):
             continue
         try:
             if platform == "facebook":
-                pid = post_facebook(fb_text, url)
+                pid = post_facebook(fb_text, url, cards)
             elif platform == "instagram":
                 if not jpgs:
                     report.append(f"| {name} | instagram | 略過（Instagram 只接受 JPG 圖片） |")
