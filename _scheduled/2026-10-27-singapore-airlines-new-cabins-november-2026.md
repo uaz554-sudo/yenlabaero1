@@ -25,7 +25,7 @@ social_post: |
   完整整理在網站：
   https://yenlabaero.com/singapore-airlines-new-cabins-november-2026
 
-  （照片：Julian Herzog／Wikimedia Commons）
+  （圖片來源：新加坡航空預告影片）
 
   #新加坡航空 #新客艙 #豪華經濟艙
 social_cards:
@@ -44,6 +44,10 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-november-2026.jpg
 
 不過，**全新的豪經、經濟艙座椅只會裝在 777-9**，現有 A350 的豪經、經濟艙只做**翻新**。
 
+![新航新頭等艙預告畫面](/assets/images/sia-new-first-bed.jpg)
+
+*新頭等艙床鋪與睡衣（圖片來源：新加坡航空預告影片）*
+
 ## 一、11/7 發表會
 
 | 項目 | 內容 |
@@ -52,6 +56,10 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-november-2026.jpg
 | 地點 | 新加坡濱海灣金沙 |
 | 對象 | 受邀的 Solitaire PPS、PPS 會員 |
 | 預期內容 | 新頭等艙、商務艙、豪經、經濟艙、KrisWorld、餐飲與備品 |
+
+![新航新頭等艙化妝鏡](/assets/images/sia-new-first-vanity.jpg)
+
+*新頭等艙的化妝鏡與保養品（圖片來源：新加坡航空預告影片）*
 
 ## 二、哪些飛機會有新座椅？
 
@@ -64,6 +72,10 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-november-2026.jpg
 - **777-9 豪經：** 最大 16 吋 4K 螢幕（部分飛機 OLED）、藍牙、USB-C、新版 KrisWorld 與空間音效。
 - **777-9 交機：** 波音預估 2027 年，但仍不確定；新航已有 2 架 777-9 開始試飛。
 
+![新版 KrisWorld](/assets/images/sia-krisworld-menu-page.jpg)
+
+*新版 KrisWorld 娛樂系統，777-9 與改裝後的 A350 全艙等都會有（圖片來源：新加坡航空）*
+
 ## 三、為什麼 A350 豪經、經濟艙不換？
 
 - **成本與停場時間：** 41 架同時換座椅，每架停場時間更長。
@@ -74,7 +86,7 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-november-2026.jpg
 
 - **短期搭不到新豪經：** 新豪經、經濟艙要等 777-9 交機，最快 2027 年以後。
 - **A350 改裝：** 商務艙 2027 年第一季起陸續換新螢幕，可以參考我們整理的[新航 41 架 A350 改裝](/singapore-airlines-a350-retrofit-krisworld-2027)。
-- **新頭等艙、商務艙：** 先前的預告影片整理在[新航新頭等艙、商務艙](/singapore-airlines-new-first-business-class-reveal)。
+- **新頭等艙、商務艙：** 先前的預告影片與更多畫面整理在[新航新頭等艙、商務艙](/singapore-airlines-new-first-business-class-reveal)。
 
 ## 五、總結
 
@@ -87,5 +99,7 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-november-2026.jpg
 3. Executive Traveller：〈SQ confirms new premium economy, but not for the A350〉（2026/10/23）
 
 _封面照片：新加坡航空 777-300ER（Julian Herzog／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Singapore_Airlines_Boeing_777-312_ER_9V-SWB_MUC_2015_01.jpg)，CC BY 4.0），經裁切。_
+
+_內文圖片：新加坡航空官方圖片與預告影片。_
 
 _編輯註：本文整理截至 2026 年 10 月 26 日的資訊，以各公司官方公告為準。_
