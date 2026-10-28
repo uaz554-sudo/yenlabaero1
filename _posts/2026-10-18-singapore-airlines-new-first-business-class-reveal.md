@@ -64,13 +64,13 @@ thumbnail: /assets/images/singapore-airlines-new-first-business-class-reveal.jpg
 - **其他細節：** 大螢幕下方有可坐的腳凳、床邊有收納空間、翻蓋式化妝鏡。
 - **可能用在 777-9：** 新航申請的頭等艙專利，應該是給未來的波音 777-9；中間座位的隔板可以收起來變成雙人床。
 
-![新頭等艙床鋪與寢具](/assets/images/sia-new-first-bed.jpg)
+![空服員在頭等艙床鋪上擺放睡衣](/assets/images/sia-new-first-bed.jpg)
 
-*新頭等艙床鋪與寢具（圖片來源：新加坡航空預告影片）*
+*空服員在頭等艙床鋪上擺放睡衣（圖片來源：新加坡航空預告影片）*
 
-![頭等艙套房的對開門與電動遮光簾](/assets/images/sia-new-first-doors.jpg)
+![頭等艙套房的電動遮光簾](/assets/images/sia-new-first-doors.jpg)
 
-*頭等艙套房的對開門與電動遮光簾（圖片來源：新加坡航空預告影片）*
+*頭等艙套房的電動遮光簾（圖片來源：新加坡航空預告影片）*
 
 ![頭等艙化妝鏡與床邊收納](/assets/images/sia-new-first-vanity.jpg)
 
@@ -88,13 +88,9 @@ thumbnail: /assets/images/singapore-airlines-new-first-business-class-reveal.jpg
 - **座位會比較窄：** 新商務艙的座椅寬度看起來比現行版本窄。
 - **其他設備：** 餐桌、置物袋、側邊平台，應該也會有遙控器與插座。
 
-![新商務艙直接躺平成床](/assets/images/sia-new-business-bed.jpg)
+![預告片中展示的新睡衣](/assets/images/sia-new-business-bed.jpg)
 
-*新商務艙直接躺平成床（圖片來源：新加坡航空預告影片）*
-
-![新商務艙中間座位的可移動隔板](/assets/images/sia-new-business-divider.jpg)
-
-*新商務艙中間座位的可移動隔板（圖片來源：新加坡航空預告影片）*
+*預告片中展示的新睡衣（圖片來源：新加坡航空預告影片）*
 
 ## 四、其他艙等與機上 Wi-Fi
 
