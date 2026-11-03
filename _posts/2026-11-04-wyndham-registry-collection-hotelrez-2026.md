@@ -80,6 +80,14 @@ thumbnail: /assets/images/wyndham-registry-collection-hotelrez-2026.jpg
 
 後續還會有更多飯店加入，取決於品牌契合度與業主是否願意參加 Wyndham Rewards。
 
+![米克諾斯 The TownHouse Mykonos](/assets/images/wyndham-townhouse-mykonos.jpg)
+
+*希臘米克諾斯老城的 The TownHouse Mykonos（圖片來源：Wyndham）*
+
+![泰國姚諾島 TreeHouse Villas](/assets/images/wyndham-treehouse-villas-koh-yao.jpg)
+
+*泰國攀牙灣姚諾島的 TreeHouse Villas Koh Yao（圖片來源：Wyndham）*
+
 ## 四、Registry Collection 規模變化
 
 | 時間 | 飯店數 |

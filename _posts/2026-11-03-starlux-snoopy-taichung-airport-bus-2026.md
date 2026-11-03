@@ -26,7 +26,7 @@ social_post: |
   完整整理在網站：
   https://yenlabaero.com/starlux-snoopy-taichung-airport-bus-2026
 
-  （照片：LN9267／Wikimedia Commons）
+  （照片：台中市政府）
 
   #星宇航空 #SNOOPY #台中機場
 social_cards:
@@ -43,6 +43,10 @@ thumbnail: /assets/images/starlux-snoopy-taichung-airport-bus-2026.jpg
 
 **台中市交通局**和**星宇航空**、**PEANUTS** 合作，把 **333 路機場快線**打造成 **3 輛 SNOOPY 主題彩繪公車**，分別是**春天、夏天、秋冬**三款。**11 月 4 日**在台中機場搭指定班次可以拿限量好禮，星宇臉書也有**拍照抽獎到年底**。
 
+![秋冬款 SNOOPY 彩繪公車與星宇空服員](/assets/images/snoopy-bus-autumn-crew.jpg)
+
+*秋冬款 SNOOPY 彩繪公車，車身印有 PEANUTS × STARLUX 字樣（圖片來源：台中市政府）*
+
 ## 一、SNOOPY 彩繪公車
 
 | 項目 | 內容 |
@@ -55,6 +59,15 @@ thumbnail: /assets/images/starlux-snoopy-taichung-airport-bus-2026.jpg
 | 出現角色 | SNOOPY、糊塗塌客（Woodstock）、查理布朗等 |
 | 合作單位 | 台中市交通局、星宇航空、PEANUTS、睿奕交通 |
 
+![春天款 SNOOPY 彩繪公車](/assets/images/snoopy-bus-spring.jpg)
+
+*春天款 SNOOPY 彩繪公車，粉色車身（圖片來源：台中市政府）*
+
+![SNOOPY 彩繪公車車廂內部](/assets/images/snoopy-bus-interior.jpg)
+
+*車廂內的拉環、車頂和牆面也有 PEANUTS 角色裝飾（圖片來源：台中市政府）*
+
+
 ## 二、活動一覽
 
 | 活動 | 時間 | 怎麼參加 | 獎品 |
@@ -64,6 +77,10 @@ thumbnail: /assets/images/starlux-snoopy-taichung-airport-bus-2026.jpg
 
 ### 11/4 指定班次
 
+![SNOOPY 彩繪公車停在台中國際機場](/assets/images/snoopy-bus-taichung-airport.jpg)
+
+*SNOOPY 彩繪公車停在台中國際機場前（圖片來源：台中市政府）*
+
 | 班次 | 上車地點 |
 | --- | --- |
 | **09:50** | 台中國際機場 1 號月台 |
@@ -71,6 +88,10 @@ thumbnail: /assets/images/starlux-snoopy-taichung-airport-bus-2026.jpg
 | **10:45** | 台中國際機場 1 號月台 |
 
 ## 三、台中機場快線
+
+![333 路機場快線 SNOOPY 彩繪公車](/assets/images/snoopy-bus-333.jpg)
+
+*行駛 333 路機場快線的 SNOOPY 彩繪公車（圖片來源：台中市政府）*
 
 | 路線 | 說明 |
 | --- | --- |
@@ -102,6 +123,6 @@ thumbnail: /assets/images/starlux-snoopy-taichung-airport-bus-2026.jpg
 2. 自由時報：[台中333路機場快捷公車 滿滿史努比彩繪](https://news.ltn.com.tw/news/Taichung/breakingnews/5626861)（2026/11/2）
 3. 焦點時報：[星宇航空聯手台中市政府推廣機場快線 SNOOPY季節彩繪公車](https://focus.586.com.tw/2026/11/03/p409788/)（2026/11/3）
 
-_封面照片：星宇航空 A321neo 在台中國際機場（LN9267／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:STARLUX_Airlines_B-58205_run_JX331(Taiwan_Taichung_International_Airport_to_Macau_International_Airport)_05-07-2024(1).jpg)，CC BY-SA 4.0），經裁切。_
+_封面照片：SNOOPY 彩繪公車停在台中國際機場（圖片來源：台中市政府），經裁切。_
 
 _編輯註：本文整理截至 2026 年 11 月 3 日的資訊，以各公司官方公告為準。_
