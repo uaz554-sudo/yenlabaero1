@@ -1,8 +1,8 @@
 ---
 title: 桃園機場北跑道 11/3 起夜間歲修！每次凌晨 1:00～6:30、共 7 個工作天，南跑道照常起降
 slug: taoyuan-airport-north-runway-maintenance-november-2026
-date: 2026-11-03T08:00:00
-publish_at: 2026-11-03T16:00:00+08:00
+date: 2026-11-03T06:30:00
+publish_at: 2026-11-03T14:30:00+08:00
 main_category: 航空資訊
 sub_category: 無聯盟
 tags: 桃園機場, 跑道歲修, 北跑道, 南跑道, 夜間施工, 紅眼航班, 機場營運

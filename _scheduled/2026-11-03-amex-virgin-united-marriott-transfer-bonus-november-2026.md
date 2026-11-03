@@ -1,8 +1,8 @@
 ---
 title: Amex 轉維珍 Flying Club 加贈 30%、聯合哩程轉萬豪加贈 20%！都到 11/30，換全日空頭等艙只要 6.6 萬點
 slug: amex-virgin-united-marriott-transfer-bonus-november-2026
-date: 2026-11-03T13:00:00
-publish_at: 2026-11-03T21:00:00+08:00
+date: 2026-11-03T09:00:00
+publish_at: 2026-11-03T17:00:00+08:00
 main_category: 哩程資訊
 sub_category: 美國信用卡
 tags: American Express, Membership Rewards, 維珍航空, Virgin Atlantic, Flying Club, 全日空, ANA, 聯合航空, MileagePlus, 萬豪, Marriott Bonvoy, 轉點加成

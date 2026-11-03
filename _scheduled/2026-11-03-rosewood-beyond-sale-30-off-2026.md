@@ -1,8 +1,8 @@
 ---
 title: 瑰麗 Rosewood Beyond 年度最大優惠！房價 7 折、住到 2027 年 6 月，加送早餐、升等，只能透過 Rosewood Elite 顧問訂
 slug: rosewood-beyond-sale-30-off-2026
-date: 2026-11-03T12:00:00
-publish_at: 2026-11-03T20:00:00+08:00
+date: 2026-11-03T08:30:00
+publish_at: 2026-11-03T16:30:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 瑰麗酒店, Rosewood, Rosewood Beyond, Rosewood Elite, 奢華飯店, 飯店優惠, 香港瑰麗, 曼谷瑰麗

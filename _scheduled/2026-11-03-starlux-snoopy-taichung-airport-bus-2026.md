@@ -1,8 +1,8 @@
 ---
 title: 台中 333 機場快線變 SNOOPY 彩繪公車！星宇推春、夏、秋冬 3 款，11/4 搭指定班次送限量好禮、拍照抽周邊到年底
 slug: starlux-snoopy-taichung-airport-bus-2026
-date: 2026-11-03T14:00:00
-publish_at: 2026-11-03T22:00:00+08:00
+date: 2026-11-03T09:30:00
+publish_at: 2026-11-03T17:30:00+08:00
 main_category: 航空資訊
 sub_category: 無聯盟
 tags: 星宇航空, STARLUX, SNOOPY, PEANUTS, 台中國際機場, 台中機場快線, 333 路, 555 路, 彩繪公車, 抽獎

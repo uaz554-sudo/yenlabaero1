@@ -1,8 +1,8 @@
 ---
 title: 溫德姆攜手 HotelREZ！40 多家獨立精品奢華飯店加入 Registry Collection，米克諾斯、馬爾他、泰國都有，點數要打電話換
 slug: wyndham-registry-collection-hotelrez-2026
-date: 2026-11-04T02:00:00
-publish_at: 2026-11-04T10:00:00+08:00
+date: 2026-11-03T11:30:00
+publish_at: 2026-11-03T19:30:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 溫德姆, Wyndham Rewards, Registry Collection, HotelREZ, Elegant Hotels of the World, 米克諾斯, 馬爾他, 泰國, 哥倫比亞, 奢華飯店
@@ -40,7 +40,7 @@ thumbnail: /assets/images/wyndham-registry-collection-hotelrez-2026.jpg
 # 溫德姆攜手 HotelREZ！40 多家獨立精品奢華飯店加入 Registry Collection，米克諾斯、馬爾他、泰國都有，點數要打電話換
 
 **新聞分類：飯店資訊／集團體系**
-**發布日期：2026 年 11 月 4 日**
+**發布日期：2026 年 11 月 3 日**
 
 **溫德姆 Wyndham** 11 月 2 日宣布和全球最大的飯店代理公司之一 **HotelREZ** 合作，旗下 **Elegant Hotels of the World** 的 **40 多家獨立奢華飯店**將在 **2027 年初**前加入溫德姆的奢華品牌 **Registry Collection Hotels**，會員可以累積、兌換**溫德姆點數**。以平價飯店為主的溫德姆，用點數能住的高端飯店一下子多了一倍。
 

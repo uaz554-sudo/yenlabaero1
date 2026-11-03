@@ -1,8 +1,8 @@
 ---
 title: 雅高 ALL 11 月促銷整理！亞太住 2 晚雙倍點數、Accor+ 會員最多加送 9,000 點、新飯店 4 倍點數，一次看懂 7 個活動
 slug: accor-promotions-november-2026
-date: 2026-11-04T01:00:00
-publish_at: 2026-11-04T09:00:00+08:00
+date: 2026-11-03T11:00:00
+publish_at: 2026-11-03T19:00:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 雅高, Accor, ALL Accor Live Limitless, Accor+, 雙倍點數, 飯店促銷, 諾富特, 美居, 鉑爾曼, 瑞士酒店
@@ -40,7 +40,7 @@ thumbnail: /assets/images/accor-promotions-november-2026.jpg
 # 雅高 ALL 11 月促銷整理！亞太住 2 晚雙倍點數、Accor+ 會員最多加送 9,000 點、新飯店 4 倍點數，一次看懂 7 個活動
 
 **新聞分類：飯店資訊／集團體系**
-**發布日期：2026 年 11 月 4 日**
+**發布日期：2026 年 11 月 3 日**
 
 **雅高 ALL – Accor Live Limitless** 目前同時有 **7 個**點數促銷，對台灣旅客最實用的是**亞太、中東、非洲住 2 晚以上雙倍點數**（日本、韓國、新加坡、泰國都適用），以及 **ALL Accor+ 會員最多加送 9,000 點**。以下逐一整理條件。
 

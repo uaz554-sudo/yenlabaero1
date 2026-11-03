@@ -1,8 +1,8 @@
 ---
 title: Choice Privileges 買點數加贈 40%、每點約 0.74 美分！一次買 14,000 點以上才有最高加贈，到 11/26
 slug: choice-privileges-buy-points-40-bonus-2026
-date: 2026-11-04T00:00:00
-publish_at: 2026-11-04T08:00:00+08:00
+date: 2026-11-03T10:30:00
+publish_at: 2026-11-03T18:30:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: Choice Privileges, Choice Hotels, 精選國際酒店, 買點數, 飯店點數, Comfort Inn, Ascend Hotel Collection, points.com
@@ -38,7 +38,7 @@ thumbnail: /assets/images/choice-privileges-buy-points-40-bonus-2026.jpg
 # Choice Privileges 買點數加贈 40%、每點約 0.74 美分！一次買 14,000 點以上才有最高加贈，到 11/26
 
 **新聞分類：飯店資訊／集團體系**
-**發布日期：2026 年 11 月 4 日**
+**發布日期：2026 年 11 月 3 日**
 
 **Choice Privileges**（精選國際酒店集團會員計畫）推出**買點數最高加贈 40%**，最低每點約 **0.74 美分**，到 **11 月 26 日**。這是**指定會員**優惠，不是每個人都看得到 40%，登入後要先確認自己的加贈比例。
 

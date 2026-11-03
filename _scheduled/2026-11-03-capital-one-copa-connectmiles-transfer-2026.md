@@ -1,8 +1,8 @@
 ---
 title: Capital One 新增巴拿馬航空 Copa 轉點！上線加贈 30%，阿聯酋商務艙免燃油附加費，23 個夥伴比例一次看
 slug: capital-one-copa-connectmiles-transfer-2026
-date: 2026-11-03T06:00:00
-publish_at: 2026-11-03T14:00:00+08:00
+date: 2026-11-03T05:30:00
+publish_at: 2026-11-03T13:30:00+08:00
 main_category: 信用卡
 sub_category: 美國信用卡
 tags: Capital One, 巴拿馬航空, Copa Airlines, ConnectMiles, 轉點, 星空聯盟, 阿聯酋航空, 長榮航空, 美國信用卡

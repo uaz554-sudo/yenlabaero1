@@ -1,8 +1,8 @@
 ---
 title: 華航第三季營收 651 億元年增 28%，法人估 EPS 近 0.4 元！明年再加 4 架 777F，貨機增到 22 架
 slug: china-airlines-q3-2026-eps-777f-freighters
-date: 2026-11-03T11:00:00
-publish_at: 2026-11-03T19:00:00+08:00
+date: 2026-11-03T08:00:00
+publish_at: 2026-11-03T16:00:00+08:00
 main_category: 航空資訊
 sub_category: 天合聯盟
 tags: 中華航空, China Airlines, 財報, EPS, 777F, 貨機, 航空貨運, 燃油成本, 台灣航空股

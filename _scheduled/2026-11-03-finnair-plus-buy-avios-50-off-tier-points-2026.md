@@ -1,8 +1,8 @@
 ---
 title: 芬航 Finnair Plus 買 Avios 最高 5 折、每點約 1.09 美分！再送 10% 定級積分，買 15 萬點就能拿寰宇一家紅寶石
 slug: finnair-plus-buy-avios-50-off-tier-points-2026
-date: 2026-11-03T10:00:00
-publish_at: 2026-11-03T18:00:00+08:00
+date: 2026-11-03T07:30:00
+publish_at: 2026-11-03T15:30:00+08:00
 main_category: 哩程資訊
 sub_category: 寰宇一家
 tags: 芬蘭航空, Finnair Plus, Avios, 買哩程, 定級積分, Tier Points, 寰宇一家, 紅寶石, 藍寶石, 綠寶石

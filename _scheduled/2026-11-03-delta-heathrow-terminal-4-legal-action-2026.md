@@ -1,8 +1,8 @@
 ---
 title: 達美 CEO 槓上希斯洛！不滿 2028 年被搬到 T4、和維珍拆開，揚言「動用所有手段」包括提告
 slug: delta-heathrow-terminal-4-legal-action-2026
-date: 2026-11-03T15:00:00
-publish_at: 2026-11-03T23:00:00+08:00
+date: 2026-11-03T10:00:00
+publish_at: 2026-11-03T18:00:00+08:00
 main_category: 航空資訊
 sub_category: 天合聯盟
 tags: 達美航空, Delta, 倫敦希斯洛機場, Heathrow, 第四航廈, 第三航廈, 維珍航空, Virgin Atlantic, 天合聯盟, 轉機
