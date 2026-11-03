@@ -1,8 +1,8 @@
 ---
 title: 法航砸 10 億歐元搶頂級客！La Première 頭等艙有保時捷接送、2 公尺床，巴黎－紐約約 1.4 萬美元起
 slug: air-france-la-premiere-first-class-2026
-date: 2026-11-03T05:00:00
-publish_at: 2026-11-03T13:00:00+08:00
+date: 2026-11-03T04:40:00
+publish_at: 2026-11-03T12:40:00+08:00
 main_category: 航空資訊
 sub_category: 天合聯盟
 tags: 法國航空, Air France, La Première, 頭等艙, 777-300ER, 保時捷, 東京羽田, 新加坡, 天合聯盟, 高端旅客
