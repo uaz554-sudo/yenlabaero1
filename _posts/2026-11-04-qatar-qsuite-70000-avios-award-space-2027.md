@@ -101,6 +101,8 @@ thumbnail: /assets/images/qatar-qsuite-70000-avios-award-space-2027.jpg
 ### 消息來源
 
 1. Upgraded Points：[[Award Alert] Fly Qatar Airways Qsuite From 70,000 Points One-Way](https://upgradedpoints.com/news/award-alert-qatar-airways-qsuites/)（2026/11/3）
+2. 顏究所：[芬航 Finnair Plus 買 Avios 最高 5 折、每點約 1.09 美分](https://yenlabaero.com/finnair-plus-buy-avios-50-off-tier-points-2026)（2026/11/3，11/4 更新）
+3. 顏究所：[美國信用卡 11 月轉點加成整理](https://yenlabaero.com/us-credit-card-transfer-bonuses-november-2026)（2026/11/2）
 
 _封面照片：卡達航空 777-300ER 的 Qsuite 商務艙（Raymondeuro／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Qsuite_on_Qatar_Airways_Boeing_777-300ER.jpg)，CC BY-SA 4.0），經裁切。_
 
