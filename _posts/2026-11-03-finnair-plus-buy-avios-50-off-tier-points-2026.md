@@ -74,7 +74,17 @@ thumbnail: /assets/images/finnair-plus-buy-avios-50-off-tier-points-2026.jpg
 | 85,000～99,000 | 50% off | 1.14 美分 |
 | **100,000～200,000** | **50% off** | **1.09 美分** |
 
-> **11/4 更新：** 芬航在 11/4 **悄悄把日圓價格調高約 11.5%**，原本日圓付款每點約 1.06 美分的優勢已經消失，**現在用美元付款最便宜**（10 萬點以上每點約 1.09 美分）。用歐元付款換算後也比美元貴。結帳前記得切換幣別比較，並用沒有海外手續費的卡。
+> **11/4 更新：價格調整，現在美元最便宜**
+>
+> 特賣開始不到一天，芬航就調高了日圓價格。買 20 萬哩的價格如下：
+>
+> | 幣別 | 20 萬哩價格 | 約新台幣 | 每哩約 |
+> | --- | --- | --- | --- |
+> | 日圓 | ¥371,600 | 77,292 元 | 0.386 元（原本 0.347 元） |
+> | **美元** | **$2,170** | **71,228 元** | **0.356 元** |
+> | 歐元 | €2,100 | 77,441 元 | 0.387 元 |
+>
+> 現在**用美元付款最便宜**，每哩約 0.356 元，跟調整前的日圓價格只差一點點。結帳時記得切換幣別比較，並用沒有海外手續費的卡。
 
 ## 三、實際要花多少錢
 
@@ -161,9 +171,8 @@ Finnair Plus 會籍要在 **12 個月的累積期間**內拿到足夠的定級�
 1. Upgraded Points：[Buy Finnair Avios With up to a 50% Discount](https://upgradedpoints.com/news/buy-finnair-plus-avios/)（2026/11/2）
 2. Frequent Miler：[Buy Avios for just over 1c per point from Finnair Plus](https://frequentmiler.com/buy-avios-for-just-over-1c-per-point-from-finnair-plus/)（2026/11/2）
 3. AwardWallet：[Buy Finnair Points](https://awardwallet.com/airlines/buy-finnair-points/)
-4. LoyaltyLobby：[UPDATE: Finnair Plus Buy Avios 50% Off + Extra 10% Tier Points November 2 – 16, 2026 (Pricing Change)](https://loyaltylobby.com/2026/11/04/update-finnair-plus-buy-avios-50-off-extra-10-tier-points-november-2-16-2026-pricing-change/)（2026/11/4）
-5. The MileLion：[Finnair Plus selling Avios with up to 50% discount](https://milelion.com/2026/11/04/finnair-plus-selling-avios-with-up-to-50-discount-or-1-35-cents-each/)（2026/11/4）
-6. 芬蘭航空：[How do I qualify for the next Finnair Plus tier?](https://www.finnair.com/us-en/frequently-asked-questions/finnair-plus/how-do-i-qualify-for-the-next-finnair-plus-tier--1905512)
+4. 顏究生旅行趣：[【芬蘭航空特賣】各國貨幣價格調整](https://www.facebook.com/permalink.php?story_fbid=pfbid0u2U2v1Gooh2m4XeBQ2mhSYYoZ5Mp4LdKm4FzV69HwwRxsWNvJajSjZFp1V71BM7Nl&id=100093842299450)（2026/11/4）
+5. 芬蘭航空：[How do I qualify for the next Finnair Plus tier?](https://www.finnair.com/us-en/frequently-asked-questions/finnair-plus/how-do-i-qualify-for-the-next-finnair-plus-tier--1905512)
 
 _封面照片：芬蘭航空 A350 停在赫爾辛基機場（Valentin Hintikka／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:OH-LWD_Finnair_A350_@_HEL_(34630321076).jpg)，CC BY 2.0），經裁切。_
 
