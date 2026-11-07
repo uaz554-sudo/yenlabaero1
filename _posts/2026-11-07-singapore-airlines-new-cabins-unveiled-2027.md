@@ -30,7 +30,7 @@ social_post: |
   完整整理在網站：
   https://yenlabaero.com/singapore-airlines-new-cabins-unveiled-2027
 
-  （照片：DaHuzyBru／Wikimedia Commons）
+  （圖片來源：新加坡航空）
 
   #新加坡航空 #SingaporeAirlines #商務艙
 social_cards:
@@ -75,6 +75,12 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-unveiled-2027.jpg
 
 ## 三、新頭等艙
 
+![新航新頭等艙雙人床](/assets/images/singapore-airlines-2027-first-double-bed.jpg)
+_新頭等艙中間兩席併成雙人床（圖片來源：新加坡航空）_
+
+![新航新頭等艙靠窗座位](/assets/images/singapore-airlines-2027-first-window-seat.jpg)
+_新頭等艙靠窗單人套房（圖片來源：新加坡航空）_
+
 | 項目 | 規格 |
 | --- | --- |
 | 製造／設計 | Collins Aerospace／PriestmanGoode |
@@ -89,6 +95,12 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-unveiled-2027.jpg
 - 頭等艙沒有頭頂行李櫃，隨身行李放在腳凳下方。
 
 ## 四、新商務艙
+
+![新航新商務艙靠窗座位](/assets/images/singapore-airlines-2027-business-window-seat.jpg)
+_新商務艙靠窗座位，有滑門（圖片來源：新加坡航空）_
+
+![新航新商務艙蜜月座併床](/assets/images/singapore-airlines-2027-business-companion-bed.jpg)
+_新商務艙中間「蜜月座」放平併成雙人床（圖片來源：新加坡航空）_
 
 | 項目 | A350-900LH／ULR | 777-9 |
 | --- | --- | --- |
@@ -105,6 +117,12 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-unveiled-2027.jpg
 - **爭議：** 灰色系配黃色點綴，不少部落客覺得不像新航過去溫暖的風格；座椅寬度也比 2013 年版的 28 吋窄。
 
 ## 五、新豪經與經濟艙（只上 777-9）
+
+![新航新豪華經濟艙](/assets/images/singapore-airlines-2027-premium-economy.jpg)
+_777-9 新豪華經濟艙（圖片來源：新加坡航空）_
+
+![新航新經濟艙](/assets/images/singapore-airlines-2027-economy.jpg)
+_777-9 新經濟艙（圖片來源：新加坡航空）_
 
 | 項目 | 豪華經濟艙 | 經濟艙 |
 | --- | --- | --- |
@@ -130,11 +148,12 @@ thumbnail: /assets/images/singapore-airlines-new-cabins-unveiled-2027.jpg
 
 ### 消息來源
 
-1. The Milelion：[Unveiled: Singapore Airlines' new First, Business, Premium Economy and Economy seats](https://milelion.com/2026/11/06/unveiled-singapore-airlines-new-first-business-premium-economy-and-economy-seats/)（2026/11/6）
-2. The Milelion：[On the sidelines: 10 insights from SIA's next-generation cabin products launch](https://milelion.com/2026/11/07/on-the-sidelines-10-insights-from-sias-next-generation-cabin-products-launch/)（2026/11/7）
-3. One Mile at a Time：[Singapore Airlines Unveils New First & Business Class Cabins For A350, 777-9](https://onemileatatime.com/news/singapore-airlines-new-first-business-class/)（2026/11/6）
-4. 顏究所：[新航新客艙 11/7 發表！新頭等艙、商務艙、豪經全面換新，但全新豪經、經濟艙座椅只上 777-9](https://yenlabaero.com/singapore-airlines-new-cabins-november-2026)（2026/10/27）
+1. 新加坡航空：[Singapore Airlines Introduces Next-Generation Long-Haul Cabin Products](https://www.singaporeair.com/en_UK/sg/corporate/newsroom/press-release/2026/oct-to-dec-2026/Next_generation_Long_Haul_cabin_products/)（2026/11/6）
+2. The Milelion：[Unveiled: Singapore Airlines' new First, Business, Premium Economy and Economy seats](https://milelion.com/2026/11/06/unveiled-singapore-airlines-new-first-business-premium-economy-and-economy-seats/)（2026/11/6）
+3. The Milelion：[On the sidelines: 10 insights from SIA's next-generation cabin products launch](https://milelion.com/2026/11/07/on-the-sidelines-10-insights-from-sias-next-generation-cabin-products-launch/)（2026/11/7）
+4. One Mile at a Time：[Singapore Airlines Unveils New First & Business Class Cabins For A350, 777-9](https://onemileatatime.com/news/singapore-airlines-new-first-business-class/)（2026/11/6）
+5. 顏究所：[新航新客艙 11/7 發表！新頭等艙、商務艙、豪經全面換新，但全新豪經、經濟艙座椅只上 777-9](https://yenlabaero.com/singapore-airlines-new-cabins-november-2026)（2026/10/27）
 
-_封面照片：新航 A350-900 在新加坡樟宜機場（DaHuzyBru／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Singapore_Airlines_A350-900_(9V-SMS)_@_SIN,_Sept_2024_01.jpg)，CC BY-SA 4.0），經裁切。_
+_封面照片：新航新頭等艙雙人床（圖片來源：新加坡航空），經裁切。_
 
 _編輯註：本文整理截至 2026 年 11 月 7 日的資訊，以各公司官方公告為準。_

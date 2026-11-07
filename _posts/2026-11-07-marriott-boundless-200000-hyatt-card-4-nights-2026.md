@@ -27,7 +27,7 @@ social_post: |
   完整整理在網站：
   https://yenlabaero.com/marriott-boundless-200000-hyatt-card-4-nights-2026
 
-  （照片：BrokenSegue／Wikimedia Commons）
+  （圖片來源：Chase）
 
   #美國信用卡 #萬豪 #凱悅
 social_cards:
@@ -104,6 +104,6 @@ _匯率：1 美元＝32.6279 元新台幣（Mastercard，2026/11/2）。_
 2. Frequent Miler：[Chase Marriott Bonvoy Boundless Card: Massive 200K welcome offer](https://frequentmiler.com/chase-marriott-bonvoy-boundless-card-massive-200k-welcome-offer/)（2026/11/6）
 3. Frequent Miler：[World of Hyatt card: New welcome offer with four Category 1-4 free night certificates](https://frequentmiler.com/world-of-hyatt-card-new-welcome-offer-with-four-category-1-4-free-night-certificates/)（2026/11/5）
 
-_封面照片：紐約布魯克林大橋萬豪酒店（BrokenSegue／[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:New_York_Marriott_at_the_Brooklyn_Bridge.jpg)，CC BY-SA 4.0），經裁切。_
+_封面圖片：Chase 萬豪 Bonvoy Boundless 卡與 World of Hyatt 卡卡面（圖片來源：Chase）。_
 
 _編輯註：本文整理截至 2026 年 11 月 7 日的資訊，以各公司官方公告為準。_
