@@ -1,8 +1,8 @@
 ---
 title: 10 月刷卡王換人！玉山單月 980 億元奪冠，五大發卡行前 10 月 3.48 兆、年增近 18%，近 3 年刷卡金額一次比
 slug: taiwan-credit-card-spending-october-2026
-date: 2026-11-14T09:20:00
-publish_at: 2026-11-14T17:20:00+08:00
+date: 2026-11-14T04:50:00
+publish_at: 2026-11-14T12:50:00+08:00
 main_category: 信用卡
 sub_category: 台灣信用卡
 tags: 信用卡, 刷卡金額, 玉山銀行, 中國信託, 國泰世華, 台北富邦, 台新銀行, 金管會
