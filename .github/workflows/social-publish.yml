@@ -16,8 +16,9 @@ on:
         description: "要發的平台，用逗號分隔"
         default: "facebook,instagram,threads"
 
+# 每次執行各自獨立，同時發好幾篇也不會互相取消
 concurrency:
-  group: social-publish
+  group: social-publish-${{ github.run_id }}
   cancel-in-progress: false
 
 jobs:
