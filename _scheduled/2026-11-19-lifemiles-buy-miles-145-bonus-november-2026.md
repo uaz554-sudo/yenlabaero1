@@ -1,8 +1,8 @@
 ---
 title: LifeMiles 買哩程又加贈 145%！每哩約 0.44 元，11/21 截止，換長榮商務艙飛日本仍划算
 slug: lifemiles-buy-miles-145-bonus-november-2026
-date: 2026-11-19T12:40:00
-publish_at: 2026-11-19T20:40:00+08:00
+date: 2026-11-19T03:40:00
+publish_at: 2026-11-19T11:40:00+08:00
 main_category: 哩程資訊
 sub_category: 星空聯盟
 tags: Avianca, LifeMiles, 哥倫比亞航空, 購買哩程, 哩程特賣, 長榮航空, 星空聯盟

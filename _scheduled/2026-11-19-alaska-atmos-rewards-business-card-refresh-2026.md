@@ -1,8 +1,8 @@
 ---
 title: 阿拉斯加 Atmos 商務聯名卡改版：開卡禮 9 萬點、商旅平台訂票 10 倍，但取消 99 美元同行票
 slug: alaska-atmos-rewards-business-card-refresh-2026
-date: 2026-11-19T13:10:00
-publish_at: 2026-11-19T21:10:00+08:00
+date: 2026-11-19T04:10:00
+publish_at: 2026-11-19T12:10:00+08:00
 main_category: 信用卡
 sub_category: 美國信用卡
 tags: 阿拉斯加航空, Alaska Airlines, Atmos Rewards, 聯名卡, 商務卡, 美國銀行, Bank of America, 寰宇一家

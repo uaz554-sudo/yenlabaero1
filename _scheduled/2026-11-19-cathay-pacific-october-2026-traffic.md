@@ -1,8 +1,8 @@
 ---
 title: 國泰 10 月載客 272 萬人次、年增 4.5%，載客率 85.7%；貨運增 7.5%，聖誕節需求看好
 slug: cathay-pacific-october-2026-traffic
-date: 2026-11-19T13:00:00
-publish_at: 2026-11-19T21:00:00+08:00
+date: 2026-11-19T04:00:00
+publish_at: 2026-11-19T12:00:00+08:00
 main_category: 航空資訊
 sub_category: 寰宇一家
 tags: 國泰航空, Cathay Pacific, 香港快運, 載客量, 貨運, 寰宇一家, 香港

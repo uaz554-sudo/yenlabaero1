@@ -1,8 +1,8 @@
 ---
 title: 漢莎機師工會：調解方案被公司拒絕，11/23 前要漢莎回頭；今年已罷工 2 次、第一次取消 800 班
 slug: lufthansa-pilots-dispute-mediation-rejected-2026
-date: 2026-11-19T13:20:00
-publish_at: 2026-11-19T21:20:00+08:00
+date: 2026-11-19T04:20:00
+publish_at: 2026-11-19T12:20:00+08:00
 main_category: 航空資訊
 sub_category: 星空聯盟
 tags: 漢莎航空, Lufthansa, 機師工會, Vereinigung Cockpit, 罷工, 退休金, CityLine, 星空聯盟, 德國

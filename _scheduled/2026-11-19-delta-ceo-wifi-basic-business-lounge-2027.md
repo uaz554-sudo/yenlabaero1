@@ -1,8 +1,8 @@
 ---
 title: 達美 CEO：旅客不會因為 Wi-Fi 選航空公司；Delta One 基本商務艙 2027/1/19 起不能進貴賓室
 slug: delta-ceo-wifi-basic-business-lounge-2027
-date: 2026-11-19T13:15:00
-publish_at: 2026-11-19T21:15:00+08:00
+date: 2026-11-19T04:15:00
+publish_at: 2026-11-19T12:15:00+08:00
 main_category: 航空資訊
 sub_category: 天合聯盟
 tags: 達美航空, Delta, Ed Bastian, Wi-Fi, Starlink, Amazon Leo, Viasat, Delta One, 基本商務艙, 貴賓室, 天合聯盟

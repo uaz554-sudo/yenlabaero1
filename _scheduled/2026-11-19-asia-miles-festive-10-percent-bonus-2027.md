@@ -1,8 +1,8 @@
 ---
 title: 亞洲萬里通「里賞佳節」：飯店、購物轉點多送 10% 到 2027/1/4，台灣 LaLaport、三井 Outlet 也算
 slug: asia-miles-festive-10-percent-bonus-2027
-date: 2026-11-19T12:30:00
-publish_at: 2026-11-19T20:30:00+08:00
+date: 2026-11-19T03:30:00
+publish_at: 2026-11-19T11:30:00+08:00
 main_category: 哩程資訊
 sub_category: 寰宇一家
 tags: 國泰航空, 亞洲萬里通, Asia Miles, 轉點加贈, LaLaport, 三井 Outlet, 香格里拉, 凱悅, 希爾頓, 寰宇一家

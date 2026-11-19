@@ -1,8 +1,8 @@
 ---
 title: 雅高 Accor+ Explorer 送禮會籍 75 折到 11/24：香港買約 6,300 元，送 2 晚住宿券、30 晚會籍直上金卡
 slug: accor-plus-explorer-gift-25-off-2026
-date: 2026-11-19T12:50:00
-publish_at: 2026-11-19T20:50:00+08:00
+date: 2026-11-19T03:50:00
+publish_at: 2026-11-19T11:50:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 雅高, ALL Accor, Accor+, Accor Plus, Explorer, 付費會籍, 金卡, 送禮

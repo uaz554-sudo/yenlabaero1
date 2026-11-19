@@ -1,8 +1,8 @@
 ---
 title: 凱悅 2027 會員制度大改：10 晚就有里程碑獎勵、獎勵可疊加，但 Globalist 點數住宿免費停車取消
 slug: world-of-hyatt-2027-milestone-rewards-changes
-date: 2026-11-19T12:15:00
-publish_at: 2026-11-19T20:15:00+08:00
+date: 2026-11-19T03:15:00
+publish_at: 2026-11-19T11:15:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 凱悅, World of Hyatt, Globalist, 里程碑獎勵, Milestone Rewards, 免費房, 會員制度, 飯店

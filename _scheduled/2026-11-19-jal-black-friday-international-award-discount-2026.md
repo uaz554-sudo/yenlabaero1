@@ -1,8 +1,8 @@
 ---
 title: JAL 黑五國際線減哩獎勵票：沖繩－台北單程 5,250 哩、法蘭克福商務艙 38,500 哩，11/30 前訂
 slug: jal-black-friday-international-award-discount-2026
-date: 2026-11-19T12:20:00
-publish_at: 2026-11-19T20:20:00+08:00
+date: 2026-11-19T03:20:00
+publish_at: 2026-11-19T11:20:00+08:00
 main_category: 哩程資訊
 sub_category: 寰宇一家
 tags: 日本航空, JAL, JMB, 獎勵機票, 黑色星期五, 沖繩, 那霸, 台北, 寰宇一家, 減哩

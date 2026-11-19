@@ -1,8 +1,8 @@
 ---
 title: 萬豪新增義大利 Lefay 度假村品牌：加爾達湖、多洛米蒂 2 間可用 Bonvoy 點數，白金卡保證延遲退房到 13:00
 slug: marriott-bonvoy-lefay-new-brand-2026
-date: 2026-11-19T12:55:00
-publish_at: 2026-11-19T20:55:00+08:00
+date: 2026-11-19T03:55:00
+publish_at: 2026-11-19T11:55:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 萬豪, Marriott Bonvoy, Lefay, 義大利, 加爾達湖, 多洛米蒂, 會員條款, 度假村

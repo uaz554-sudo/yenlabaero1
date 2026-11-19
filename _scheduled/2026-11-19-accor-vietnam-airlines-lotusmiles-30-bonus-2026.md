@@ -1,8 +1,8 @@
 ---
 title: 雅高 ALL × 越南航空 Lotusmiles 雙向轉點加贈 30%，到 11/30：3,000 點可換 2,600 哩
 slug: accor-vietnam-airlines-lotusmiles-30-bonus-2026
-date: 2026-11-19T12:45:00
-publish_at: 2026-11-19T20:45:00+08:00
+date: 2026-11-19T03:45:00
+publish_at: 2026-11-19T11:45:00+08:00
 main_category: 哩程資訊
 sub_category: 天合聯盟
 tags: 雅高, ALL Accor, 越南航空, Vietnam Airlines, Lotusmiles, 轉點加贈, 天合聯盟

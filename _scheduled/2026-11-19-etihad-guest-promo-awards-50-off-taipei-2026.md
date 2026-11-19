@@ -1,8 +1,8 @@
 ---
 title: 阿提哈德獎勵票最高 5 折！阿布達比－台北商務艙單程 37,500 哩、經濟艙 18,500 哩，11/27 前訂
 slug: etihad-guest-promo-awards-50-off-taipei-2026
-date: 2026-11-19T12:25:00
-publish_at: 2026-11-19T20:25:00+08:00
+date: 2026-11-19T03:25:00
+publish_at: 2026-11-19T11:25:00+08:00
 main_category: 哩程資訊
 sub_category: 無聯盟
 tags: 阿提哈德航空, Etihad, Etihad Guest, 獎勵機票, 台北, 阿布達比, 商務艙, 哩程特賣

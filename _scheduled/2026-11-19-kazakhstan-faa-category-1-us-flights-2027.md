@@ -1,8 +1,8 @@
 ---
 title: 哈薩克爭取美國 FAA 第一級飛安評等，目標 2027 年底前開美國直飛；年旅客量 5 年內要翻倍到 6,000 萬
 slug: kazakhstan-faa-category-1-us-flights-2027
-date: 2026-11-19T13:05:00
-publish_at: 2026-11-19T21:05:00+08:00
+date: 2026-11-19T04:05:00
+publish_at: 2026-11-19T12:05:00+08:00
 main_category: 航空資訊
 sub_category: 無聯盟
 tags: 哈薩克, Kazakhstan, FAA, 飛安評等, IASA, 阿斯塔納航空, Air Astana, 中亞, 美國

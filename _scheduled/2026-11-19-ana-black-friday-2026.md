@@ -1,8 +1,8 @@
 ---
 title: ANA 黑五 11/20 開跑！國內線、國際線減哩獎勵票 11/24 公布，最後 3 天加碼「ANAにキュン」
 slug: ana-black-friday-2026
-date: 2026-11-19T12:35:00
-publish_at: 2026-11-19T20:35:00+08:00
+date: 2026-11-19T03:35:00
+publish_at: 2026-11-19T11:35:00+08:00
 main_category: 哩程資訊
 sub_category: 星空聯盟
 tags: 全日空, ANA, 黑色星期五, 獎勵機票, 減哩, ANAマイレージクラブ, 星空聯盟, 日本

@@ -1,8 +1,8 @@
 ---
 title: 凱悅 × 達美合作上線！連結帳號雙重累積、會員可選達美會籍和凱悅免費房，年底前住宿多送 1 晚會籍
 slug: world-of-hyatt-delta-skymiles-partnership-launch-2026
-date: 2026-11-19T12:10:00
-publish_at: 2026-11-19T20:10:00+08:00
+date: 2026-11-19T03:10:00
+publish_at: 2026-11-19T11:10:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 凱悅, World of Hyatt, 達美航空, Delta, SkyMiles, 雙重累積, 會籍, 里程碑獎勵, 天合聯盟

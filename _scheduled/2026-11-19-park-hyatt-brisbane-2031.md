@@ -1,8 +1,8 @@
 ---
 title: 柏悅布里斯本 2031 年開幕：河畔 201 間客房，柏悅在澳洲第 4 間、南太平洋第 5 間
 slug: park-hyatt-brisbane-2031
-date: 2026-11-19T13:25:00
-publish_at: 2026-11-19T21:25:00+08:00
+date: 2026-11-19T04:25:00
+publish_at: 2026-11-19T12:25:00+08:00
 main_category: 飯店資訊
 sub_category: 集團體系
 tags: 柏悅, Park Hyatt, 凱悅, 布里斯本, 澳洲, 昆士蘭, 新飯店

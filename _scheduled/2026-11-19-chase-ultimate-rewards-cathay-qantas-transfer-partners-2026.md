@@ -1,8 +1,8 @@
 ---
 title: Chase 點數新增國泰亞洲萬里通、澳航兩個轉點夥伴，都是 1:1！四大美國點數現在都能轉國泰
 slug: chase-ultimate-rewards-cathay-qantas-transfer-partners-2026
-date: 2026-11-19T12:05:00
-publish_at: 2026-11-19T20:05:00+08:00
+date: 2026-11-19T03:05:00
+publish_at: 2026-11-19T11:05:00+08:00
 main_category: 信用卡
 sub_category: 美國信用卡
 tags: Chase, Ultimate Rewards, 國泰航空, 亞洲萬里通, Asia Miles, 澳洲航空, Qantas, 轉點, 寰宇一家

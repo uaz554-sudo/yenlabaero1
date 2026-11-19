@@ -1,8 +1,8 @@
 ---
 title: 華航法說會重點：前三季賺 126 億、寒假春節機位已賣八成，桃機第三航廈搶下最大貴賓室
 slug: china-airlines-investor-conference-q3-2026
-date: 2026-11-19T12:00:00
-publish_at: 2026-11-19T20:00:00+08:00
+date: 2026-11-19T03:00:00
+publish_at: 2026-11-19T11:00:00+08:00
 main_category: 航空資訊
 sub_category: 天合聯盟
 tags: 中華航空, 華航, 法說會, 桃園機場第三航廈, 貴賓室, 春節機票, 貨運, 機隊, 天合聯盟
